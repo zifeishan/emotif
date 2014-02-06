@@ -1,0 +1,64 @@
+.logo{
+	font-size:60px;
+	font-family: Helvetica, sans-serif;
+	color: #3191f6;
+	font-weight: 600;
+	text-shadow: text-shadow: 2px 2px 2px #FF0000;
+	font-variant: small-caps;
+	position: relative;
+	left: 30px;
+	display: inline;
+	text-decoration: none;
+}
+
+#homepage #logo {
+	background: url("emo1ogo.jpg") no-repeat center left;
+	height: 179px;
+}
+.logo-word {
+	display: inline;
+	position: relative;
+	left: 80px;
+	top: -10px;
+	font-family: cursive;
+	font-style: italic;
+	font-size: 20px;
+	font-weight: 500;
+	color: #8d9baa;
+	
+}
+#homepage #band {
+	background: url("home-band.jpg") no-repeat center center;
+	background-size: cover;
+	height: 650px;
+}
+#band #text {
+	position: relative;
+	left: 100px;
+	top: 50px;
+	font-size: 25px;
+	width: 600px;
+	color:  #070b4a;
+}
+
+
+#band .button {
+	position: relative;
+	left: 100px;
+	top: 50px;
+}
+.button {
+	padding: 0 50px;
+	font-size: 25px;
+	height: 139px;
+	display: block;
+	position: relative;
+	z-index: 1;
+	font-family: "museo-sans",sans-serif;
+	color: #070b4a;
+	font-weight: 900;
+	background: url("catclaw.png") no-repeat center center;
+	border-radius: 0;
+	line-height: 28px;
+	-webkit-appearance: none;
+}
