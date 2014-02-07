@@ -1,30 +1,33 @@
 div(ng-include='\'partials/navbar\'')
 
 .jumbotron
-  h1
-    | Emotif
-    span(ng-show='currentUser') {{ currentUser.name }}
-    | !
+  div.bigheader
+    h1.
+      Emotif
 
-  p.lead
-    <img src="images/yeoman.png" alt="I'm Yeoman">
-    br
-    | "Cause you had a bad day
-    br
-    | You're taking one down
-    br
-    | You sing a sad song just to turn it around
-    br
-    | You say you don't know"
-    br
-    |  --"Bad Day" by Daniel Powter
-  p
-    a.btn.btn-lg.btn-success(ng-href='#') Splendid!
+      {{ currentUser.name }}!
+      
+
+  div.motif
+    p.lead.emph
+      //- <img class="mainlogo" src="images/emologo.png" alt="I'm Yeoman">
+      br
+      | "Cause you had a bad day
+      br
+      | You're taking one down
+      br
+      | You sing a sad song just to turn it around
+      br
+      | You say you don't know"
+    p.lead.
+      --"Bad Day" by Daniel Powter
+    div.startbutton
+      a.btn.btn-lg.btn-success(ng-href='/login') Start!
     
-.row.marketing
-  div(ng-repeat='thing in awesomeThings')
-    h4 {{thing.name}}
-    p {{thing.info}}
+//- .row.marketing
+//-   div(ng-repeat='thing in awesomeThings')
+//-     h4 {{thing.name}}
+//-     p {{thing.info}}
 
 .footer
-  p ♥ from the Yeoman team
+  p ♥ from the Emomew / Emotif team

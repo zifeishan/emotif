@@ -77,3 +77,23 @@ body {
     border-bottom: 0;
   }
 }
+
+
+.mainlogo {
+  max-width: 100%;
+}
+
+.emph {
+  font-style: italic;
+}
+
+.bigheader {  
+}
+
+.fakechart img {
+  max-width: 100%;
+}
+
+.back {
+  margin-top: 30px;
+}
