@@ -15,7 +15,7 @@ angular.module('emotifAppApp')
     
     $scope.logout = ->
       Auth.logout().then ->
-        $location.path "/login"
+        $location.path "/"
     
     $scope.isActive = (route) ->
       route is $location.path()

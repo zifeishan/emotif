@@ -83,6 +83,10 @@ body {
   max-width: 100%;
 }
 
+.lead {
+  font-size: 12px;
+}
+
 .emph {
   font-style: italic;
 }
