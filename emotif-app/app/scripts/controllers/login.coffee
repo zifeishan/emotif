@@ -15,7 +15,8 @@ angular.module('emotifAppApp')
         )
         .then ->
           # Logged in, redirect to home
-          $location.path '/'
+          # $location.path '/'
+          $location.path '/select'
         .catch (err) ->
           err = err.data;
           $scope.errors.other = err.message;
