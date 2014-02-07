@@ -1,8 +1,10 @@
-div(ng-include='\'partials/navbar.html\'')
+.logo
+  a(href="/")
+    img(src="images/logo.png" alt="LOGO")
 
 .row
   .col-sm-12
-    h1 Login
+    h3 Login
     p
       | Default account is
       code test@test.com
@@ -25,7 +27,7 @@ div(ng-include='\'partials/navbar.html\'')
           | Please enter your email and password.
         p.help-block {{ errors.other }}
 
-      button.btn.btn-lg.btn-primary(type='submit')  Sign in 
+      button.btn.btn-block.btn-primary(type='submit')  Sign in 
       span.clearfix
 
 .row
