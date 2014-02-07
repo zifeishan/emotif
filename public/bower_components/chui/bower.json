@@ -1,0 +1,19 @@
+{
+  "name": "chui",
+  "version": "1.0.1",
+  "authors": [
+    "Robert Biggs <robert.biggs@sourcebits.com>"
+  ],
+  "description": "ChocolateChip-UI for Android, iOS & Windows Phone 8",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "main": ["./*.js", "./*.css"],
+  "dependencies": {
+    "jquery": "2.0.3"
+  }
+}

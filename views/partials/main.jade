@@ -1,0 +1,31 @@
+.logo
+  a(href="/")
+    img(src="images/logo.png" alt="LOGO")
+
+.jumbotron
+  div.bigheader
+    h1.
+      Welcome
+      {{ currentUser.name }}!
+      
+  div.motif
+    p.lead.emph
+      //- <img class="mainlogo" src="images/3ad98b5f.emologo.png" alt="I'm Yeoman">
+      br
+      | "Cause you had a bad day
+      br
+      | You're taking one down
+      br
+      | You sing a sad song just to turn it around"
+    p.lead.
+      --"Bad Day" by Daniel Powter
+    div.startbutton
+      a.btn.btn-block.btn-success(ng-href='/login') Get started!
+    
+//- .row.marketing
+//-   div(ng-repeat='thing in awesomeThings')
+//-     h4 {{thing.name}}
+//-     p {{thing.info}}
+
+.footer
+  p ♥ from the Emotif team
