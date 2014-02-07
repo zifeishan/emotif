@@ -32,6 +32,10 @@ How to's
 - Run `$ grunt` to compile the whole project
 - `cd` into `dist/`, then push it into Heroku.
 
+- For the first push on heroku:
+  - Add addon `mongohq`
+  - Run `$ heroku config:set NODE_ENV=production`
+
 Development Plan
 ====
 
