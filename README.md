@@ -7,6 +7,8 @@ Dependencies
 ----
 
 - npm: `$ sudo brew install npm` 
+- grunt: `$ sudo npm install -g grunt-cli`
+- bower: `$ sudo npm install -g bower`
 - yo: `$ sudo npm install -g yo`
 - coffeescript: `$ sudo npm install -g coffee-script`
 - mongodb: `$ brew install mongodb`
@@ -14,6 +16,11 @@ Dependencies
 
 How to's
 ----
+
+### Initiate
+
+- Run `$ npm install`
+- Run `$ bower install`
 
 ### How to host a local server
 

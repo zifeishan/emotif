@@ -18,6 +18,9 @@ angular.module('emotifAppApp', [
       .when '/signup', 
         templateUrl: 'partials/signup'
         controller: 'SignupCtrl'
+      .when '/select',
+        templateUrl: 'partials/select'
+        controller: 'SelectCtrl'
       .when '/settings',
         templateUrl: 'partials/settings'
         controller: 'SettingsCtrl'
