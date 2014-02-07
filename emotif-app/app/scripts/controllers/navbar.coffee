@@ -5,12 +5,12 @@ angular.module('emotifAppApp')
     $scope.menu = [
       title: 'Home'
       link: '/'
-    , 
-      title: 'Trend'
-      link: '/trend'
-    ,
-      title: 'Settings'
-      link: '/settings'
+    # , 
+    #   title: 'Trend'
+    #   link: '/trend'
+    # ,
+    #   title: 'Settings'
+    #   link: '/settings'
     ]
     
     $scope.logout = ->

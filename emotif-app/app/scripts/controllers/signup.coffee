@@ -15,7 +15,8 @@ angular.module('emotifAppApp')
           password: $scope.user.password
         ).then( ->
           # Account created, redirect to home
-          $location.path '/'
+          # $location.path '/'
+          $location.path '/select'
         ).catch( (err) ->
           err = err.data
           $scope.errors = {}

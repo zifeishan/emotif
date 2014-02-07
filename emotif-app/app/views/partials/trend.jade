@@ -3,10 +3,8 @@ div(ng-include='\'partials/navbar\'')
 .jumbotron
   div.bigheader
     h1.
-      Emotif
-
-      {{ currentUser.name }}!
-  
+      Your mood trend
+ 
 
   div.trend
     //- | Show my trend here...  
@@ -17,7 +15,7 @@ div(ng-include='\'partials/navbar\'')
     
 
   div.back
-      a.btn.btn-lg.btn-success(ng-href='/') Back
+      a.btn.btn-lg.btn-success(ng-href='/select') Back
 
 .footer
   p ♥ from the Emomew / Emotif team
