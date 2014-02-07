@@ -88,6 +88,7 @@ body {
 }
 
 .bigheader {  
+  margin-bottom: 20px;
 }
 
 .fakechart img {
@@ -100,4 +101,24 @@ body {
 
 .navbar-header {
   font-size: 12px;
+}
+
+.video {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.spacer {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.logo {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+
+.logo img {
+  max-width: 120px;
 }

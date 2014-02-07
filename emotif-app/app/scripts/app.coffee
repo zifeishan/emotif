@@ -28,6 +28,9 @@ angular.module('emotifAppApp', [
         templateUrl: 'partials/settings'
         controller: 'SettingsCtrl'
         authenticate: true
+      .when '/content',
+        templateUrl: 'partials/content'
+        controller: 'ContentCtrl'
       .otherwise
         redirectTo: '/'
 
