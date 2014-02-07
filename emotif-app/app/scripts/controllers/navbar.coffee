@@ -6,6 +6,9 @@ angular.module('emotifAppApp')
       title: 'Home'
       link: '/'
     , 
+      title: 'Trend'
+      link: '/trend'
+    ,
       title: 'Settings'
       link: '/settings'
     ]

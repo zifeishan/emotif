@@ -5,7 +5,7 @@ describe 'Controller: TrendCtrl', () ->
   # load the controller's module
   beforeEach module 'emotifAppApp'
 
-  MainCtrl = {}
+  TrendCtrl = {}
   scope = {}
   $httpBackend = {}
 
