@@ -31,6 +31,12 @@ angular.module('emotifAppApp', [
       .when '/content',
         templateUrl: 'partials/content'
         controller: 'ContentCtrl'
+      .when '/content2',
+        templateUrl: 'partials/content2'
+        controller: 'Content2Ctrl'
+      .when '/share',
+        templateUrl: 'partials/share'
+        controller: 'ShareCtrl'
       .otherwise
         redirectTo: '/'
 
