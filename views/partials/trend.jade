@@ -1,0 +1,22 @@
+div(ng-include='\'partials/navbar\'')
+
+.jumbotron
+  div.bigheader
+    h1.
+      Emotif
+
+      {{ currentUser.name }}!
+  
+
+  div.trend
+    //- | Show my trend here...  
+    //- svg#trendchart
+    div.fakechart.row
+      //- div.col-md-12
+      img(src="images/fakechart.png", alt="Rendering...")
+          
+  div.back
+      a.btn.btn-lg.btn-success(ng-href='/') Back
+
+.footer
+  p ♥ from the Emomew / Emotif team

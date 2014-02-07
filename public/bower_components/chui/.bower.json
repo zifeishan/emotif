@@ -1,0 +1,33 @@
+{
+  "name": "chui",
+  "version": "3.5.1",
+  "authors": [
+    "Robert Biggs <robert.biggs@sourcebits.com>"
+  ],
+  "description": "ChocolateChip-UI for Android, iOS & Windows Phone 8",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "main": [
+    "./*.js",
+    "./*.css"
+  ],
+  "dependencies": {
+    "jquery": "2.0.3"
+  },
+  "homepage": "https://github.com/sourcebits-robertbiggs/bower-chui",
+  "_release": "3.5.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.5.1",
+    "commit": "14a85969a93c68554fe68f0bf9aa6ec328e15487"
+  },
+  "_source": "https://github.com/sourcebits-robertbiggs/bower-chui.git",
+  "_target": "~3.5.1",
+  "_originalSource": "https://github.com/sourcebits-robertbiggs/bower-chui.git",
+  "_direct": true
+}
