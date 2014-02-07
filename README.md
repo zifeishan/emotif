@@ -3,6 +3,27 @@ Emotif
 
 **Emotif** is a mobile web application to track your mood and make you feel better!
 
+Dependencies
+----
+
+- npm: `$ sudo brew install npm` 
+- yo: `$ sudo npm install -g yo`
+- coffeescript: `$ sudo npm install -g coffee-script`
+- mongodb: `$ brew install mongodb`
+- jade
+
+How to's
+----
+
+### How to host a local server
+
+- Run `$ mongod` to start your local database.
+- Run `$ grunt serve` to start the server
+
+### How to compile & push to Heroku
+
+- Run `$ grunt` to compile the whole project
+- `cd` into `dist/`, then push it into Heroku.
 
 Development Plan
 ====
@@ -58,4 +79,6 @@ Development Plan
 - Gather data to optimize recommendation strategy
 - Try predicting user's emotions, and see how it can help
 - Report interesting findings how the app can improve emotions
+
+
 
