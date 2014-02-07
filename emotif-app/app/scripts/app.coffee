@@ -21,6 +21,9 @@ angular.module('emotifAppApp', [
       .when '/select',
         templateUrl: 'partials/select'
         controller: 'SelectCtrl'
+      .when '/trend', 
+        templateUrl: 'partials/trend'
+        controller: 'TrendCtrl'
       .when '/settings',
         templateUrl: 'partials/settings'
         controller: 'SettingsCtrl'
