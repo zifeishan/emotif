@@ -1,0 +1,25 @@
+.logo
+  a(href="/")
+    img(src="images/logo.png" alt="LOGO")
+
+.jumbotron
+  div.bigheader
+    p.
+      How are you feeling now?
+
+  .row
+    .col-sm-6
+      a.btn.btn-primary.btn-block(type='button', href='/trend') +2
+    .col-sm-6
+      a.btn.btn-info.btn-block(type='button', href='/trend') +1
+  .row
+    .col-sm-12
+      a.btn.btn-success.btn-block(type='button', href='/content') 0
+  .row
+    .col-sm-6
+      a.btn.btn-warning.btn-block(type='button', href='/content') -1
+    .col-sm-6
+      a.btn.btn-danger.btn-block(type='button', href='/content') -2
+
+    div.back
+      a.btn.btn-lg.btn-success(ng-href='/') Back
