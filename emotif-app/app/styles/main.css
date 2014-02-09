@@ -2,6 +2,8 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -78,9 +80,62 @@ body {
   }
 }
 
+.main-logo {
+  position:fixed;
+  right:25%;
+  left:25%;
+  top:15%;
+}
 
-.mainlogo {
+.main-logo img{
   max-width: 100%;
+}
+
+.main-center {
+  position: fixed;
+  top: 55%;
+  left:0;
+  right:0;
+  margin-top:-80px;
+}
+
+.main-center p.hint{
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 14px;
+}
+
+.main-center p.next{
+  margin-right: 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: right;
+}
+
+.main-center p.back{
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.main-center a:link{
+  color: #000000;
+  text-decoration:none;
+}
+
+.main-center a:visited{
+  color: #000000;
+  text-decoration:none;
+}
+
+.main-footer {
+  position: fixed;
+  bottom: 10px;
+  text-align: center;
+  left:0;
+  right:0;
+  font-size: 12px;
 }
 
 .lead {
