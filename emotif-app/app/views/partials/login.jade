@@ -2,10 +2,10 @@
   img(src="images/logo.png" alt="LOGO")
 
 .main-center
-  p.hint
+  p.hint(ng-model='user')
     | Sign in as:
     br
-    | test@test.com
+    | {{user.email}}
   label.item.item-input
     input(type='password', placeholder='Password')
   .row

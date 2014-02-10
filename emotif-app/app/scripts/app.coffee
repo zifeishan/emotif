@@ -54,4 +54,4 @@ angular.module('emotifAppApp', [
     
     # Redirect to login if route requires auth and you're not logged in
     $rootScope.$on '$routeChangeStart', (event, next) ->
-      $location.path '/login'  if next.authenticate and not Auth.isLoggedIn()
+      $location.path '/'  if next.authenticate and not Auth.isLoggedIn()
