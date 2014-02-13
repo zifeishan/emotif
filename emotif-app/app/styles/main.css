@@ -80,6 +80,10 @@ body {
   }
 }
 
+
+/********************************
+* Main, Login, Signup page CSS
+*********************************/
 .main-logo {
   position:fixed;
   right:25%;
@@ -144,6 +148,23 @@ body {
   font-size: 12px;
 }
 
+/********************************
+* Select page CSS
+*********************************/
+
+.content-spacer {
+  margin-top: 40px;
+}
+
+.mood-select {
+  height: 55px;
+}
+
+/********************************
+* Content page CSS
+*********************************/
+
+/*##############################*/
 .lead {
   font-size: 15px;
 }

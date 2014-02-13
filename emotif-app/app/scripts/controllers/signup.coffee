@@ -2,17 +2,27 @@
 
 angular.module('emotifAppApp')
   .controller 'SignupCtrl', ($scope, Auth, $location) ->
-    $scope.user = {}
+    $scope.user = Auth.getTempUser()
     $scope.errors = {}
     
+    #This is the proper code to run when page is loaded
+    $scope.$on('$viewContentLoaded', ->
+      if $scope.user == null
+        console.log("No temp user")
+        $location.path '/'
+    )
+
+    $scope.back = ->
+      Auth.clearTempUser()
+      $location.path '/'
+
     $scope.register = (form) ->
       $scope.submitted = true
 
       if form.$valid
         Auth.createUser(
-          name: $scope.user.name
           email: $scope.user.email
-          password: $scope.user.password
+          password: $scope.password
         ).then( ->
           # Account created, redirect to home
           # $location.path '/'

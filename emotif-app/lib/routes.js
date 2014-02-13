@@ -16,6 +16,7 @@ module.exports = function(app) {
   app.get('/api/awesomeThings', api.awesomeThings);
   
   app.post('/api/users', users.create);
+  app.post('/api/users/exist', users.userExist);
   app.put('/api/users', users.changePassword);
   app.get('/api/users/me', users.me);
   app.get('/api/users/:id', users.show);

@@ -90,7 +90,6 @@ angular.module('emotifAppApp')
     currentUser: ->
       User.get()
 
-    
     ###
     Simple check to see if a user is logged in
     
@@ -108,3 +107,11 @@ angular.module('emotifAppApp')
 
     clearTempUser: ->
       $rootScope.tempUser = null
+
+    isRegistered: (useremail, callback) ->
+      User.checkExist(
+        email: useremail
+        , (result) ->
+          callback result
+      ).$promise
+

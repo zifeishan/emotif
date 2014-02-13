@@ -7,8 +7,12 @@ angular.module('emotifAppApp')
     #   $scope.awesomeThings = awesomeThings
 
     $scope.next = (form) ->
-    	Auth.updateTempUser($scope.user)
-    	console
     	if form.$valid
+    		Auth.updateTempUser($scope.user)
     		console.log 'Email Address received'
-    		$location.path '/login'
+    		Auth.isRegistered($scope.user.email, (result) ->
+    			if result.exist == false
+    				$location.path '/signup'
+    			else
+    				$location.path '/login'
+    		)

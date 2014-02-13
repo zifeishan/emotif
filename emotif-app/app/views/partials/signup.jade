@@ -2,19 +2,20 @@
   img(src="images/logo.png" alt="LOGO")
 
 .main-center
-  p.hint
-    | Sign in as:
-    br
-    | test@test.com
-  label.item.item-input
-    input(type='password', placeholder='Password')
-  .row
-    .col-33
-      p.back
-        a.next(href='/') Back
-    .col-33.col-offset-33
-      p.next
-        a.back(href='/login') Create Acount
+  form(name='form', novalidate)
+    p.hint(ng-model='user')
+      | Create a new acount as:
+      br
+      | {{user.email}}
+    label.item.item-input
+      input(type='password' placeholder='Password' ng-model='password' required)
+    .row
+      .col-33
+        p.back
+          a.next(ng-click='back()') Back
+      .col-33.col-offset-33
+        p.next
+          a.back(ng-click='register(form)') Sign In
 
 
 

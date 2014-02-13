@@ -1,29 +1,62 @@
-.logo
-  a(href="/")
-    img(src="images/logo.png" alt="LOGO")
+//- .logo
+//-   a(href="/")
+//-     img(src="images/logo.png" alt="LOGO")
 
-.jumbotron
-  div.bigheader
-    h3.
-      Congrats! You are in a good mood!
-    p.
-      Your mood trend:
+//- .jumbotron
+//-   div.bigheader
+//-     h3.
+//-       Congrats! You are in a good mood!
+//-     p.
+//-       Your mood trend:
 
-  div.trend
-    //- | Show my trend here...  
-    //- svg#trendchart
-    div.fakechart.row
-      //- div.col-md-12
-      img(src="images/fakechart.png", alt="Rendering...")
+//-   div.trend
+//-     //- | Show my trend here...  
+//-     //- svg#trendchart
+//-     div.fakechart.row
+//-       //- div.col-md-12
+//-       img(src="images/fakechart.png", alt="Rendering...")
     
 
-.row
-  .col-xs-5.col-xs-offset-1
-    a.btn.btn-primary.btn-block(href='/content') Back
-  .col-xs-5.col-xs-offset-0
-    a.btn.btn-success.btn-block(href='/share') Share it now
+//- .row
+//-   .col-xs-5.col-xs-offset-1
+//-     a.btn.btn-primary.btn-block(href='/content') Back
+//-   .col-xs-5.col-xs-offset-0
+//-     a.btn.btn-success.btn-block(href='/share') Share it now
 
-.spacer
+//- .spacer
 
-.footer
-  p ♥ from the Emotif team
+//- .footer
+//-   p ♥ from the Emotif team
+
+
+.bar.bar-header.bar-light
+  h1.title Emotif
+
+.list.card.content-spacer
+  .item
+    p Check out your mood trend here!
+
+  .item.item-body
+    img.full-image(src="images/fakechart.png")
+    p
+      | Congrats! Seems that you are in a pretty good condition!
+      br
+      br
+      | Exercise can always make you feel better, remember to check out next time you are feeling down.
+
+  .item.tabs.tabs-secondary.tabs-icon-left
+    a.tab-item
+      i.icon.ion-refresh
+    a.tab-item
+      i.icon.ion-share
+
+.tabs.tabs-icon-top
+  a.tab-item
+    i.icon.ion-ios7-albums-outline
+    p Content
+  a.tab-item
+    i.icon.ion-arrow-graph-up-right
+    p Trend
+  a.tab-item
+    i.icon.ion-ios7-gear-outline
+    p Settings

@@ -37,14 +37,25 @@ Thing.find({}).remove(function() {
 });
 
 // Clear old users, then add a default user
-User.find({}).remove(function() {
-  User.create({
-    provider: 'local',
-    name: 'Test User',
-    email: 'test@test.com',
-    password: 'test'
-  }, function() {
-      console.log('finished populating users');
-    }
-  );
-});
+// User.find({}).remove(function() {
+//   User.create({
+//     provider: 'local',
+//     name: 'Test User',
+//     email: 'test@test.com',
+//     password: 'test'
+//   }, function() {
+//       console.log('finished populating users');
+//     }
+//   );
+// });
+
+//Don't clear old ones:
+User.create({
+  provider: 'local',
+  name: 'Test User',
+  email: 'test@test.com',
+  password: 'test'
+}, function() {
+    console.log('finished populating users');
+  }
+);

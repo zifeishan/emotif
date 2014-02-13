@@ -10,11 +10,11 @@ angular.module('emotifAppApp')
     #   $location.path '/'
 
     #This is the proper code to run when page is loaded
-    $scope.$on('$viewContentLoaded', function() {
+    $scope.$on('$viewContentLoaded', ->
       if $scope.user == null
-      console.log("No temp user")
-      $location.path '/'
-    });
+        console.log("No temp user")
+        $location.path '/'
+    )
 
     $scope.back = ->
       Auth.clearTempUser()

@@ -71,6 +71,24 @@ exports.changePassword = function(req, res, next) {
 };
 
 /**
+* Check if user exists
+*/
+exports.userExist = function(req, res, next) {
+  var useremail = String(req.body.email);
+
+  User.find({email: useremail}, function (err, user) {
+    if (err) return next(new Error('Failed to load User'));
+    if (user.length) {
+      res.json({ exist: true });
+      // console.log('true');
+    } else {
+      res.json({ exist: false });
+      // console.log('false');
+    }
+  });
+};
+
+/**
  * Get current user
  */
 exports.me = function(req, res) {
