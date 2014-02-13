@@ -2,15 +2,15 @@
   img(src="images/logo.png" alt="LOGO")
 
 .main-center
-  form(name='form', novalidate)
+  form(name='form' novalidate)
     p.hint.
       Enter your email address to sign in or create a new account:
     label.item.item-input
-      input(type='email', placeholder='Email Address', ng-model='user.email' required)
+      input(type='email' placeholder='Email Address' ng-model='user.email' required)
     .row
       .col-33.col-offset-67
         p.next
-          a.back(ng-click='next(user)') Next
+          a.back(ng-click='next(form)') Next
 
 .main-footer
   p.

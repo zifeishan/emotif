@@ -7,6 +7,8 @@ angular.module('emotifAppApp')
     $rootScope.currentUser = $cookieStore.get('user') or null
     $cookieStore.remove 'user'
     
+    $rootScope.tempUser = null
+
     ###
     Authenticate user
     
@@ -97,3 +99,12 @@ angular.module('emotifAppApp')
     isLoggedIn: ->
       user = $rootScope.currentUser
       !!user
+
+    updateTempUser: (user) ->
+      $rootScope.tempUser = user
+
+    getTempUser: ->
+      $rootScope.tempUser
+
+    clearTempUser: ->
+      $rootScope.tempUser = null
