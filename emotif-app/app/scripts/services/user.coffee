@@ -9,6 +9,11 @@ angular.module("emotifAppApp")
         method: "PUT"
         params: {}
 
+      checkExist:
+        method: "POST"
+        params:
+          id: "exist"
+
       get:
         method: "GET"
         params:
