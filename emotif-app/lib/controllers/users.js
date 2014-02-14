@@ -117,30 +117,19 @@ exports.addMood = function(req, res, next) {
     console.log('=======START==========');
     var thisuser = user[0];
     console.log(thisuser);
-    // console.log(thisuser.getmood);
     console.log(useremail);
     console.log(time);
-    // console.log(thisuser.mood);
     thisuser.mood.push({
       'time': time, 
       'score': mood
     });
-    thisuser.markModified('mood');
-
-    // WE CAN USE IN >3.2.0: 
+    //// WE CAN USE IN Mongo > 3.2.0: 
     // thissz = thisuser.mood.length;
     // console.log(thissz);
     // thisuser.mood.set(thissz, );
+    //// Otherwise:
+    thisuser.markModified('mood');
     thisuser.save();
-    // console.log(user.mood);
-    // TODO
-    // if (user.length) {
-    //   res.json({ exist: true });
-    //   // console.log('true');
-    // } else {
-    //   res.json({ exist: false });
-    //   // console.log('false');
-    // }
   });
 
   // console.log(usermood);
@@ -152,15 +141,21 @@ exports.addMood = function(req, res, next) {
 * Check if user exists
 */
 exports.getMoods = function(req, res, next) {
-  var useremail = String(req.body.email);
-  var time = String(req.body.time);
-  var mood = String(req.body.mood);
-
-  // TODO Create usermood for new users!
-  UserMood.find({email: useremail}, function (err, usermood) {
+  
+  console.log(req.user);
+  var useremail = String(req.user.email);
+  // var time = String(req.body.time);
+  // var mood = String(req.body.mood);
+  // console.log('User Mail: '+useremail);
+  User.find({email: useremail}, function (err, user) {
     if (err) return next(new Error('Failed to load User'+useremail));
-    console.log(usermood);
-    console.log(time);
-    console.log(mood);
+    // console.log('what???');
+    // console.log(user);
+    var thisuser = user[0];
+    // console.log(thisuser.mood);
+    // return thisuser.mood;
+    res.json({
+      "key":"Mood",
+      "values": thisuser.mood});
   });
 };

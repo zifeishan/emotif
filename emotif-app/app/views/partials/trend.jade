@@ -36,16 +36,17 @@
   .item
     p Check out your mood trend here!
 
+  //- canvas#mychart(data-type="Line")
+  div#mychart
+    svg
   .item.item-body
     //- img.full-image(src="images/fakechart.png")
-    //- canvas#mychart(data-type="Line")
-    svg#mychart
-
+    
     p#trendcomment
       | Congrats! Seems that you are in a pretty good condition!
-      br
-      br
-      | Exercise can always make you feel better, remember to check out next time you are feeling down.
+      //- br
+      //- br
+      //- | Exercise can always make you feel better, remember to check out next time you are feeling down.
 
   .item.tabs.tabs-secondary.tabs-icon-left
     a.tab-item
