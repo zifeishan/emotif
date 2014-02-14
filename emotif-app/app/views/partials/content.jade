@@ -5,29 +5,32 @@
 .bar.bar-header.bar-light
   h1.title Emotif
 
-.list.card.content-spacer(ng-model='video')
-  .item
-    p Why not try this out today?
+//- header-bar(title="'header'")
 
-  .item.item-body
-    iframe.full-image(id='ytplayer' type='text/html' src="{{video.url}}" frameborder="0")
-    p
-      | Exercise can make you relaxed!
-      br
-      | Take a deep breathe and follow this video to do a 15-minutes Yoga!
-    p
-      a.subdued 121 people like you find this useful!
+content(has-header='true' has-footer='ture' scroll='true')
+  .list.card.content-spacer(ng-model='video')
+    .item
+      p Why not try this out today?
 
-  .item.tabs.tabs-secondary.tabs-icon-left
-    a.tab-item
-      i.icon.ion-refresh
-      p Like
-    a.tab-item
-      i.icon.ion-thumbsup
-      p Like
-    a.tab-item
-      i.icon.ion-heart
-      p Feeling better
+    .item.item-body
+      iframe.full-image(id='ytplayer' type='text/html' src="{{video.url}}" allowfullscreen="true" frameborder="0")
+      p
+        b {{video.caption}}
+        br
+        | Watch this funny video and you'll feel relaxed!
+      p
+        a.subdued {{video.likes}} people like you find this useful!
+
+    .item.tabs.tabs-secondary.tabs-icon-left
+      a.tab-item
+        i.icon.ion-refresh
+        p Like
+      a.tab-item
+        i.icon.ion-thumbsup
+        p Like
+      a.tab-item
+        i.icon.ion-heart
+        p Feeling better
 
 .tabs.tabs-icon-top
   a.tab-item

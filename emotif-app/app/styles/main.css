@@ -154,7 +154,7 @@ body {
 *********************************/
 
 .content-spacer {
-  overflow: scroll;
+  /*overflow: scroll;*/
   margin-top: 35px;
   margin-bottom: 40px;
 }
@@ -168,6 +168,15 @@ body {
 /********************************
 * Content page CSS
 *********************************/
+
+
+/********************************
+* Settings page CSS
+*********************************/
+.content-full-spacer {
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
 
 /*##############################*/
 .lead {

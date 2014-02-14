@@ -16,7 +16,7 @@ module.exports = function(app) {
   // Server API Routes
   app.get('/api/awesomeThings', api.awesomeThings);
   app.post('/api/video/keyword', video.getVideoByKeyword);
-    app.post('/api/video/database', video.getVideoFromDatabase);
+  app.post('/api/video/database', video.getVideoFromDatabase);
   
   app.post('/api/users', users.create);
   app.post('/api/users/exist', users.userExist);
