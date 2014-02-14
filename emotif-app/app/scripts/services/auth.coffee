@@ -90,6 +90,9 @@ angular.module('emotifAppApp')
     currentUser: ->
       User.get()
 
+    # currentUserEmail: ->
+    #   User.getEmail()
+
     ###
     Simple check to see if a user is logged in
     
@@ -115,3 +118,7 @@ angular.module('emotifAppApp')
           callback result
       ).$promise
 
+
+    # Zifei's SYNCHRONIZED function
+    getCurrentUser: ->
+      return $rootScope.currentUser
