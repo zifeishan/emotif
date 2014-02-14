@@ -26,20 +26,34 @@
 .bar.bar-header.bar-light
   h1.title Emotif
 
-.list
-  .item.item-divider
-    p User Acount
-  a.item.item-icon-left(href='#')
-    i.icon.ion-ios7-person
-    p Change Name
-  a.item.item-icon-left(href='#')
-    i.icon.ion-ios7-locked
-    p Change Password
+content(has-header='true' has-footer='ture' scroll='true')
+  .list.content-full-spacer
+    .item.item-divider
+      p User Acount
+    a.item.item-icon-left(ng-click='changeName()')
+      i.icon.ion-ios7-person
+      p Change Name
+    a.item.item-icon-left(ng-click='changePassword()')
+      i.icon.ion-ios7-locked
+      p Change Password
 
-  .item.item-divider
-    p Content Tuning
-  a.item.item-icon-left(href='#')
+    .item.item-divider
+      p Content Tuning
+    //- a.item.item-icon-left(href='#')
+    ul.list
+      li.item.item-toggle Content Filtering
+        label.toggle
+          input.checkbox
+          .track
+            .handle
+      li.item.item-toggle Interest Analysis
+        label.toggle
+          input.checkbox
+          .track
+            .handle
 
+  .padding
+    button.button.button-block.button-assertive(ng-click='logout()') Log Out
 
 
 //- .list.card.content-spacer

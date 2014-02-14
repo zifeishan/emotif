@@ -21,9 +21,11 @@ angular.module('emotifAppApp', [
       .when '/select',
         templateUrl: 'partials/select'
         controller: 'SelectCtrl'
+        authenticate: true
       .when '/trend', 
         templateUrl: 'partials/trend'
         controller: 'TrendCtrl'
+        authenticate: true
       .when '/settings',
         templateUrl: 'partials/settings'
         controller: 'SettingsCtrl'
@@ -31,9 +33,10 @@ angular.module('emotifAppApp', [
       .when '/content',
         templateUrl: 'partials/content'
         controller: 'ContentCtrl'
-      .when '/content2',
-        templateUrl: 'partials/content2'
-        controller: 'Content2Ctrl'
+        authenticate: true
+      # .when '/content2',
+      #   templateUrl: 'partials/content2'
+      #   controller: 'Content2Ctrl'
       .when '/share',
         templateUrl: 'partials/share'
         controller: 'ShareCtrl'

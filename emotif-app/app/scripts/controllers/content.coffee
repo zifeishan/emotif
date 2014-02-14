@@ -13,7 +13,8 @@ angular.module('emotifAppApp')
       
       Video.getVideoFromDatabase (video) ->
         $scope.video = video
-        final_url = 'http://www.youtube.com/v/' + video.video_id
+        final_url = 'http://www.youtube.com/embed/' + video.video_id
         $scope.video.url = $sce.trustAsResourceUrl(final_url)
+        $scope.video.likes = Math.floor(100* Math.random())
 
     )
