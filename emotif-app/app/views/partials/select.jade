@@ -8,11 +8,12 @@
 .card.content-spacer
   .item.item-divider Hey, how are you feeling today?
   .item.item-text-wrap
-    button.button.button-full.button-positive.mood-select Perfect
-    button.button.button-full.button-calm.mood-select Good
-    button.button.button-full.button-balanced.mood-select Normal
-    button.button.button-full.button-energized.mood-select Bad
-    button.button.button-full.button-assertive.mood-select Awful
+    button#p2.button.button-full.button-positive.mood-select(ng-click='SelectMood(2)') Perfect
+
+    button#p1.button.button-full.button-calm.mood-select(ng-click='SelectMood(1)') Good
+    button#p0.button.button-full.button-balanced.mood-select(ng-click='SelectMood(0)') Normal
+    button#n1.button.button-full.button-energized.mood-select(ng-click='SelectMood(-1)') Bad
+    button#n2.button.button-full.button-assertive.mood-select(ng-click='SelectMood(-2)') Awful
 
 //- .jumbotron
 //-   div.bigheader

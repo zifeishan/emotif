@@ -19,3 +19,12 @@ angular.module("emotifAppApp")
         params:
           id: "me"
 
+      addmood:
+        method: "PUT"
+        params:
+          id: "addmood"
+
+      getmood:
+        method: "GET"
+        params:
+          id: "getmood"

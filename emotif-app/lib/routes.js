@@ -21,6 +21,9 @@ module.exports = function(app) {
   app.get('/api/users/me', users.me);
   app.get('/api/users/:id', users.show);
 
+  app.put('/api/users/addmood', users.addMood);
+  app.get('/api/users/getmood', users.getMoods);
+
   app.post('/api/session', session.login);
   app.del('/api/session', session.logout);
 

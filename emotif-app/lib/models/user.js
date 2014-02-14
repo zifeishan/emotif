@@ -27,7 +27,8 @@ var UserSchema = new Schema({
   facebook: {},
   twitter: {},
   github: {},
-  google: {}
+  google: {},
+  mood: []
 });
 
 /**
@@ -51,20 +52,35 @@ UserSchema
     return {
       'name': this.name,
       'role': this.role,
-      'provider': this.provider
+      'provider': this.provider,
+      'email': this.email
     };
   });
 
-// Public profile information
 UserSchema
   .virtual('profile')
   .get(function() {
     return {
       'name': this.name,
-      'role': this.role
+      'role': this.role,
+      'email': this.email
     };
   });
-    
+
+UserSchema
+  .virtual('getmood').get(function() {
+    return this.mood;
+  });
+
+UserSchema
+  .virtual('addmood')
+  .set(function(time, score) {
+    this.mood = this.mood.push({
+      'time': time, 
+      'score': score
+    });
+  });
+
 /**
  * Validations
  */
@@ -144,7 +160,19 @@ UserSchema.methods = {
     if (!password || !this.salt) return '';
     var salt = new Buffer(this.salt, 'base64');
     return crypto.pbkdf2Sync(password, salt, 10000, 64).toString('base64');
-  }
+  },
+
+  // addmood: function(time, score) {
+  //   this.mood = this.mood.push({
+  //     'time': time, 
+  //     'score': score
+  //   });
+  // },
+
+  // getmood: function() {
+  //   return this.mood;
+  // }
+
 };
 
 mongoose.model('User', UserSchema);
