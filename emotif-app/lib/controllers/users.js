@@ -121,11 +121,16 @@ exports.addMood = function(req, res, next) {
     console.log(useremail);
     console.log(time);
     // console.log(thisuser.mood);
-    thisuser.mood = [];
     thisuser.mood.push({
       'time': time, 
       'score': mood
     });
+    thisuser.markModified('mood');
+
+    // WE CAN USE IN >3.2.0: 
+    // thissz = thisuser.mood.length;
+    // console.log(thissz);
+    // thisuser.mood.set(thissz, );
     thisuser.save();
     // console.log(user.mood);
     // TODO
