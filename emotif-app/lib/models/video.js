@@ -12,7 +12,7 @@ var VideoSchema = new Schema({
     type: Number,
     unique: true
   },
-  url: String,
+  video_id: String,
   caption: String
 });
 
