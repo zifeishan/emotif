@@ -10,7 +10,9 @@
     "angular-cookies": "1.2.6",
     "angular-sanitize": "1.2.6",
     "angular-route": "1.2.6",
-    "ionic": "~0.9.24"
+    "ionic": "~0.9.24",
+    "Chart.js": "git://github.com/nnnick/Chart.js.git",
+    "nvd3": "~1.1.15-beta"
   },
   "devDependencies": {
     "angular-mocks": "1.2.6",

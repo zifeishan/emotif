@@ -14,6 +14,8 @@ angular.module('emotifAppApp')
       if $scope.user == null
         console.log("No temp user")
         $location.path '/'
+      else
+        
     )
 
     $scope.back = ->

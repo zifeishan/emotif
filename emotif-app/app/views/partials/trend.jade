@@ -37,8 +37,11 @@
     p Check out your mood trend here!
 
   .item.item-body
-    img.full-image(src="images/fakechart.png")
-    p
+    //- img.full-image(src="images/fakechart.png")
+    //- canvas#mychart(data-type="Line")
+    svg#mychart
+
+    p#trendcomment
       | Congrats! Seems that you are in a pretty good condition!
       br
       br

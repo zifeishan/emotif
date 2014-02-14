@@ -208,3 +208,7 @@ body {
 .logo img {
   max-width: 120px;
 }
+
+#mychart {
+  width:100%;
+}
