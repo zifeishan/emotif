@@ -1,21 +1,19 @@
 'use strict'
 
 angular.module('emotifAppApp')
-  .controller 'ContentCtrl', ($scope, Auth, $location) ->
+  .controller 'ContentCtrl', ($scope, Auth, Video, $location, $sce) ->
     $scope.user = {}
     $scope.errors = {}
+    $sce.trustAsResourceUrl 'http://www.youtube.com/*'
 
-    $scope.login = (form) ->
-      $scope.submitted = true
+    #This is the proper code to run when page is loaded
+    $scope.$on('$viewContentLoaded', ->
+      # video = Video.getVideoByKeyword({keyword: 'funny'})
+      console.log 'Content page loaded'
       
-      if form.$valid
-        Auth.login(
-          email: $scope.user.email
-          password: $scope.user.password
-        )
-        .then ->
-          # Logged in, redirect to home
-          $location.path '/'
-        .catch (err) ->
-          err = err.data;
-          $scope.errors.other = err.message;
+      Video.getVideoFromDatabase (video) ->
+        $scope.video = video
+        final_url = 'http://www.youtube.com/v/' + video.video_id
+        $scope.video.url = $sce.trustAsResourceUrl(final_url)
+
+    )

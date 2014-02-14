@@ -4,6 +4,7 @@ body {
   padding-bottom: 20px;
   font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
+  overflow: scroll;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -153,11 +154,15 @@ body {
 *********************************/
 
 .content-spacer {
-  margin-top: 40px;
+  overflow: scroll;
+  margin-top: 35px;
+  margin-bottom: 40px;
 }
 
 .mood-select {
-  height: 55px;
+  max-height: 40px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 /********************************

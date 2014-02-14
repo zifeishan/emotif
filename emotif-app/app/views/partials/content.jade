@@ -5,12 +5,12 @@
 .bar.bar-header.bar-light
   h1.title Emotif
 
-.list.card.content-spacer
+.list.card.content-spacer(ng-model='video')
   .item
     p Why not try this out today?
 
   .item.item-body
-    img.full-image(src="images/yoga.png")
+    iframe.full-image(id='ytplayer' type='text/html' src="{{video.url}}" frameborder="0")
     p
       | Exercise can make you relaxed!
       br
@@ -28,6 +28,17 @@
     a.tab-item
       i.icon.ion-heart
       p Feeling better
+
+.tabs.tabs-icon-top
+  a.tab-item
+    i.icon.ion-ios7-albums
+    p Content
+  a.tab-item(href='/trend')
+    i.icon.ion-ios7-speedometer-outline
+    p Trend
+  a.tab-item(href='/settings')
+    i.icon.ion-ios7-gear-outline
+    p Settings
 
 //- <div class="list card">
 
@@ -66,20 +77,6 @@
 //-   </div>
 
 //- </div>
-
-
-
-.tabs.tabs-icon-top
-  a.tab-item
-    i.icon.ion-ios7-albums-outline
-    p Content
-  a.tab-item
-    i.icon.ion-arrow-graph-up-right
-    p Trend
-  a.tab-item
-    i.icon.ion-ios7-gear-outline
-    p Settings
-
 
 //- .jumbotron
 //-   div.bigheader
