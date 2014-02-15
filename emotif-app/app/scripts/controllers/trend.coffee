@@ -35,6 +35,7 @@ angular.module('emotifAppApp')
           # console.log size(moods.values)
 
           # for i = 0; i < moods.values.length; i++
+          time_index = 1
           for thismood in moods.values
             # console.log 'i:'
             # console.log i
@@ -45,7 +46,9 @@ angular.module('emotifAppApp')
               continue
             if thismood.time < 99999999  # Not right format
               continue
-            x = thismood.time
+            # x = thismood.time
+            x = time_index
+            time_index += 1
             y = parseInt(thismood.score)
             data[0].values.push([x,y])
             # console.log x
@@ -72,9 +75,11 @@ angular.module('emotifAppApp')
                 ;
             
             chart.xAxis
-              .tickFormat( (d) ->
-                return d3.time.format('%x')(new Date(d))
-              );
+              .tickFormat(d3.format('%d'))
+
+              # .tickFormat( (d) ->
+              #   # return d3.time.format('%x')(new Date(d))
+              # );
 
             chart.yAxis
               .tickFormat(d3.format('%f'))
