@@ -178,6 +178,11 @@ body {
   margin-bottom: 40px;
 }
 
+.content-bottom-spacer {
+  /*margin-top: 10px;*/
+  margin-bottom: 20px;
+}
+
 /*##############################*/
 .lead {
   font-size: 15px;

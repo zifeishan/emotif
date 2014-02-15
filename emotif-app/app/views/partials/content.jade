@@ -3,12 +3,14 @@
 //-     img(src="images/logo.png" alt="LOGO")
 
 .bar.bar-header.bar-light
+  a.button.button-clear.icon.ion-ios7-arrow-back(href='/select')
   h1.title Emotif
 
 //- header-bar(title="'header'")
 
-content(has-header='true' has-footer='true' scroll='true')
-  .list.card.content-spacer(ng-model='video')
+//- content(has-header='true' has-footer='true' scroll='true')
+.scroll-content.has-header.has-tabs.overflow-scroll.content-bottom-spacer
+  .list.card(ng-model='video')
     .item
       p Why not try this out today?
 
@@ -18,19 +20,18 @@ content(has-header='true' has-footer='true' scroll='true')
         b {{video.caption}}
         br
         | Watch this funny video and you'll feel relaxed!
-      p
-        a.subdued {{video.likes}} people like you find this useful!
+      p.subdued {{video.likes}} people like you find this useful!
 
     .item.tabs.tabs-secondary.tabs-icon-left
-      a.tab-item
+      a.tab-item(ng-click="change()")
         i.icon.ion-refresh
-        p Like
-      a.tab-item
+        | Try another
+      a.tab-item(ng-click="like()")
         i.icon.ion-thumbsup
-        p Like
-      a.tab-item
+        | I like it
+      a.tab-item(ng-click="finish()")
         i.icon.ion-heart
-        p Feeling better
+        | I'm better
 
 .tabs.tabs-icon-top
   a.tab-item
