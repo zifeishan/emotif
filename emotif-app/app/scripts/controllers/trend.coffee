@@ -35,6 +35,7 @@ angular.module('emotifAppApp')
           # console.log size(moods.values)
 
           # for i = 0; i < moods.values.length; i++
+          time_index = 1
           for thismood in moods.values
             # console.log 'i:'
             # console.log i
@@ -45,11 +46,13 @@ angular.module('emotifAppApp')
               continue
             if thismood.time < 99999999  # Not right format
               continue
-            x = thismood.time
+            # x = thismood.time
+            x = time_index
+            time_index += 1
             y = parseInt(thismood.score)
             data[0].values.push([x,y])
             # console.log x
-            console.log y
+            # console.log y
 
           console.log data
           nv.addGraph( ()-> 
@@ -60,7 +63,8 @@ angular.module('emotifAppApp')
             #   .rotateLabels(0)      # Angle to rotate x-axis labels.
             #   .showControls(true)   # Allow user to switch between 'Grouped' and 'Stacked' mode.
             #   .groupSpacing(0.1);    # Distance between each group of bars.
-            chart = nv.models.cumulativeLineChart()
+            # chart = nv.models.cumulativeLineChart()
+            chart = nv.models.lineChart()
                 .x((d) -> 
                     return d[0] 
                   )
@@ -68,16 +72,17 @@ angular.module('emotifAppApp')
                     return d[1]
                   ) # adjusting, 100% is 1.00, not 100 as it is in the data
                 .color(d3.scale.category10().range())
-                .useInteractiveGuideline(true)
+                .useInteractiveGuideline(false)
                 ;
-            
+            window.chart = chart
             chart.xAxis
-              .tickFormat( (d) ->
-                return d3.time.format('%x')(new Date(d))
-              );
+              .tickFormat(d3.format('d'))
+              # .tickFormat( (d) ->
+              #   return d3.time.format('%x')(new Date(d))
+              # );
 
             chart.yAxis
-              .tickFormat(d3.format('%f'))
+              .tickFormat(d3.format('d'))
 
             # chart.xAxis
             #     .tickFormat(d3.format(',f'))
