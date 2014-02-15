@@ -9,8 +9,8 @@
 //- header-bar(title="'header'")
 
 //- content(has-header='true' has-footer='true' scroll='true')
-.scroll-content.has-header.has-tabs.overflow-scroll.content-bottom-spacer
-  .list.card(ng-model='video')
+.scroll-content.has-header.has-tabs.overflow-scroll
+  .list.card.content-bottom-spacer(ng-model='video')
     .item
       p Why not try this out today?
 
@@ -25,13 +25,14 @@
     .item.tabs.tabs-secondary.tabs-icon-left
       a.tab-item(ng-click="change()")
         i.icon.ion-refresh
-        | Try another
+        | Another
       a.tab-item(ng-click="like()")
         i.icon.ion-thumbsup
         | I like it
       a.tab-item(ng-click="finish()")
         i.icon.ion-heart
         | I'm better
+  .content-bottom-spacer
 
 .tabs.tabs-icon-top
   a.tab-item
