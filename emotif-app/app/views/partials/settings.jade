@@ -24,10 +24,11 @@
 //-       button.btn.btn-lg.btn-primary(type='submit') Save changes
 
 .bar.bar-header.bar-light
+  a.button.button-clear.icon.ion-ios7-arrow-back(href='/select')
   h1.title Emotif
 
-content(has-header='true' has-footer='ture' scroll='true')
-  .list.content-full-spacer
+.scroll-content.has-header.has-tabs.overflow-scroll
+  .list
     .item.item-divider
       p User Acount
     a.item.item-icon-left(ng-click='changeName()')
@@ -43,14 +44,15 @@ content(has-header='true' has-footer='ture' scroll='true')
     ul.list
       li.item.item-toggle Content Filtering
         label.toggle
-          input.checkbox
+          input(type='checkbox')
           .track
             .handle
       li.item.item-toggle Interest Analysis
         label.toggle
-          input.checkbox
+          input(type='checkbox')
           .track
             .handle
+  .content-bottom-spacer
 
   .padding
     button.button.button-block.button-assertive(ng-click='logout()') Log Out

@@ -30,29 +30,35 @@
 
 
 .bar.bar-header.bar-light
+  a.button.button-clear.icon.ion-ios7-arrow-back(href='/select')
   h1.title Emotif
 
-.list.card.content-spacer
-  .item
-    p Check out your mood trend here!
+.scroll-content.has-header.has-tabs.overflow-scroll
+  .list.card
+    .item
+      p Check out your mood trend here!
 
-  //- canvas#mychart(data-type="Line")
-  div#mychart
-    svg
-  .item.item-body
-    //- img.full-image(src="images/fakechart.png")
+    //- canvas#mychart(data-type="Line")
     
-    p#trendcomment
-      | Congrats! Seems that you are in a pretty good condition!
-      //- br
-      //- br
-      //- | Exercise can always make you feel better, remember to check out next time you are feeling down.
+    .item.item-body
+      div#mychart
+        svg
+      //- img.full-image(src="images/fakechart.png")
+      
+      p#trendcomment
+        | Congrats! Seems that you are in a pretty good condition!
+        //- br
+        //- br
+        //- | Exercise can always make you feel better, remember to check out next time you are feeling down.
 
-  .item.tabs.tabs-secondary.tabs-icon-left
-    a.tab-item
-      i.icon.ion-refresh
-    a.tab-item
-      i.icon.ion-share
+    .item.tabs.tabs-secondary.tabs-icon-left
+      a.tab-item(ng-click="refresh()")
+        i.icon.ion-refresh
+        | Refresh
+      a.tab-item(ng-click="share()")
+        i.icon.ion-share
+        | Share
+  .content-bottom-spacer
 
 .tabs.tabs-icon-top
   a.tab-item(href="/content")

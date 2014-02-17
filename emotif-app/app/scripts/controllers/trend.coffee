@@ -7,7 +7,19 @@ angular.module('emotifAppApp')
     #   console.log(moods)
       # $scope.emotionHistory = emotionHistory
 
+
     $scope.$on('$viewContentLoaded', ->
+      loadMoodTrend()
+    )
+
+    $scope.refresh = () ->
+      loadMoodTrend()
+      window.alert 'The mood trend has been reloaded!'
+
+    $scope.share = () ->
+      window.alert 'Share to Facebook successfully!'
+
+    loadMoodTrend = () ->
       # console.log $scope.user
       user = Auth.getCurrentUser()
       console.log 'User:'
@@ -104,11 +116,6 @@ angular.module('emotifAppApp')
          
             return chart
           )
-
-
         )
-          
 
-    )
-          
         

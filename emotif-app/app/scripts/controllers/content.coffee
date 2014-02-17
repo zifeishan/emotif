@@ -18,3 +18,18 @@ angular.module('emotifAppApp')
         $scope.video.likes = Math.floor(100* Math.random())
 
     )
+
+    $scope.change = () ->
+      Video.getVideoFromDatabase (video) ->
+        $scope.video = video
+        final_url = 'http://www.youtube.com/embed/' + video.video_id
+        $scope.video.url = $sce.trustAsResourceUrl(final_url)
+        $scope.video.likes = Math.floor(100* Math.random())
+
+    $scope.like = () ->
+      $scope.video.likes += 1
+      window.alert 'Awesome! You like this video!'
+
+    $scope.finish = () ->
+      window.alert 'Congrats! You are feeling better now!'
+      $location.path '/trend'
