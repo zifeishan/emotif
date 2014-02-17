@@ -1,0 +1,72 @@
+//- .logo
+//-   a(href="/")
+//-     img(src="images/logo.png" alt="LOGO")
+
+//- .jumbotron
+//-   div.bigheader
+//-     h3.
+//-       Congrats! You are in a good mood!
+//-     p.
+//-       Your mood trend:
+
+//-   div.trend
+//-     //- | Show my trend here...  
+//-     //- svg#trendchart
+//-     div.fakechart.row
+//-       //- div.col-md-12
+//-       img(src="images/fakechart.png", alt="Rendering...")
+    
+
+//- .row
+//-   .col-xs-5.col-xs-offset-1
+//-     a.btn.btn-primary.btn-block(href='/content') Back
+//-   .col-xs-5.col-xs-offset-0
+//-     a.btn.btn-success.btn-block(href='/share') Share it now
+
+//- .spacer
+
+//- .footer
+//-   p ♥ from the Emotif team
+
+
+.bar.bar-header.bar-light
+  a.button.button-clear.icon.ion-ios7-arrow-back(href='/select')
+  h1.title Emotif
+
+.scroll-content.has-header.has-tabs.overflow-scroll
+  .list.card
+    .item
+      p Check out your mood trend here!
+
+    //- canvas#mychart(data-type="Line")
+    
+    .item.item-body
+      div#mychart
+        svg
+      //- img.full-image(src="images/fakechart.png")
+      
+      p#trendcomment
+        | Congrats! Seems that you are in a pretty good condition!
+        //- br
+        //- br
+        //- | Exercise can always make you feel better, remember to check out next time you are feeling down.
+
+    .item.tabs.tabs-secondary.tabs-icon-left
+      a.tab-item(ng-click="refresh()")
+        i.icon.ion-refresh
+        | Refresh
+      a.tab-item(ng-click="share()")
+        i.icon.ion-share
+        | Share
+  .content-bottom-spacer
+
+.tabs.tabs-icon-top
+  a.tab-item(href="/content")
+    i.icon.ion-ios7-albums-outline
+    p Content
+  a.tab-item
+    i.icon.ion-ios7-speedometer
+    p Trend
+  a.tab-item(href="/settings")
+    i.icon.ion-ios7-gear-outline
+    p Settings

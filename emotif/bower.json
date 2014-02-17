@@ -7,6 +7,8 @@
     "components"
   ],
   "dependencies": {
-    "ionic": "~0.9.24"
+    "ionic": "~0.9.24",
+    "jquery": "~2.1.0",
+    "nvd3": "~1.1.15-beta"
   }
 }

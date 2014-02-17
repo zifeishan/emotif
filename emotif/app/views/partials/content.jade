@@ -1,0 +1,102 @@
+//- .logo
+//-   a(href="/")
+//-     img(src="images/logo.png" alt="LOGO")
+
+.bar.bar-header.bar-light
+  a.button.button-clear.icon.ion-ios7-arrow-back(href='/select')
+  h1.title Emotif
+
+//- header-bar(title="'header'")
+
+//- content(has-header='true' has-footer='true' scroll='true')
+.scroll-content.has-header.has-tabs.overflow-scroll
+  .list.card.content-bottom-spacer(ng-model='video')
+    .item
+      p Why not try this out today?
+
+    .item.item-body
+      iframe.full-image(id='ytplayer' type='text/html' src="{{video.url}}" allowfullscreen="true" frameborder="0")
+      p
+        b {{video.caption}}
+        br
+        | Watch this funny video and you'll feel relaxed!
+      p.subdued {{video.likes}} people like you find this useful!
+
+    .item.tabs.tabs-secondary.tabs-icon-left
+      a.tab-item(ng-click="change()")
+        i.icon.ion-refresh
+        | Another
+      a.tab-item(ng-click="like()")
+        i.icon.ion-thumbsup
+        | I like it
+      a.tab-item(ng-click="finish()")
+        i.icon.ion-heart
+        | I'm better
+  .content-bottom-spacer
+
+.tabs.tabs-icon-top
+  a.tab-item
+    i.icon.ion-ios7-albums
+    p Content
+  a.tab-item(href='/trend')
+    i.icon.ion-ios7-speedometer-outline
+    p Trend
+  a.tab-item(href='/settings')
+    i.icon.ion-ios7-gear-outline
+    p Settings
+
+//- <div class="list card">
+
+//-   <div class="item item-avatar">
+//-     <img src="mcfly.jpg">
+//-     <h2>Marty McFly</h2>
+//-     <p>November 05, 1955</p>
+//-   </div>
+
+//-   <div class="item item-body">
+//-     <img class="full-image" src="delorean.jpg">
+//-     <p>
+//-       This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+//-       the content is from a card-body consisting of an image and paragraph text. The footer
+//-       consists of tabs, icons aligned left, within the card-footer.
+//-     </p>
+//-     <p>
+//-       <a href="#" class="subdued">1 Like</a>
+//-       <a href="#" class="subdued">5 Comments</a>
+//-     </p>
+//-   </div>
+
+//-   <div class="item tabs tabs-secondary tabs-icon-left">
+//-     <a class="tab-item" href="#">
+//-       <i class="icon ion-thumbsup"></i>
+//-       Like
+//-     </a>
+//-     <a class="tab-item" href="#">
+//-       <i class="icon ion-chatbox"></i>
+//-       Comment
+//-     </a>
+//-     <a class="tab-item" href="#">
+//-       <i class="icon ion-share"></i>
+//-       Share
+//-     </a>
+//-   </div>
+
+//- </div>
+
+//- .jumbotron
+//-   div.bigheader
+//-     h3.
+//-       Why not try this out?
+
+//-   div.video
+//-     img.mainlogo(src="images/yoga.png" alt="Yoga Video")
+//-     br
+//-     br
+//-     p.lead.
+//-       Follow this video and do a 15-minute Yoga!
+
+//- .row
+//-   .col-xs-5.col-xs-offset-1
+//-     a.btn.btn-warning.btn-block(type='button', href='content2') Try another
+//-   .col-xs-5.col-xs-offset-0
+//-     a.btn.btn-success.btn-block(type='button', ng-href='/trend', href="/trend") I feel better
