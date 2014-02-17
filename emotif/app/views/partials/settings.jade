@@ -23,39 +23,42 @@
 
 //-       button.btn.btn-lg.btn-primary(type='submit') Save changes
 
-.bar.bar-header.bar-light
-  a.button.button-clear.icon.ion-ios7-arrow-back(href='/select')
-  h1.title Emotif
+extends ../index
 
-.scroll-content.has-header.has-tabs.overflow-scroll
-  .list
-    .item.item-divider
-      p User Acount
-    a.item.item-icon-left(ng-click='changeName()')
-      i.icon.ion-ios7-person
-      p Change Name
-    a.item.item-icon-left(ng-click='changePassword()')
-      i.icon.ion-ios7-locked
-      p Change Password
+block pageContent
+  .bar.bar-header.bar-light
+    a.button.button-clear.icon.ion-ios7-arrow-back(href='/select')
+    h1.title Emotif
 
-    .item.item-divider
-      p Content Tuning
-    //- a.item.item-icon-left(href='#')
-    ul.list
-      li.item.item-toggle Content Filtering
-        label.toggle
-          input(type='checkbox')
-          .track
-            .handle
-      li.item.item-toggle Interest Analysis
-        label.toggle
-          input(type='checkbox')
-          .track
-            .handle
-  .content-bottom-spacer
+  .scroll-content.has-header.has-tabs.overflow-scroll
+    .list
+      .item.item-divider
+        p User Acount
+      a.item.item-icon-left(ng-click='changeName()')
+        i.icon.ion-ios7-person
+        p Change Name
+      a.item.item-icon-left(ng-click='changePassword()')
+        i.icon.ion-ios7-locked
+        p Change Password
 
-  .padding
-    button.button.button-block.button-assertive(ng-click='logout()') Log Out
+      .item.item-divider
+        p Content Tuning
+      //- a.item.item-icon-left(href='#')
+      ul.list
+        li.item.item-toggle Content Filtering
+          label.toggle
+            input(type='checkbox')
+            .track
+              .handle
+        li.item.item-toggle Interest Analysis
+          label.toggle
+            input(type='checkbox')
+            .track
+              .handle
+    .content-bottom-spacer
+
+    .padding
+      button.button.button-block.button-assertive(ng-click='logout()') Log Out
 
 
 //- .list.card.content-spacer

@@ -1,26 +1,29 @@
-.main-logo
-  img(src="images/logo.png" alt="LOGO")
+extends ../index
 
-.main-center
-  form(name='form', novalidate)
-    p.hint(ng-model='user')
-      | Sign in as:
-      br
-      | {{user.email}}
-    label.item.item-input
-      input(type='password' placeholder='Password' ng-model='password' required)
-    .row
-      .col-33
-        p.back
-          a.next(ng-click='back()') Back
-      .col-33.col-offset-33
-        p.next
-          a.back(ng-click='login(form)') Sign In
+block pageContent
+  .main-logo
+    img(src="images/logo.png" alt="LOGO")
+
+  .main-center
+    form(name='form', novalidate)
+      p.hint(ng-model='user')
+        | Sign in as:
+        br
+        | {{user.email}}
+      label.item.item-input
+        input(type='password' placeholder='Password' ng-model='password' required)
+      .row
+        .col-33
+          p.back
+            a.next(ng-click='back()') Back
+        .col-33.col-offset-33
+          p.next
+            a.back(ng-click='login(form)') Sign In
 
 
-.main-footer
-  p.
-    Forgot Password?
+  .main-footer
+    p.
+      Forgot Password?
 
 
 

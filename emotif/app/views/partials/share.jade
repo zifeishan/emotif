@@ -1,27 +1,30 @@
-.logo
-  a(href="/")
-    img(src="images/logo.png" alt="LOGO")
+extends ../index
 
-.jumbotron
-  div.bigheader
-    h3.
-      Congrats!
-    p.
-      You have shared your mood trend to Facebook!
+block pageContent
+  .logo
+    a(href="/")
+      img(src="images/logo.png" alt="LOGO")
 
-  div.trend
-    //- | Show my trend here...  
-    //- svg#trendchart
-    div.fakechart.row
-      //- div.col-md-12
-      img(src="images/facebook.png", alt="Facebook")
-    
+  .jumbotron
+    div.bigheader
+      h3.
+        Congrats!
+      p.
+        You have shared your mood trend to Facebook!
 
-.row
-  .col-xs-6.col-xs-offset-3
-    a.btn.btn-primary.btn-block(href='/trend') See trend
+    div.trend
+      //- | Show my trend here...  
+      //- svg#trendchart
+      div.fakechart.row
+        //- div.col-md-12
+        img(src="images/facebook.png", alt="Facebook")
+      
 
-.spacer
+  .row
+    .col-xs-6.col-xs-offset-3
+      a.btn.btn-primary.btn-block(href='/trend') See trend
 
-.footer
-  p ♥ from the Emotif team
+  .spacer
+
+  .footer
+    p ♥ from the Emotif team

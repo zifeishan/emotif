@@ -17,6 +17,7 @@ module.exports = function (grunt) {
         file: 'app.js'
       }
     },
+
     watch: {
       options: {
         nospawn: true,

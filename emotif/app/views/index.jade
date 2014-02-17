@@ -3,24 +3,27 @@ doctype html
 // [if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]
 // [if IE 8]>         <html class="no-js lt-ie9"> <![endif]
 // [if gt IE 8]><!
-html.no-js
+//- html.no-js
+html
   //<![endif]
   head
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
     base(href="/")
-    title
+    title Emotif
     meta(name="description", content="Emotif")
     meta(name="viewport", content="width=device-width")
     // Place favicon.ico and apple-touch-icon.png in the root directory
     <!-- build:css(app) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/ionic/release/css/ionic.css" />
-    <link rel="stylesheet" href="bower_components/nvd3/src/nv.d3.css" />
+    link(rel="stylesheet", href="/css/ionic.css")
+    link(rel="stylesheet", href="/css/nv.d3.css")
+    //- link(rel="stylesheet", href="../bower_components/ionic/release/css/ionic.css")
+    //- link(rel="stylesheet", href="../bower_components/nvd3/src/nv.d3.css")
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
-    link(rel="stylesheet", href="styles/main.css")
+    link(rel="stylesheet", href="/css/main.css")
     <!-- endbuild -->
   body
     //[if lt IE 7]>
@@ -32,22 +35,26 @@ html.no-js
       <![endif]
 
     // Add your site or application content here
-    
-    div.container
+    //- div.container
+    block pageContent
 
-    // Google Analytics: change UA-XXXXX-X to be your site's ID.
-    script.
-      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-      g.src='//www.google-analytics.com/ga.js';
-      s.parentNode.insertBefore(g,s)}(document,'script'));
+    //- // Google Analytics: change UA-XXXXX-X to be your site's ID.
+    //- script.
+    //-   var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    //-   (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    //-   g.src='//www.google-analytics.com/ga.js';
+    //-   s.parentNode.insertBefore(g,s)}(document,'script'));
 
     <!-- build:js(app) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/jquery.js"></script>
-    <script src="bower_components/ionic/release/js/ionic.js"></script>
-    <script src="bower_components/d3/d3.js"></script>
-    <script src="bower_components/nvd3/nv.d3.js"></script>
+    //- <script src="bower_components/jquery/jquery.js"></script>
+    //- <script src="bower_components/ionic/release/js/ionic.js"></script>
+    //- <script src="bower_components/d3/d3.js"></script>
+    //- <script src="bower_components/nvd3/nv.d3.js"></script>
+    script(src="/js/jquery.js")
+    script(src="/js/ionic.js")
+    script(src="/js/d3.js")
+    script(src="/js/nv.d3.js")
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->

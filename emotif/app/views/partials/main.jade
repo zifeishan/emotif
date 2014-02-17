@@ -1,18 +1,21 @@
-.main-logo
-  img(src="images/logo.png" alt="LOGO")
+extends ../index
 
-.main-center
-  form(name='form' novalidate)
-    p.hint.
-      Enter your email address to sign in or create a new account:
-    label.item.item-input
-      //- input(type='email' placeholder='Email Address' ng-model='user.email' required)
-      input(type='email' placeholder='Email Address' required)
-    .row
-      .col-33.col-offset-67
-        p.next
-          a.back(ng-click='next(form)') Next
+block pageContent
+  .main-logo
+    img(src="img/logo.png", alt="LOGO")
 
-.main-footer
-  p.
-    Learn About Emotif
+  .main-center
+    form(name='form', novalidate)
+      p.hint.
+        Enter your email address to sign in or create a new account:
+      label.item.item-input
+        //- input(type='email' placeholder='Email Address' ng-model='user.email' required)
+        input(type='email', placeholder='Email Address', required)
+      .row
+        .col-33.col-offset-67
+          p.next
+            a.back(ng-click='next(form)') Next
+
+  .main-footer
+    p.
+      Learn About Emotif

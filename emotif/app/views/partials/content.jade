@@ -2,48 +2,51 @@
 //-   a(href="/")
 //-     img(src="images/logo.png" alt="LOGO")
 
-.bar.bar-header.bar-light
-  a.button.button-clear.icon.ion-ios7-arrow-back(href='/select')
-  h1.title Emotif
+extends ../index
 
-//- header-bar(title="'header'")
+block pageContent
+  .bar.bar-header.bar-light
+    a.button.button-clear.icon.ion-ios7-arrow-back(href='/select')
+    h1.title Emotif
 
-//- content(has-header='true' has-footer='true' scroll='true')
-.scroll-content.has-header.has-tabs.overflow-scroll
-  .list.card.content-bottom-spacer(ng-model='video')
-    .item
-      p Why not try this out today?
+  //- header-bar(title="'header'")
 
-    .item.item-body
-      iframe.full-image(id='ytplayer' type='text/html' src="{{video.url}}" allowfullscreen="true" frameborder="0")
-      p
-        b {{video.caption}}
-        br
-        | Watch this funny video and you'll feel relaxed!
-      p.subdued {{video.likes}} people like you find this useful!
+  //- content(has-header='true' has-footer='true' scroll='true')
+  .scroll-content.has-header.has-tabs.overflow-scroll
+    .list.card.content-bottom-spacer(ng-model='video')
+      .item
+        p Why not try this out today?
 
-    .item.tabs.tabs-secondary.tabs-icon-left
-      a.tab-item(ng-click="change()")
-        i.icon.ion-refresh
-        | Another
-      a.tab-item(ng-click="like()")
-        i.icon.ion-thumbsup
-        | I like it
-      a.tab-item(ng-click="finish()")
-        i.icon.ion-heart
-        | I'm better
-  .content-bottom-spacer
+      .item.item-body
+        iframe.full-image(id='ytplayer' type='text/html' src="{{video.url}}" allowfullscreen="true" frameborder="0")
+        p
+          b {{video.caption}}
+          br
+          | Watch this funny video and you'll feel relaxed!
+        p.subdued {{video.likes}} people like you find this useful!
 
-.tabs.tabs-icon-top
-  a.tab-item
-    i.icon.ion-ios7-albums
-    p Content
-  a.tab-item(href='/trend')
-    i.icon.ion-ios7-speedometer-outline
-    p Trend
-  a.tab-item(href='/settings')
-    i.icon.ion-ios7-gear-outline
-    p Settings
+      .item.tabs.tabs-secondary.tabs-icon-left
+        a.tab-item(ng-click="change()")
+          i.icon.ion-refresh
+          | Another
+        a.tab-item(ng-click="like()")
+          i.icon.ion-thumbsup
+          | I like it
+        a.tab-item(ng-click="finish()")
+          i.icon.ion-heart
+          | I'm better
+    .content-bottom-spacer
+
+  .tabs.tabs-icon-top
+    a.tab-item
+      i.icon.ion-ios7-albums
+      p Content
+    a.tab-item(href='/trend')
+      i.icon.ion-ios7-speedometer-outline
+      p Trend
+    a.tab-item(href='/settings')
+      i.icon.ion-ios7-gear-outline
+      p Settings
 
 //- <div class="list card">
 
