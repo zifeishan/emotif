@@ -2,16 +2,16 @@ extends ../index
 
 block pageContent
   .main-logo
-    img(src="images/logo.png" alt="LOGO")
+    img(src="images/logo.png", alt="LOGO")
 
   .main-center
     form(name='form', novalidate)
-      p.hint(ng-model='user')
+      p.hint()
         | Sign in as:
         br
-        | {{user.email}}
+        | {{email}}
       label.item.item-input
-        input(type='password' placeholder='Password' ng-model='password' required)
+        input(type='password', placeholder='Password', required)
       .row
         .col-33
           p.back
@@ -24,8 +24,6 @@ block pageContent
   .main-footer
     p.
       Forgot Password?
-
-
 
 
 //- .row

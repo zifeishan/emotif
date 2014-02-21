@@ -10,12 +10,15 @@ block pageContent
         Enter your email address to sign in or create a new account:
       label.item.item-input
         //- input(type='email' placeholder='Email Address' ng-model='user.email' required)
-        input(type='email', placeholder='Email Address', required)
+        input(id='main-email-input', type='email', placeholder='Email Address', required)
       .row
         .col-33.col-offset-67
           p.next
-            a.back(ng-click='next(form)') Next
+            a.back(id="main-next-button") Next
 
   .main-footer
     p.
       Learn About Emotif
+
+block js
+  script(src="/js/main.js")
