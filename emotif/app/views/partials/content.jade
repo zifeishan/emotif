@@ -3,12 +3,9 @@
 extends ../index
 
 block pageContent
-  .logo
-   a(href="/")
-    img(src="img/emotif-logo.png", alt="LOGO")
-  //-.bar.bar-header.bar-light
+  .bar.bar-header.bar-emotif
     a.button.button-clear.icon.ion-ios7-arrow-back(href='/select')
-    h1.title Emotif
+    h1.title.bar-title Emotif
 
   //- header-bar(title="'header'")
 
@@ -25,18 +22,21 @@ block pageContent
       //-   p.subdued {{video.likes}} people like you find this useful!
 
       .item.tabs.tabs-secondary.tabs-icon-left
-        a.tab-item(ng-click="change()")
+        a.tab-item#content-refresh-button
           i.icon.ion-refresh
           | Another
-        a.tab-item(ng-click="like()")
+        a.tab-item#content-like-button
           i.icon.ion-thumbsup
           | I like it
-        a.tab-item(ng-click="finish()")
+        a.tab-item#content-better-button
           i.icon.ion-heart
           | I'm better
     .content-bottom-spacer
 
   .tabs.tabs-icon-top
+    //- a.tab-item(href="/select")
+    //-   i.icon.ion-ios7-sunny-outline
+    //-   p Select
     a.tab-item
       i.icon.ion-ios7-albums
       p Content

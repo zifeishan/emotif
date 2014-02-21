@@ -5,34 +5,68 @@ var mongoose = require('mongoose'),
     UserMood = mongoose.model('UserMood'),
     passport = require('passport');
 
+
+exports.authenticate = function(req, res, next) {
+    passport.authenticate('local', function(err, user, info) {
+        if (err) {
+            return next(err);
+        }
+
+        if (!user) {
+            return res.json({auth: false});
+        }
+
+        req.login(user, function(err) {
+            if (err) {
+                return next(err);
+            }
+
+            res.json({auth: true});
+        });
+    })(req, res, next);
+}
+
 /**
  * Create user
  */
 exports.create = function (req, res, next) {
-  var newUser = new User(req.body);
-  newUser.provider = 'local';
-
-  newUser.save(function(err) {
-    if (err) {
-      // Manually provide our own message for 'unique' validation errors, can't do it from schema
-      if(err.errors.email.type === 'Value is not unique.') {
-        err.errors.email.type = 'The specified email address is already in use.';
-      }
-      return res.json(400, err);
-    }
-
-    req.logIn(newUser, function(err) {
-      if (err) return next(err);
-      
-      return res.json(req.user.userInfo);
+  var email = req.body.email;
+    var password = req.body.password;
+    var newuser = {
+        email: email,
+        password: password
+    };
+    User.create( newuser, function(err, user) {
+        if(err) console.log(err);
+        req.login(user, function(err) {
+            if (err) {
+                return next(err);
+            }
+            res.send({success: true});
+        });
     });
-  });
-
-
-  console.log(newUser.email);
-
-
 };
+
+exports.createFBUser = function (req, res, next) {
+  var email = req.body.email;
+  var name = req.body.name;
+  var password = req.body.password;
+  var newuser = {
+      email: email,
+      name: name,
+      password: password
+  };
+  User.create( newuser, function(err, user) {
+      if(err) console.log(err);
+      req.login(user, function(err) {
+          if (err) {
+              return next(err);
+          }
+          res.send({success: true});
+      });
+  });
+};
+
 
 /**
  *  Get profile of specified user
@@ -76,6 +110,37 @@ exports.changePassword = function(req, res, next) {
   });
 };
 
+exports.isUserLoggedIn = function(req, res, next) {
+
+    // if facebook logged in, do not worry (need change)
+    // FBCheckLogin(function(data){
+    //   console.log('FB status:'+data.status);
+    //   if (data.status == 'connected') {
+
+    //     FB.api('/me', function(data){
+    //       // var fbid = data.id;
+    //       if (data == undefined) {
+    //         window.alert('Error when getting user info from facebook. Use manual login.');
+    //         window.location.href = '/';
+    //       }
+    //       window.localStorage.setItem('email', data.username);
+    //       res.json({ loggedin: true, id: data.username });
+
+    //     });
+
+    //   }
+    // });
+
+    var userId = req.session.passport.user;
+    if(userId) {
+        console.log('user has id: ' + userId);
+        res.json({ loggedin: true, id: userId });
+    } else {
+        console.log('user has not logged in');
+        res.json({ loggedin:false, id: 'undefined' });
+    }
+}
+
 /**
 * Check if user exists
 */
@@ -106,18 +171,18 @@ exports.me = function(req, res) {
 * Check if user exists
 */
 exports.addMood = function(req, res, next) {
-  var useremail = String(req.body.email);
+  var userId = String(req.body.id);
   var time = String(req.body.time);
   var mood = String(req.body.mood);
 
   
-  User.find({email: useremail}, function (err, user) {
-    if (err) return next(new Error('Failed to load User'+useremail));
+  User.find({_id: userId}, function (err, user) {
+    if (err) return next(new Error('Failed to load User'+userId));
     
     console.log('=======START==========');
     var thisuser = user[0];
     console.log(thisuser);
-    console.log(useremail);
+    console.log(userId);
     console.log(time);
     thisuser.mood.push({
       'time': time, 
@@ -130,6 +195,7 @@ exports.addMood = function(req, res, next) {
     //// Otherwise:
     thisuser.markModified('mood');
     thisuser.save();
+    res.send();
   });
 
   // console.log(usermood);
@@ -142,11 +208,12 @@ exports.addMood = function(req, res, next) {
 */
 exports.getMoods = function(req, res, next) {
   
-  console.log(req.user);
-  var useremail = String(req.user.email);
+  // console.log(req.body);
+  console.log(req.body.email);
+  var useremail = String(req.body.email);
   // var time = String(req.body.time);
   // var mood = String(req.body.mood);
-  // console.log('User Mail: '+useremail);
+  console.log('User Mail: '+useremail);
   User.find({email: useremail}, function (err, user) {
     if (err) return next(new Error('Failed to load User'+useremail));
     // console.log('what???');
@@ -159,3 +226,18 @@ exports.getMoods = function(req, res, next) {
       "values": thisuser.mood});
   });
 };
+
+
+// require("./util/jquery.js");
+
+// function FBCheckLogin(callback)
+// {
+//   $.ajaxSetup({ cache: true });
+//   $.getScript('//connect.facebook.net/en_UK/all.js', function(){
+//     FB.init({
+//       appId: '1481091805451645',
+//     });     
+//     $('#loginbutton,#feedbutton').removeAttr('disabled');
+//     FB.getLoginStatus(callback);
+//   });
+// }

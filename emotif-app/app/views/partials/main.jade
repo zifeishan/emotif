@@ -8,7 +8,10 @@
     label.item.item-input
       input(type='email' placeholder='Email Address' ng-model='user.email' required)
     .row
-      .col-33.col-offset-67
+      .col-66
+        p.back
+          a.next(ng-click='facebook()') Facebook Login
+      .col-33
         p.next
           a.back(ng-click='next(form)') Next
 

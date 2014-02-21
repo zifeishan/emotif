@@ -108,6 +108,19 @@ body {
   }
 }
 
+/********************************
+*  Widget CSS
+*********************************/
+.bar-emotif {
+  background-color: #93DE7F;
+  border-bottom: 1px solid white;
+  /*border-bottom: 1px solid #408740;*/
+
+}
+
+.bar-title {
+  color: white;
+}
 
 /********************************
 * Main, Login, Signup page CSS
@@ -116,7 +129,7 @@ body {
   position:fixed;
   right:25%;
   left:25%;
-  top:15%;
+  top:18%;
 }
 
 .main-logo img{
@@ -216,6 +229,39 @@ body {
   background-color: #7E8ADE;
   border-color: #e7e7e7;
 
+}
+
+.mood-select#p2 {
+  background-color: #FF7050;
+  border-color: #e7e7e7;
+
+}
+
+.mood-select#p1 {
+  background-color: #F29E4A;
+  border-color: #e7e7e7;
+
+}
+.mood-select#p0 {
+  background-color: #FFED5D;
+  border-color: #e7e7e7;
+
+}
+.mood-select#n1 {
+  background-color: #7BBADE;
+  border-color: #e7e7e7;
+
+}
+.mood-select#n2 {
+  background-color: #7E8ADE;
+  border-color: #e7e7e7;
+
+}
+
+.button.button-assertive {
+  color: #fff;
+  background-color: #FF7050;
+  border-color: #e7e7e7;
 }
 
 /********************************

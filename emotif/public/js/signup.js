@@ -6,21 +6,9 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
   initializePage();
-  initializeFB();
+  // initializeFB();
 })
 
-
-function AfterFBLogin(response) {
-  if (response.authResponse) {
-      console.log('Congrats!');
-      // The person logged into your app
-      FB.api('me?fields=id,name,posts.limit(10)', function(res) {console.log(res.posts);});
-
-  } else {
-      // The person cancelled the login dialog
-
-  }
-}
 
 /*
  * Function that is called when the document is ready.
@@ -39,7 +27,7 @@ function initializePage() {
     //Here add some validation logic
     
     //Here I will call passport to authenticate user
-    $.post('/create', {email: email, password: password}, afterCreate);
+    $.post('/api/users/create', {email: email, password: password}, afterCreate);
 
     function afterCreate(result) {
       if(result.success) {

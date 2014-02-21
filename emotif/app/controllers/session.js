@@ -7,6 +7,7 @@ var mongoose = require('mongoose'),
  * Logout
  */
 exports.logout = function (req, res) {
+  console.log('log out');
   req.logout();
   res.send(200);
 };

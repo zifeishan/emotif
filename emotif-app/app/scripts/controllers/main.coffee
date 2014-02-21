@@ -6,6 +6,11 @@ angular.module('emotifAppApp')
     # $http.get('/api/awesomeThings').success (awesomeThings) ->
     #   $scope.awesomeThings = awesomeThings
 
+    $scope.facebook = ->
+        $http.get('/api/facebook/login').success (err, data) ->
+            $location.path '/select'
+            console.log data
+
     $scope.next = (form) ->
     	if form.$valid
     		Auth.updateTempUser($scope.user)

@@ -1,34 +1,3 @@
-function FBLogout(callback)
-{
-  $.ajaxSetup({ cache: true });
-  $.getScript('//connect.facebook.net/en_UK/all.js', function(){
-    FB.init({
-      appId: '1481091805451645',
-    });     
-    $('#loginbutton,#feedbutton').removeAttr('disabled');
-    FB.getLoginStatus(function(res){
-      console.log('Facebook module initiated!');
-      console.log(res);
-      if (res.status == "connected")
-      {
-        FB.logout(callback);
-      }
-    });
-  });
-}
-
-function FBCheckLogin(callback)
-{
-  $.ajaxSetup({ cache: true });
-  $.getScript('//connect.facebook.net/en_UK/all.js', function(){
-    FB.init({
-      appId: '1481091805451645',
-    });     
-    $('#loginbutton,#feedbutton').removeAttr('disabled');
-    FB.getLoginStatus(callback);
-  });
-}
-
 function FBLogin(callback)
 {
   $.ajaxSetup({ cache: true });
@@ -48,20 +17,6 @@ function FBLogin(callback)
     });
   });
 }
-
-
-function AfterFBLogin(response) {
-  if (response.authResponse) {
-      console.log('Congrats!');
-      // The person logged into your app
-      FB.api('me?fields=id,name,posts.limit(10)', function(res) {console.log(res.posts);});
-
-  } else {
-      // The person cancelled the login dialog
-
-  }
-}
-
 
 function FBGetPhotos(callback)
 {

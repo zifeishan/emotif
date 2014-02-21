@@ -4,6 +4,7 @@ var api = require('./controllers/api'),
     video = require('./controllers/video'),
     index = require('./controllers'),
     users = require('./controllers/users'),
+    facebook = require('./controllers/facebook'),
     session = require('./controllers/session');
 
 var middleware = require('./middleware');
@@ -26,6 +27,8 @@ module.exports = function(app) {
   app.get('/api/users/getmood', users.getMoods);
 
   app.get('/api/users/:id', users.show);
+
+  app.get('/api/facebook/login', facebook.FBLogin);
 
   app.post('/api/session', session.login);
   app.del('/api/session', session.logout);

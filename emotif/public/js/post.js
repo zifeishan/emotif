@@ -1,0 +1,50 @@
+/*
+* Front end logic for main page.
+*/
+'use strict';
+
+// Call this function when the page loads (the "ready" event)
+$(document).ready(function() {
+  
+
+  //add clickListeners for buttons
+  $('#content-refresh-button').click(function(e) {
+    // getNewVideo();
+
+    // TODO Switch to photo
+    window.location.href = '/recommend/video';
+  });
+
+  $('#content-like-button').click(function(e) {
+    var likes = parseInt($('#like-number').text());
+    likes++;
+    $('label#like-number').text(likes);
+  });
+
+  $('#content-better-button').click(function(e) {
+    window.location.href = '/trend';
+  });
+
+
+  FBCheckLogin(function(data){
+    console.log('FB status:'+data.status);
+    if (data.status == 'connected') {
+
+    // console.log(arr_imgs);
+
+      FB.api('/me/posts', function(data){
+        console.log(data);
+        // // var fbid = data.id;
+        // if (data == undefined) {
+        //   window.alert('Error when getting user info from facebook. Use manual login.');
+        //   window.location.href = '/';
+        // }
+        // console.log(data);
+        // window.localStorage.setItem('email', data.username);
+        // window.location.href = '/select';
+
+      });
+
+    }
+  });
+})

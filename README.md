@@ -3,6 +3,31 @@ Emotif
 
 **Emotif** is a mobile web application to track your mood and make you feel better!
 
+Current TODO
+====
+
+
+- Define a new data schema
+
+    Recommendation
+      rectype: String ( photo / video / friend ...)
+      url: String (videoURL, photoURL, ...)
+      time_shown: int (how many times shown to user)
+      time_likes: int (how many likes in total)
+      time_better: int (how many times user see this and feel better)
+
+- Link buttons to update Recommendation schema!
+  - like button
+  - better button
+
+
+- Give an interface to get user email at any page (write a doc how to do so)
+
+- Write a "Connect to Facebook" button, and register a click listener
+
+- Write a skeleton to calculate all recommendations, store this into window.localStorage. (after Select mood)
+
+
 Dependencies
 ----
 

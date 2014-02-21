@@ -8,9 +8,14 @@ block recommendContent
     
   .item.item-body
         
-    iframe.full-image(id='ytplayer' type='text/html' src="{{video.url}}" allowfullscreen="true" frameborder="0")
+    iframe.full-image(id='ytplayer', type='text/html', src='', allowfullscreen="true", frameborder="0")
     p
-      b= video.caption
+      b#video-title
       br
       | Watch this funny video and you'll feel relaxed!
-    p.subdued {{video.likes}} people like you find this useful!
+    p.subdued
+      label#like-number   
+      |  people like you find this useful!
+
+block js
+  script(src="/js/video.js")
