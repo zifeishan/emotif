@@ -5,6 +5,8 @@ block pageContent
     img(src="img/logo.png", alt="LOGO")
 
   .main-center
+    div#fb-root
+      
     form(name='form', novalidate)
       p.hint(ng-model='user')
         | Create a new acount as:
@@ -20,6 +22,9 @@ block pageContent
         .col-33.col-offset-33
           p.next
             a.back(id='signup-signup-button') Sign Up
+
+block js
+  script(src="/js/signup.js")
 
 block js
   script(src="/js/signup.js")
