@@ -48,7 +48,7 @@ module.exports = function(app){
   app.post('/api/gatekeeper', gatekeeper.direct);
 
   app.post('/api/video/keyword', video.getVideoByKeyword);
-  app.post('/api/video/database', video.getVideoFromDatabase);
+  app.get('/api/video/database', video.getVideoFromDatabase);
   
   app.post('/api/users', users.create);
   app.post('/api/users/exist', users.userExist);
@@ -64,6 +64,6 @@ module.exports = function(app){
   app.get('/api/users/:id', users.show);
 
   app.post('/api/session', session.login);
-  app.del('/api/session', session.logout);
+  app.get('/api/session/logout', session.logout);
 };
 
