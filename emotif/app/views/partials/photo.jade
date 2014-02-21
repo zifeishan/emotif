@@ -1,0 +1,16 @@
+extends content
+
+block recommendContent
+  .item
+    p Remember the good old days?
+    
+  .item.item-body
+    div
+      img.recphoto(src=source)
+      br 
+      p
+        b= date
+      p= name
+
+    p.subdued 
+      = like + ' people like you find this useful!'

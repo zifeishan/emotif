@@ -40,6 +40,7 @@ module.exports = function(app){
   app.get('/signup/:email', main.signup);
   app.get('/settings', main.settings);
   app.get('/content', main.content);
+  app.get('/recommend/:rectype', main.contentType);
   app.get('/share', main.share);
 
   // Server API Routes

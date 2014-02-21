@@ -14,16 +14,14 @@ block pageContent
   //- content(has-header='true' has-footer='true' scroll='true')
   .scroll-content.has-header.has-tabs.overflow-scroll
     .list.card.content-bottom-spacer(ng-model='video')
-      .item
-        p Why not try this out today?
+      block recommendContent
 
-      .item.item-body
-        iframe.full-image(id='ytplayer' type='text/html' src="{{video.url}}" allowfullscreen="true" frameborder="0")
-        p
-          b {{video.caption}}
-          br
-          | Watch this funny video and you'll feel relaxed!
-        p.subdued {{video.likes}} people like you find this useful!
+      //-   iframe.full-image(id='ytplayer' type='text/html' src="{{video.url}}" allowfullscreen="true" frameborder="0")
+      //-   p
+      //-     b {{video.caption}}
+      //-     br
+      //-     | Watch this funny video and you'll feel relaxed!
+      //-   p.subdued {{video.likes}} people like you find this useful!
 
       .item.tabs.tabs-secondary.tabs-icon-left
         a.tab-item(ng-click="change()")
@@ -47,6 +45,9 @@ block pageContent
     a.tab-item(href='/settings')
       i.icon.ion-ios7-gear-outline
       p Settings
+
+block js
+  script(src="/js/content.js")
 
 //- <div class="list card">
 

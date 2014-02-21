@@ -1,0 +1,14 @@
+extends content
+
+block recommendContent
+  .item
+    p Why not try this out today?
+    
+  .item.item-body
+        
+    iframe.full-image(id='ytplayer' type='text/html' src="{{video.url}}" allowfullscreen="true" frameborder="0")
+    p
+      b= video.caption
+      br
+      | Watch this funny video and you'll feel relaxed!
+    p.subdued {{video.likes}} people like you find this useful!

@@ -1,38 +1,59 @@
-$(document).ready(function() {
+function FBLogin(callback)
+{
   $.ajaxSetup({ cache: true });
   $.getScript('//connect.facebook.net/en_UK/all.js', function(){
     FB.init({
       appId: '1481091805451645',
     });     
     $('#loginbutton,#feedbutton').removeAttr('disabled');
-    FB.getLoginStatus(function(){
+    FB.getLoginStatus(function(res){
       console.log('Facebook module initiated!');
-
       
-      // (function(d, s, id) {
-      //   var js, fjs = d.getElementsByTagName(s)[0];
-      //   if (d.getElementById(id)) return;
-      //   js = d.createElement(s); js.id = id;
-      //   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=1481091805451645";
-      //   fjs.parentNode.insertBefore(js, fjs);
-      // }(document, 'script', 'facebook-jssdk'));
-
-
-      // FB.login(function(response) {
-      //     if (response.authResponse) {
-      //         // The person logged into your app                 
-      //     } else {
-      //         // The person cancelled the login dialog
-
-      //     }
-      // });
-
-
+      console.log(res);
+      if (res.status != "connected")
+      {
+        FB.login(callback);
+      }
     });
   });
-});
+}
+
+function FBGetPhotos(callback)
+{
+  FB.api('me/photos?fields=name,source,likes,created_time', callback);
+}
+
+function FBGetPhotos(callback)
+{
+  FB.api('me/photos?fields=name,source,likes,created_time', callback);
+}
 
 
+function initializeFB(){
+  $.ajaxSetup({ cache: true });
+  $.getScript('//connect.facebook.net/en_UK/all.js', function(){
+    FB.init({
+      appId: '1481091805451645',
+    });     
+    $('#loginbutton,#feedbutton').removeAttr('disabled');
+    FB.getLoginStatus(function(res){
+      console.log('Facebook module initiated!');
+      
+      $('.fb').append(
+        '<div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false"></div>');
+      
+      console.log(res);
+      if (res.status == "connected")
+      {
+        FB.logout();
+        FB.login(AfterFBLogin);
+      }
+      else
+        FB.login(AfterFBLogin);
+    });
+  });
+
+}
 
 
 

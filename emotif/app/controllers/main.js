@@ -35,3 +35,20 @@ exports.content = function(req, res){
 exports.share = function(req, res){
   res.render('../views/partials/share');
 };
+
+exports.contentType = function(req, res){
+  var rectype = req.params.rectype;
+  console.log(rectype);
+  if(rectype == 'video') {
+    res.render('../views/partials/video');
+  }
+  else if(rectype == 'photo') {
+    res.render('../views/partials/photo', {
+      source:'https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-frc1/t1/s720x720/1779090_269572853197701_347952807_n.jpg',
+      name: 'Me at Gates building, Stanford. Thanks Hector for the photo!',
+      date: '2014-02-05T20:29:10+0000',
+      like: 20
+    });
+  }
+};
+
