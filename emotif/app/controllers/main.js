@@ -18,10 +18,13 @@ exports.trend = function(req, res){
   res.render('../views/partials/trend');
 };
 exports.login = function(req, res){
-  res.render('../views/partials/login');
+  var email = req.params.email;
+  res.render('../views/partials/login', {email:email});
 };
 exports.signup = function(req, res){
-  res.render('../views/partials/signup');
+  var email = req.params.email;
+  console.log(email);
+  res.render('../views/partials/signup', {email:email});
 };
 exports.settings = function(req, res){
   res.render('../views/partials/settings');

@@ -2,7 +2,7 @@ extends ../index
 
 block pageContent
   .main-logo
-    img(src="images/logo.png" alt="LOGO")
+    img(src="img/logo.png", alt="LOGO")
 
   .main-center
     div#fb-root
@@ -11,9 +11,9 @@ block pageContent
       p.hint(ng-model='user')
         | Create a new acount as:
         br
-        | {{user.email}}
+        | {{email}}
       label.item.item-input
-        input(type='password' placeholder='Password' ng-model='password' required)
+        input(type='password', placeholder='Password', required)
       .row
         .col-33
           p.back
@@ -21,7 +21,6 @@ block pageContent
         .col-33.col-offset-33
           p.next
             a.back(ng-click='register(form)') Sign In
-
 
 
 //- .logo

@@ -26,7 +26,8 @@
 
 var video = require('../app/controllers/video'),
     users = require('../app/controllers/users'),
-    session = require('../app/controllers/session');
+    session = require('../app/controllers/session'),
+    gatekeeper = require('../app/controllers/gatekeeper');
 
 module.exports = function(app){
 
@@ -35,14 +36,16 @@ module.exports = function(app){
   app.get('/', main.index);
   app.get('/select', main.select);
   app.get('/trend', main.trend);
-  app.get('/login', main.login);
-  app.get('/signup', main.signup);
+  app.get('/login/:email', main.login);
+  app.get('/signup/:email', main.signup);
   app.get('/settings', main.settings);
   app.get('/content', main.content);
   app.get('/share', main.share);
 
   // Server API Routes
-  // All the font-back communication routes should be written here
+  // All the front-back communication routes should be written here
+  app.post('/gatekeeper', gatekeeper.direct);
+
   app.post('/api/video/keyword', video.getVideoByKeyword);
   app.post('/api/video/database', video.getVideoFromDatabase);
   
