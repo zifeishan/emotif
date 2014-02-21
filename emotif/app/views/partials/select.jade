@@ -1,6 +1,3 @@
-//- .logo
-//-   a(href="/")
-//-     img(src="images/logo.png" alt="LOGO")
 extends ../index
 
 block pageContent
@@ -11,12 +8,14 @@ block pageContent
     .card
       .item.item-divider How are you feeling today?
       .item
-        button#p2.button.button-full.button-positive.mood-select(ng-click='SelectMood(2)') Perfect
+        button#p2.button.button-full.button-positive.mood-select Perfect
+        button#p1.button.button-full.button-calm.mood-select Good
+        button#p0.button.button-full.button-balanced.mood-select Normal
+        button#n1.button.button-full.button-energized.mood-select Bad
+        button#n2.button.button-full.button-assertive.mood-select Awful
 
-        button#p1.button.button-full.button-calm.mood-select(ng-click='SelectMood(1)') Good
-        button#p0.button.button-full.button-balanced.mood-select(ng-click='SelectMood(0)') Normal
-        button#n1.button.button-full.button-energized.mood-select(ng-click='SelectMood(-1)') Bad
-        button#n2.button.button-full.button-assertive.mood-select(ng-click='SelectMood(-2)') Awful
+block js
+  script(src="/js/select.js")
 
 //- .jumbotron
 //-   div.bigheader

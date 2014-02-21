@@ -45,10 +45,10 @@ module.exports = function(app){
 
   // Server API Routes
   // All the front-back communication routes should be written here
-  app.post('/gatekeeper', gatekeeper.direct);
+  app.post('/api/gatekeeper', gatekeeper.direct);
 
   app.post('/api/video/keyword', video.getVideoByKeyword);
-  app.post('/api/video/database', video.getVideoFromDatabase);
+  app.get('/api/video/database', video.getVideoFromDatabase);
   
   app.post('/api/users', users.create);
   app.post('/api/users/exist', users.userExist);
@@ -57,9 +57,13 @@ module.exports = function(app){
   app.put('/api/users/addmood', users.addMood);
   app.get('/api/users/getmood', users.getMoods);
 
+  app.post('/api/users/auth', users.authenticate);
+  app.post('/api/users/create', users.create);
+  app.post('/api/users/checkLogin', users.isUserLoggedIn);
+
   app.get('/api/users/:id', users.show);
 
   app.post('/api/session', session.login);
-  app.del('/api/session', session.logout);
+  app.get('/api/session/logout', session.logout);
 };
 

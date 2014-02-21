@@ -19,7 +19,7 @@ function initializePage() {
     
     //Here add some form validation
     
-    var url_call = '/gatekeeper';
+    var url_call = '/api/gatekeeper';
     var post_body = {
       'email': email
     };
@@ -27,9 +27,9 @@ function initializePage() {
 
     $.post(url_call, post_body, function(result) {
       if(result.exist) {
-        window.location.href = '/login/:' + email;
+        window.location.href = '/login/' + email;
       } else {
-        window.location.href = '/signup/:' + email;
+        window.location.href = '/signup/' + email;
       }
     });
   });
