@@ -5,6 +5,33 @@ body {
   font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
   overflow: scroll;
+  background-color: #93DE7F;
+  background-size: 173px 173px, 311px 311px, 547px 547px, 683px 683px;
+  background-image:
+    -webkit-linear-gradient(     0, rgba(255,255,255, .02) 50%, transparent 50%),
+    -webkit-linear-gradient(     0, rgba(255,255,255, .04) 50%, transparent 50%),
+    -webkit-linear-gradient(180deg, rgba(255,255,255, .07) 50%, transparent 50%),
+    -webkit-linear-gradient(180deg, rgba(255,255,255, .06) 50%, transparent 50%);
+  background-image:
+    -moz-linear-gradient(     0, rgba(255,255,255, .02) 50%, transparent 50%),
+    -moz-linear-gradient(     0, rgba(255,255,255, .04) 50%, transparent 50%),
+    -moz-linear-gradient(180deg, rgba(255,255,255, .07) 50%, transparent 50%),
+    -moz-linear-gradient(180deg, rgba(255,255,255, .06) 50%, transparent 50%);
+  background-image:
+    -ms-linear-gradient(     0, rgba(255,255,255, .02) 50%, transparent 50%),
+    -ms-linear-gradient(     0, rgba(255,255,255, .04) 50%, transparent 50%),
+    -ms-linear-gradient(180deg, rgba(255,255,255, .07) 50%, transparent 50%),
+    -ms-linear-gradient(180deg, rgba(255,255,255, .06) 50%, transparent 50%);
+  background-image:
+    -o-linear-gradient(     0, rgba(255,255,255, .02) 50%, transparent 50%),
+    -o-linear-gradient(     0, rgba(255,255,255, .04) 50%, transparent 50%),
+    -o-linear-gradient(180deg, rgba(255,255,255, .07) 50%, transparent 50%),
+    -o-linear-gradient(180deg, rgba(255,255,255, .06) 50%, transparent 50%);
+  background-image:
+    linear-gradient(     0, rgba(255,255,255, .02) 50%, transparent 50%),
+    linear-gradient(     0, rgba(255,255,255, .04) 50%, transparent 50%),
+    linear-gradient(180deg, rgba(255,255,255, .07) 50%, transparent 50%),
+    linear-gradient(180deg, rgba(255,255,255, .06) 50%, transparent 50%);
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -164,6 +191,32 @@ body {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+.mood-select#p2 {
+  background-color: #FF7050;
+  border-color: #e7e7e7;
+
+}
+
+.mood-select#p1 {
+  background-color: #F29E4A;
+  border-color: #e7e7e7;
+
+}
+.mood-select#p0 {
+  background-color: #FFED5D;
+  border-color: #e7e7e7;
+
+}
+.mood-select#n1 {
+  background-color: #7BBADE;
+  border-color: #e7e7e7;
+
+}
+.mood-select#n2 {
+  background-color: #7E8ADE;
+  border-color: #e7e7e7;
+
+}
 
 /********************************
 * Content page CSS
@@ -238,4 +291,9 @@ body {
 
 .recphoto {
   width: 100%;
+}
+.button.button-assertive {
+color: #fff;
+background-color: #FF7050;
+border-color: #e7e7e7;
 }

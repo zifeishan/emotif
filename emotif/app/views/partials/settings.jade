@@ -22,15 +22,18 @@
 //-       p.help-block  {{ message }} 
 
 //-       button.btn.btn-lg.btn-primary(type='submit') Save changes
-
 extends ../index
 
 block pageContent
-  .bar.bar-header.bar-light
+   .logo
+    a(href="/")
+     img(src="img/emotif-logo.png", alt="LOGO")
+  //-.bar.bar-header.bar-light
     a.button.button-clear.icon.ion-ios7-arrow-back(href='/select')
     h1.title Emotif
 
   .scroll-content.has-header.has-tabs.overflow-scroll
+   .card
     .list
       .item.item-divider
         p User Acount

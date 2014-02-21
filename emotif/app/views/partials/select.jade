@@ -1,22 +1,22 @@
-//- .logo
-//-   a(href="/")
-//-     img(src="images/logo.png" alt="LOGO")
 extends ../index
 
 block pageContent
-  .bar.bar-header.bar-light
+  //-.bar.bar-header.bar-light
     h1.title Emotif
+  .logo
+    a(href="/")
+      img(src="img/emotif-logo.png", alt="LOGO")
 
   .scroll-content.has-header.overflow-scroll
     .card
       .item.item-divider How are you feeling today?
       .item
-        button#p2.button.button-full.button-positive.mood-select(ng-click='SelectMood(2)') Perfect
+        button#p2.button.button-full.button-positive.mood-select.mood-select(ng-click='SelectMood(2)') \(^ o ^)/ Excited
 
-        button#p1.button.button-full.button-calm.mood-select(ng-click='SelectMood(1)') Good
-        button#p0.button.button-full.button-balanced.mood-select(ng-click='SelectMood(0)') Normal
-        button#n1.button.button-full.button-energized.mood-select(ng-click='SelectMood(-1)') Bad
-        button#n2.button.button-full.button-assertive.mood-select(ng-click='SelectMood(-2)') Awful
+        button#p1.button.button-full.button-calm.mood-select.mood-select(ng-click='SelectMood(1)') (^ ◡ ^)/ Happy
+        button#p0.button.button-full.button-balanced.mood-select.mood-select(ng-click='SelectMood(0)') ┐(￣ー￣)┌ Calm
+        button#n1.button.button-full.button-energized.mood-select.mood-select(ng-click='SelectMood(-1)') (⌣_⌣”) Sad
+        button#n2.button.button-full.button-assertive.mood-select.mood-select(ng-click='SelectMood(-2)') (ＴДＴ）Awful
 
 //- .jumbotron
 //-   div.bigheader
