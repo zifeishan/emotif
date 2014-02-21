@@ -14,7 +14,10 @@ function initializePage() {
 
   //add clickListeners for buttons
   $('#content-refresh-button').click(function(e) {
-    getNewVideo();
+    // getNewVideo();
+
+    // TODO Switch to photo
+    window.location.href = '/recommend/photo';
   });
 
   $('#content-like-button').click(function(e) {
