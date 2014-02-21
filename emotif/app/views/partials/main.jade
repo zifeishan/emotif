@@ -5,6 +5,8 @@ block pageContent
     img(src="img/logo.png", alt="LOGO")
 
   .main-center
+    div#fb-root
+    div.fb-login-button(data-max-rows="1", data-size="large", data-show-faces="false", data-auto-logout-link="false")
     form(name='form', novalidate)
       p.hint.
         Enter your email address to sign in or create a new account:
