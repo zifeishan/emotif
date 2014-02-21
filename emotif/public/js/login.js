@@ -25,7 +25,7 @@ function initializePage() {
     //Here add some validation logic
 
     //Here I will call passport to authenticate user
-    $.post('/auth', {email: email, password: password}, afterAuth);
+    $.post('/api/users/auth', {email: email, password: password}, afterAuth);
 
     function afterAuth(result) {
       if(result.auth) {

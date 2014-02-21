@@ -19,7 +19,7 @@ function initializePage() {
     
     //Here add some form validation
     
-    var url_call = '/gatekeeper';
+    var url_call = '/api/gatekeeper';
     var post_body = {
       'email': email
     };

@@ -39,7 +39,7 @@ function initializePage() {
     //Here add some validation logic
     
     //Here I will call passport to authenticate user
-    $.post('/create', {email: email, password: password}, afterCreate);
+    $.post('/api/users/create', {email: email, password: password}, afterCreate);
 
     function afterCreate(result) {
       if(result.success) {
