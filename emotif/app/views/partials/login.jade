@@ -2,29 +2,32 @@ extends ../index
 
 block pageContent
   .main-logo
-    img(src="images/logo.png", alt="LOGO")
+    img(src="img/logo.png", alt="LOGO")
 
   .main-center
     form(name='form', novalidate)
       p.hint()
         | Sign in as:
         br
-        | {{email}}
+        = email
       label.item.item-input
-        input(type='password', placeholder='Password', required)
+        input(id= 'password', type='password', placeholder='Password', required)
+        input(id='email', type='hidden', value=email)
       .row
         .col-33
           p.back
-            a.next(ng-click='back()') Back
+            a.next(id='login-back-button') Back
         .col-33.col-offset-33
           p.next
-            a.back(ng-click='login(form)') Sign In
+            a.back(id='login-signin-button') Sign In
 
 
   .main-footer
     p.
       Forgot Password?
 
+block js
+  script(src="/js/login.js")
 
 //- .row
 //-   .col-sm-12

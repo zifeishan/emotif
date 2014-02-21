@@ -27,7 +27,8 @@
 var video = require('../app/controllers/video'),
     users = require('../app/controllers/users'),
     session = require('../app/controllers/session'),
-    gatekeeper = require('../app/controllers/gatekeeper');
+    gatekeeper = require('../app/controllers/gatekeeper'),
+    auth = require('../app/controllers/auth');
 
 module.exports = function(app){
 
@@ -45,6 +46,8 @@ module.exports = function(app){
   // Server API Routes
   // All the front-back communication routes should be written here
   app.post('/gatekeeper', gatekeeper.direct);
+  app.post('/auth', auth.authenticate);
+  app.post('/create', auth.save);
 
   app.post('/api/video/keyword', video.getVideoByKeyword);
   app.post('/api/video/database', video.getVideoFromDatabase);

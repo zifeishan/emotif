@@ -26,9 +26,9 @@ function initializePage() {
 
     $.post(url_call, post_body, function(result) {
       if(result.exist) {
-        window.location.href = '/login/:' + email;
+        window.location.href = '/login/' + email;
       } else {
-        window.location.href = '/signup/:' + email;
+        window.location.href = '/signup/' + email;
       }
     });
   });

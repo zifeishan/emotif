@@ -9,17 +9,20 @@ block pageContent
       p.hint(ng-model='user')
         | Create a new acount as:
         br
-        | {{email}}
+        = email
       label.item.item-input
-        input(type='password', placeholder='Password', required)
+        input(id='password', type='password', placeholder='Password', required)
+        input(id='email', type='hidden', value=email)
       .row
         .col-33
           p.back
-            a.next(ng-click='back()') Back
+            a.next(id='signup-back-button') Back
         .col-33.col-offset-33
           p.next
-            a.back(ng-click='register(form)') Sign In
+            a.back(id='signup-signup-button') Sign Up
 
+block js
+  script(src="/js/signup.js")
 
 //- .logo
 //-   a(href="/")
