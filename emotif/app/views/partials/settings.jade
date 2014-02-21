@@ -26,9 +26,9 @@
 extends ../index
 
 block pageContent
-  .bar.bar-header.bar-light
+  .bar.bar-header.bar-emotif
     a.button.button-clear.icon.ion-ios7-arrow-back(href='/select')
-    h1.title Emotif
+    h1.title.bar-title Emotif
 
   .scroll-content.has-header.has-tabs.overflow-scroll
     .list
@@ -61,14 +61,14 @@ block pageContent
       button.button.button-block.button-assertive#settings-logout-button Log Out
 
   .tabs.tabs-icon-top
-    a.tab-item(href="/select")
-      i.icon.ion-ios7-sunny-outline
-      p Select
+    a.tab-item(href="/content")
+      i.icon.ion-ios7-albums-outline
+      p Content
     a.tab-item(href="/trend")
-      i.icon.ion-ios7-speedometer
+      i.icon.ion-ios7-speedometer-outline
       p Trend
-    a.tab-item.active(href="/settings")
-      i.icon.ion-ios7-gear-outline
+    a.tab-item
+      i.icon.ion-ios7-gear
       p Settings
 
 block js
@@ -92,13 +92,3 @@ block js
 //-     a.tab-item
 //-       i.icon.ion-share
 
-.tabs.tabs-icon-top
-  a.tab-item(href="/content")
-    i.icon.ion-ios7-albums-outline
-    p Content
-  a.tab-item(href="/trend")
-    i.icon.ion-ios7-speedometer-outline
-    p Trend
-  a.tab-item
-    i.icon.ion-ios7-gear
-    p Settings
