@@ -17,5 +17,4 @@ var VideoSchema = new Schema({
 });
 
 
-
 mongoose.model('Video', VideoSchema);
