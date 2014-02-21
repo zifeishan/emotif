@@ -55,10 +55,11 @@ module.exports = function(app){
   app.put('/api/users', users.changePassword);
   app.get('/api/users/me', users.me);
   app.put('/api/users/addmood', users.addMood);
-  app.get('/api/users/getmood', users.getMoods);
+  app.post('/api/users/getmood', users.getMoods);
 
   app.post('/api/users/auth', users.authenticate);
   app.post('/api/users/create', users.create);
+  app.post('/api/users/createfb', users.createFBUser);
   app.post('/api/users/checkLogin', users.isUserLoggedIn);
 
   app.get('/api/users/:id', users.show);

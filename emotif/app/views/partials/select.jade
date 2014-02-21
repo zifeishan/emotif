@@ -14,6 +14,18 @@ block pageContent
         button#n1.button.button-full.button-energized.mood-select Bad
         button#n2.button.button-full.button-assertive.mood-select Awful
 
+  .tabs.tabs-icon-top
+    a.tab-item(href="/select")
+      i.icon.ion-ios7-sunny-outline.active
+      p Select
+    a.tab-item(href="/select")
+      i.icon.ion-ios7-speedometer
+      p Trend
+    a.tab-item(href="/settings")
+      i.icon.ion-ios7-gear-outline
+      p Settings
+
+
 block js
   script(src="/js/select.js")
 

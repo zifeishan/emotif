@@ -47,6 +47,27 @@ exports.create = function (req, res, next) {
     });
 };
 
+exports.createFBUser = function (req, res, next) {
+  var email = req.body.email;
+  var name = req.body.name;
+  var password = req.body.password;
+  var newuser = {
+      email: email,
+      name: name,
+      password: password
+  };
+  User.create( newuser, function(err, user) {
+      if(err) console.log(err);
+      req.login(user, function(err) {
+          if (err) {
+              return next(err);
+          }
+          res.send({success: true});
+      });
+  });
+};
+
+
 /**
  *  Get profile of specified user
  */
@@ -90,6 +111,26 @@ exports.changePassword = function(req, res, next) {
 };
 
 exports.isUserLoggedIn = function(req, res, next) {
+
+    // if facebook logged in, do not worry (need change)
+    // FBCheckLogin(function(data){
+    //   console.log('FB status:'+data.status);
+    //   if (data.status == 'connected') {
+
+    //     FB.api('/me', function(data){
+    //       // var fbid = data.id;
+    //       if (data == undefined) {
+    //         window.alert('Error when getting user info from facebook. Use manual login.');
+    //         window.location.href = '/';
+    //       }
+    //       window.localStorage.setItem('email', data.username);
+    //       res.json({ loggedin: true, id: data.username });
+
+    //     });
+
+    //   }
+    // });
+
     var userId = req.session.passport.user;
     if(userId) {
         console.log('user has id: ' + userId);
@@ -167,11 +208,12 @@ exports.addMood = function(req, res, next) {
 */
 exports.getMoods = function(req, res, next) {
   
-  console.log(req.user);
-  var useremail = String(req.user.email);
+  // console.log(req.body);
+  console.log(req.body.email);
+  var useremail = String(req.body.email);
   // var time = String(req.body.time);
   // var mood = String(req.body.mood);
-  // console.log('User Mail: '+useremail);
+  console.log('User Mail: '+useremail);
   User.find({email: useremail}, function (err, user) {
     if (err) return next(new Error('Failed to load User'+useremail));
     // console.log('what???');
@@ -184,3 +226,18 @@ exports.getMoods = function(req, res, next) {
       "values": thisuser.mood});
   });
 };
+
+
+// require("./util/jquery.js");
+
+// function FBCheckLogin(callback)
+// {
+//   $.ajaxSetup({ cache: true });
+//   $.getScript('//connect.facebook.net/en_UK/all.js', function(){
+//     FB.init({
+//       appId: '1481091805451645',
+//     });     
+//     $('#loginbutton,#feedbutton').removeAttr('disabled');
+//     FB.getLoginStatus(callback);
+//   });
+// }
