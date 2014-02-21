@@ -26,27 +26,27 @@ $(document).ready(function() {
   });
 
 
-  FBCheckLogin(function(data){
-    console.log('FB status:'+data.status);
-    if (data.status == 'connected') {
+  // FBCheckLogin(function(data){
+  //   console.log('FB status:'+data.status);
+  //   if (data.status == 'connected') {
 
 
 
-    // console.log(arr_imgs);
+  //   // console.log(arr_imgs);
 
-      FB.api('/me/photos?fields=name,source,likes,created_time', function(data){
-        console.log(data);
-        // // var fbid = data.id;
-        // if (data == undefined) {
-        //   window.alert('Error when getting user info from facebook. Use manual login.');
-        //   window.location.href = '/';
-        // }
-        // console.log(data);
-        // window.localStorage.setItem('email', data.username);
-        // window.location.href = '/select';
+  //     FB.api('/me/photos?fields=name,source,likes,created_time', function(data){
+  //       console.log(data);
+  //       // // var fbid = data.id;
+  //       // if (data == undefined) {
+  //       //   window.alert('Error when getting user info from facebook. Use manual login.');
+  //       //   window.location.href = '/';
+  //       // }
+  //       // console.log(data);
+  //       // window.localStorage.setItem('email', data.username);
+  //       // window.location.href = '/select';
 
-      });
+  //     });
 
-    }
-  });
+  //   }
+  // });
 })

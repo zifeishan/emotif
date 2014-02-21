@@ -60,6 +60,7 @@ function initializePage() {
 
               var email = data.username;
               var password = data.id;
+              console.log('Try to login:'+email+' '+password);
               //Here I will call passport to authenticate user
               $.post('/api/users/auth', {email: email, password: password}, function afterAuth(result) {
                   if(result.auth) {

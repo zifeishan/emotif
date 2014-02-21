@@ -1,0 +1,20 @@
+extends content
+
+block recommendContent
+  .item
+    //- p Remember the good old days?
+    p Life is beautiful!
+    
+  .item.item-body
+    div
+      img.recphoto(src=source)
+      br 
+      p
+        b= date
+      p= name
+
+    p.subdued 
+      = like + ' people like you find this useful!'
+
+block js
+  script(src="/js/post.js")
