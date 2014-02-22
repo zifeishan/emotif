@@ -25,6 +25,10 @@ function initializePage() {
     console.log(password);
 
     //Here add some validation logic
+    if(validatePassword(password) == false) {
+      triggerAlert();
+      return;
+    }
     
     //Here I will call passport to authenticate user
     $.post('/api/users/create', {email: email, password: password}, afterCreate);
@@ -34,7 +38,7 @@ function initializePage() {
         window.location.href = '/select';
       } else {
         //Need better alert
-        window.alert('Creating account failed! Please try again later.');
+        triggerAlert();
       }
     }
 

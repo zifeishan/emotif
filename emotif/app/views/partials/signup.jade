@@ -6,13 +6,13 @@ block pageContent
 
   .main-center
     div#fb-root
-      
+    div.validate-alert Password should have more than 3 characters!
     form(name='form', novalidate)
       p.hint(ng-model='user')
         | Create a new acount as:
         br
         = email
-      label.item.item-input
+      label.item.item-input.input-alert
         input(id='password', type='password', placeholder='Password', required)
         input(id='email', type='hidden', value=email)
       .row
@@ -25,9 +25,8 @@ block pageContent
 
 block js
   script(src="/js/signup.js")
+  script(src="/js/validate.js")
 
-block js
-  script(src="/js/signup.js")
 
 //- .logo
 //-   a(href="/")

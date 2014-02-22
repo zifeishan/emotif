@@ -5,6 +5,7 @@
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
+  //Facebook login code
   FBCheckLogin(function(data){
     console.log('FB status:'+data.status);
     if (data.status == 'connected') {
@@ -23,6 +24,8 @@ $(document).ready(function() {
 
     }
   });
+  
+  //login logic
   initializePage();
 })
 
@@ -96,7 +99,11 @@ function initializePage() {
     console.log('Next button clicked!');
     var email = $('#main-email-input').val();
     
-    //Here add some form validation
+    //Form validation code
+    if(validateEmail(email) == false) {
+      triggerAlert();
+      return;
+    }
     
     var url_call = '/api/gatekeeper';
     var post_body = {

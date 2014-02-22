@@ -6,11 +6,12 @@ block pageContent
     img(src="img/emotif-logo.png", alt="LOGO")
 
   .main-center
+    div.validate-alert Please enter a valid email address!
     div.fb
     form(name='form', novalidate)
       p.hint.
         Enter your email address to sign in or create a new account:
-      label.item.item-input
+      label.item.item-input.input-alert
         //- input(type='email' placeholder='Email Address' ng-model='user.email' required)
         input(id='main-email-input', type='email', placeholder='Email Address', required)
       .row
@@ -27,3 +28,5 @@ block pageContent
 
 block js
   script(src="/js/main.js")
+  script(src="/js/validate.js")
+

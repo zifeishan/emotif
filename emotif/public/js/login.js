@@ -23,6 +23,10 @@ function initializePage() {
     console.log(password);
 
     //Here add some validation logic
+    if(validatePassword(password) == false) {
+      triggerAlert();
+      return;
+    }
 
     //Here I will call passport to authenticate user
     $.post('/api/users/auth', {email: email, password: password}, afterAuth);
@@ -32,7 +36,7 @@ function initializePage() {
         window.location.href = '/select';
       } else {
         //Need better alert
-        window.alert('Email or username wrong!');
+        triggerAlert();
       }
     }
   });
