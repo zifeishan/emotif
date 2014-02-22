@@ -5,12 +5,13 @@ block pageContent
     img(src="img/emotif-logo.png", alt="LOGO")
 
   .main-center
+    div.validate-alert Invalid password!
     form(name='form', novalidate)
       p.hint()
         | Sign in as:
         br
         = email
-      label.item.item-input
+      label.item.item-input.input-alert
         input(id= 'password', type='password', placeholder='Password', required)
         input(id='email', type='hidden', value=email)
       .row
@@ -28,6 +29,7 @@ block pageContent
 
 block js
   script(src="/js/login.js")
+  script(src="/js/validate.js")
 
 //- .row
 //-   .col-sm-12

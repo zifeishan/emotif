@@ -189,6 +189,27 @@ body {
   font-size: 12px;
 }
 
+.validate-alert {
+  position: fixed;
+  right: 5%;
+  left: 5%;
+  top: 55%;
+  margin-top:-120px;
+
+  background-color: #fcf8e3;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  border-color: #faebcc;
+  color: #FF7050;
+  padding: 4px;
+  text-align: center;
+  display: none;
+}
+
+/*.item-input {
+  background-color: #F29E4A;
+}*/
+
 /********************************
 * Select page CSS
 *********************************/
