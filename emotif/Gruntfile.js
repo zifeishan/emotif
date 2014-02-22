@@ -15,6 +15,7 @@ module.exports = function (grunt) {
     develop: {
       server: {
         file: 'app.js'
+        node_env: 'production'
       }
     },
 
