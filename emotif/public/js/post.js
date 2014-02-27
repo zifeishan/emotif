@@ -32,8 +32,29 @@ $(document).ready(function() {
 
     // console.log(arr_imgs);
 
-      FB.api('/me/posts', function(data){
-        console.log(data);
+      FB.api(
+          "/me/feed",
+          {
+              "with": "message"
+          },
+          function (response) {
+            if (response && !response.error) {
+              console.log(response);
+              var posts = response.data;
+              for (var i = 0; i < posts.length; i++)
+              {
+                console.log(posts[i].message);
+                console.log(posts[i].created_time);
+                
+                // console.log(posts[i].likes);
+
+              }
+            }
+          }
+        );
+
+      // FB.api('/me/feed?fields=message,created_time,likes', function(fbdata){
+        
         // // var fbid = data.id;
         // if (data == undefined) {
         //   window.alert('Error when getting user info from facebook. Use manual login.');
@@ -43,7 +64,7 @@ $(document).ready(function() {
         // window.localStorage.setItem('email', data.username);
         // window.location.href = '/select';
 
-      });
+      // });
 
     }
   });

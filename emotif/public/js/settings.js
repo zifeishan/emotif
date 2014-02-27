@@ -6,6 +6,12 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
   initializePage();
+  $('#changeName').click(function(e){
+    window.alert('Life is good, why change name?');
+  });
+  $('#changePassword').click(function(e){
+    window.alert('Don\'t worry about your password, we do not save your password explicitly!');
+  });
 })
 
 function initializePage() {

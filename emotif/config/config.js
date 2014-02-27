@@ -8,7 +8,7 @@ var config = {
     app: {
       name: 'emotif'
     },
-    port: 3000,
+    port: process.env.PORT || 3000,
     db: 'mongodb://localhost/emotif-development'
   },
 
@@ -17,7 +17,7 @@ var config = {
     app: {
       name: 'emotif'
     },
-    port: 3000,
+    port: process.env.PORT || 3000,
     db: 'mongodb://localhost/emotif-test'
   },
 
@@ -26,8 +26,10 @@ var config = {
     app: {
       name: 'emotif'
     },
-    port: 3000,
-    db: 'mongodb://localhost/emotif-production'
+    port: process.env.PORT || 3000,
+    db:  process.env.MONGOLAB_URI ||
+         process.env.MONGOHQ_URL ||
+         'mongodb://localhost/emotif-production'
   }
 };
 

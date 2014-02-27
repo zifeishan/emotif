@@ -16,7 +16,18 @@ function initializePage() {
     window.location.href = '/';
   });
 
-  $('#login-signin-button').click(function(e) {
+  $('input').keypress(function (e) {
+    if (e.which == 13) {  // Enter key pressed
+      e.preventDefault();
+      SubmitLoginForm();
+    }
+  });
+
+  $('#login-signin-button').click(SubmitLoginForm);
+
+}
+
+function SubmitLoginForm(e) {
     var email = $('#email').val();
     var password = $('#password').val();
     console.log(email);
@@ -33,12 +44,11 @@ function initializePage() {
 
     function afterAuth(result) {
       if(result.auth) {
-        window.location.href = '/select';
+        // window.location.href = '/select';
+        window.location.href = '/fblogin';
       } else {
         //Need better alert
         triggerAlert();
       }
     }
-  });
-
-}
+  }

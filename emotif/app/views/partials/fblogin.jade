@@ -1,0 +1,25 @@
+extends ../index
+
+block pageContent
+  .main-logo
+    img(src="img/emotif-logo.png", alt="LOGO")
+
+  .main-center
+    div#fb-root
+    form(name='form', novalidate)
+      p.hint
+        | Would you like to login with Facebook?
+      //- label.item.item-input.input-alert
+      //-   input(id='password', type='password', placeholder='Password', required)
+      //-   input(id='email', type='hidden', value=email)
+      .row
+        .col-66
+          p.back
+            a.back(id='fblogin-yes-button') Facebook Login
+        .col-33
+          p.next
+            a.next(id='fblogin-no-button', href='/select') No, thanks
+
+block js
+  script(src="/js/fblogin.js")
+  //- script(src="/js/validate.js")
