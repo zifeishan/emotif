@@ -6,12 +6,13 @@ html
     base(href="/")
     title Emotif
     meta(name="description", content="Emotif")
-    meta(name="viewport", content="width=device-width")
+    //- meta(name="viewport", content="width=device-width")
+    //- Unable mobile browser zoom in/out
+    meta(name="viewport", content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;")
     //- Place favicon.ico and apple-touch-icon.png in the root directory
+    link(rel="apple-touch-icon",  href="/emotif-icon-small.png")
     //- Enable mobile app native look
     meta(name="apple-mobile-web-app-capable", content="yes")
-    //- Unable mobile browser zoom in/out
-    //- meta(name="viewport", content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;")
     link(rel="stylesheet", href="/css/ionic.css")
     link(rel="stylesheet", href="/css/nv.d3.css")
     link(rel="stylesheet", href="/css/main.css")
