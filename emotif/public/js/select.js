@@ -59,7 +59,9 @@ function initializePage() {
             }
         });
       } else {
-        window.location.href = '/';
+        console.log('user has not logged in..');
+        console.log(result);
+        // window.location.href = '/';
       }
     });
 

@@ -327,6 +327,10 @@ body {
 .recphoto {
   width: 100%;
 }
+.postphoto {
+  width: 50%;
+  text-align: center;
+}
 .button.button-assertive {
 color: #fff;
 background-color: #FF7050;
