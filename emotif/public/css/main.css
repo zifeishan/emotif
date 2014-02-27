@@ -7,7 +7,7 @@ body {
   overflow: scroll;
   background-color: #93DE7F;
   background-size: 173px 173px, 311px 311px, 547px 547px, 683px 683px;
-  background-image:
+/*  background-image:
     -webkit-linear-gradient(     0, rgba(255,255,255, .02) 50%, transparent 50%),
     -webkit-linear-gradient(     0, rgba(255,255,255, .04) 50%, transparent 50%),
     -webkit-linear-gradient(180deg, rgba(255,255,255, .07) 50%, transparent 50%),
@@ -31,7 +31,7 @@ body {
     linear-gradient(     0, rgba(255,255,255, .02) 50%, transparent 50%),
     linear-gradient(     0, rgba(255,255,255, .04) 50%, transparent 50%),
     linear-gradient(180deg, rgba(255,255,255, .07) 50%, transparent 50%),
-    linear-gradient(180deg, rgba(255,255,255, .06) 50%, transparent 50%);
+    linear-gradient(180deg, rgba(255,255,255, .06) 50%, transparent 50%);*/
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -252,33 +252,6 @@ body {
 
 }
 
-.mood-select#p2 {
-  background-color: #FF7050;
-  border-color: #e7e7e7;
-
-}
-
-.mood-select#p1 {
-  background-color: #F29E4A;
-  border-color: #e7e7e7;
-
-}
-.mood-select#p0 {
-  background-color: #FFED5D;
-  border-color: #e7e7e7;
-
-}
-.mood-select#n1 {
-  background-color: #7BBADE;
-  border-color: #e7e7e7;
-
-}
-.mood-select#n2 {
-  background-color: #7E8ADE;
-  border-color: #e7e7e7;
-
-}
-
 .button.button-assertive {
   color: #fff;
   background-color: #FF7050;
@@ -346,11 +319,6 @@ body {
 
 .logo img {
   max-width: 120px;
-}
-
-#mychart {
-  width: 100%;
-  height: 250px;
 }
 
 .nvd3 {

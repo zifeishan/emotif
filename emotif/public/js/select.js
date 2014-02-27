@@ -30,7 +30,15 @@ function initializePage() {
     console.log('My mood is ' + value);
     // console.log(session.passport.user);
     // email = Auth.getCurrentUser().email;
-    var today = new Date().getTime();
+    var dateProvider = new Date();
+    var day = dateProvider.getDate().toString();
+    var month = dateProvider.getMonth().toString();
+    if(month.length == 1){
+      month = '0' + month;
+    }
+    var year = dateProvider.getFullYear().toString();
+    var date = year + month + day;
+
     $.post('/api/users/checkLogin', function(result) {
       if(result.loggedin) {
         var userId = result.id;
@@ -39,8 +47,8 @@ function initializePage() {
             type: 'PUT',
             data: {
               id: userId,
-              time: today,
-              mood: value
+              date: date,
+              score: value
             },
             success: function() {
               if(value > 0) {
