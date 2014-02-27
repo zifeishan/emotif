@@ -1,5 +1,6 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
+  RegisterNavListener();
   
   // Facebook login code
   FBCheckLogin(function(data){
@@ -46,6 +47,10 @@ $(document).ready(function() {
           window.location.href = '/fblogin';
         }
     });
+  });
+
+  $('#fblogin-no-button').click(function(e){
+    window.location.href = '/select';
   });
 
 });

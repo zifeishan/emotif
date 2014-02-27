@@ -5,6 +5,7 @@
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
+  RegisterNavListener();
   
 
   //add clickListeners for buttons
@@ -23,6 +24,9 @@ $(document).ready(function() {
 
   $('#content-better-button').click(function(e) {
     window.location.href = '/trend';
+  });
+  $('#content-back-button').click(function(e) {
+    window.location.href = '/select';
   });
 
 

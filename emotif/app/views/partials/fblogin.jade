@@ -18,8 +18,10 @@ block pageContent
             a.back(id='fblogin-yes-button') Facebook Login
         .col-33
           p.next
-            a.next(id='fblogin-no-button', href='/select') No, thanks
+            a.next(id='fblogin-no-button') No, thanks
 
 block js
+  script(src="/js/apple-locality.js")
   script(src="/js/fblogin.js")
+  
   //- script(src="/js/validate.js")
