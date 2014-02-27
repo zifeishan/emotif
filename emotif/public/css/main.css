@@ -6,8 +6,13 @@ body {
   font-weight: 300;
   overflow: scroll;
   background-color: #93DE7F;
+<<<<<<< HEAD
+  /*background-size: 173px 173px, 311px 311px, 547px 547px, 683px 683px;
+  background-image:
+=======
   background-size: 173px 173px, 311px 311px, 547px 547px, 683px 683px;
 /*  background-image:
+>>>>>>> 864b14b70348d65df904622449c4837c9f29c6b2
     -webkit-linear-gradient(     0, rgba(255,255,255, .02) 50%, transparent 50%),
     -webkit-linear-gradient(     0, rgba(255,255,255, .04) 50%, transparent 50%),
     -webkit-linear-gradient(180deg, rgba(255,255,255, .07) 50%, transparent 50%),
@@ -31,7 +36,12 @@ body {
     linear-gradient(     0, rgba(255,255,255, .02) 50%, transparent 50%),
     linear-gradient(     0, rgba(255,255,255, .04) 50%, transparent 50%),
     linear-gradient(180deg, rgba(255,255,255, .07) 50%, transparent 50%),
+<<<<<<< HEAD
+    linear-gradient(180deg, rgba(255,255,255, .06) 50%, transparent 50%);
+    */
+=======
     linear-gradient(180deg, rgba(255,255,255, .06) 50%, transparent 50%);*/
+>>>>>>> 864b14b70348d65df904622449c4837c9f29c6b2
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */

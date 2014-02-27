@@ -39,6 +39,18 @@ exports.fblogin = function(req, res){
   res.render('../views/partials/fblogin');
 };
 
+exports.aboutme = function(req, res) {
+  res.render('../views/partials/profile-aboutme');
+}
+exports.description = function(req, res) {
+  res.render('../views/partials/profile-description');
+}
+exports.interests = function(req, res) {
+  res.render('../views/partials/profile-interests');
+}
+exports.travels = function(req, res) {
+  res.render('../views/partials/profile-travels');
+}
 exports.contentType = function(req, res){
   var rectype = req.params.rectype;
   console.log(rectype);
