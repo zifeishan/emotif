@@ -11,7 +11,11 @@ exports.logout = function (req, res) {
   req.logout();
   res.send(200);
 };
-
+exports.save = function (req, res) {
+  console.log('save');
+  req.save();
+  res.send(200);
+};
 /**
  * Login
  */

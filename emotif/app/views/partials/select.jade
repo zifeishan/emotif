@@ -27,20 +27,22 @@ block pageContent
         button#p0.button.button-full.button-balanced.mood-select  ┐(￣ー￣)┌ Calm
         button#n1.button.button-full.button-energized.mood-select  (⌣_⌣”) Sad
         button#n2.button.button-full.button-assertive.mood-select  (ＴДＴ）Awful
-  //- .tabs.tabs-icon-top
-  //-   a.tab-item(href="/select")
-  //-     i.icon.ion-ios7-sunny-outline.active
-  //-     p Select
-  //-   a.tab-item(href="/select")
-  //-     i.icon.ion-ios7-speedometer
-  //-     p Trend
-  //-   a.tab-item(href="/settings")
-  //-     i.icon.ion-ios7-gear-outline
-  //-     p Settings
+    .content-bottom-spacer
+       .tabs.tabs-icon-top
+          a.tab-item(href="/select")
+            i.icon.ion-ios7-sunny-outline.active
+            p Select
+          a.tab-item(href="/trend")
+            i.icon.ion-ios7-speedometer
+            p Trend
+          a.tab-item(href="/settings")
+            i.icon.ion-ios7-gear-outline
+            p Settings
 
 
 block js
   script(src="/js/select.js")
+
 
 //- .jumbotron
 //-   div.bigheader
