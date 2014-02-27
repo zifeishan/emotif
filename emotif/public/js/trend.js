@@ -5,6 +5,7 @@
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
+  RegisterNavListener();
   initializePage();
 })
 
@@ -19,6 +20,11 @@ function initializePage() {
   $('#trend-share-button').click(function(e){
     window.alert('Share to Facebook is not supported yet.');
   });
+  $('#trend-back-button').click(function(e){
+    window.location.href = '/select';
+  });
+
+  
 
 }
 

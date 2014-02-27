@@ -3,11 +3,16 @@
 */
 'use strict';
 
+// Listen for ALL links at the top level of the document. For
+// testing purposes, we're not going to worry about LOCAL vs.
+// EXTERNAL links - we'll just demonstrate the feature.
+
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
   
   //login logic
   initializePage();
+  RegisterNavListener();
 })
 
 /*

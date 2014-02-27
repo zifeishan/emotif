@@ -28,7 +28,7 @@ block pageContent
         button#n1.button.button-full.button-energized.mood-select  (⌣_⌣”) Sad
         button#n2.button.button-full.button-assertive.mood-select  (ＴДＴ）Awful
   //- .tabs.tabs-icon-top
-  //-   a.tab-item(href="/select")
+  //-   a.tab-item#nav-select
   //-     i.icon.ion-ios7-sunny-outline.active
   //-     p Select
   //-   a.tab-item(href="/select")
@@ -40,26 +40,7 @@ block pageContent
 
 
 block js
+  script(src="/js/apple-locality.js")
   script(src="/js/select.js")
+  
 
-//- .jumbotron
-//-   div.bigheader
-//-     p.
-//-       How are you feeling now?
-
-//-   .row
-//-     .col-sm-6
-//-       a.btn.btn-primary.btn-block(type='button', href='/trend') +2
-//-     .col-sm-6
-//-       a.btn.btn-info.btn-block(type='button', href='/trend') +1
-//-   .row
-//-     .col-sm-12
-//-       a.btn.btn-success.btn-block(type='button', href='/content') 0
-//-   .row
-//-     .col-sm-6
-//-       a.btn.btn-warning.btn-block(type='button', href='/content') -1
-//-     .col-sm-6
-//-       a.btn.btn-danger.btn-block(type='button', href='/content') -2
-
-//-     div.back
-//-       a.btn.btn-lg.btn-success(ng-href='/') Back
