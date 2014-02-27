@@ -1,0 +1,33 @@
+extends ../index
+
+block pageContent
+  .main-logo
+    img(src="img/emotif-logo.png", alt="LOGO")
+
+  .main-center
+    div What do you like?
+    form(name='form', novalidate)
+      p.hint()
+        | Sign in as:
+        br
+        = email
+      label.item.item-input.input-alert
+        input(id= 'password', type='password', placeholder='Password', required)
+        input(id='email', type='hidden', value=email)
+      .row
+        .col-33
+          p.back
+            a.next(id='login-back-button') Back
+        .col-33.col-offset-33
+          p.next
+            a.back(id='login-signin-button') Sign In
+
+
+  .main-footer
+    p.
+      Forgot Password?
+
+block js
+  script(src="/js/apple-locality.js")
+  script(src="/js/login.js")
+  script(src="/js/validate.js")

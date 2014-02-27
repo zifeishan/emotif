@@ -5,6 +5,7 @@
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
+  RegisterNavListener();
   initializePage();
   $('#changeName').click(function(e){
     window.alert('Life is good, why change name?');
@@ -47,5 +48,9 @@ function initializePage() {
     $.get('/api/session/logout', function() {
       window.location.href = '/';
     });
-  })
+  });
+
+  $('#settings-back-button').click(function(e) {
+    window.location.href = '/select';
+  });
 }

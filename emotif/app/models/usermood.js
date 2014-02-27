@@ -11,12 +11,11 @@ var authTypes = ['github', 'twitter', 'facebook', 'google'],
  * User Schema
  */
 var UserMoodSchema = new Schema({
-  email: {
-    type: String,
-    unique: true
-  },
-  mood: [] 
-  // time, score
+  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+  mood: []
+  //mood is stored as an array of object, where each object is a date:score-array pair:
+  //date: 2014-2-26
+  //[1,2,0,3,4]
 });
 
 
@@ -37,20 +36,52 @@ UserMoodSchema
     if (!this.isNew) return next();
     else
       next();
-
   });
 
 /**
  * Methods
  */
 UserMoodSchema.methods = {
-  addMood: function(time, score) {
-    this.mood.push({
-      'time': time,
-      'mood': score
+  addMood: function(date, score) {
+    console.log('enter addMood');
+    var moodArray = this.mood;
+    // console.log(moodArray);
+    // console.log('this');
+    // console.log(this);
+    var matchedMood = null;
+    for (var i = moodArray.length - 1; i >= 0; i--) {
+      var mood = moodArray[i];
+      console.log('Mood');
+      console.log(mood);
+      if(mood.date == date) {
+        matchedMood = mood
+        break;
+      }
+    }
+    if(matchedMood == null) {
+      console.log('inject new date array');
+      moodArray.push({
+        date: date,
+        score: [score]
+      })
+    } else {
+      console.log('push score into existing array');
+      console.log(mood.score);
+      mood.score.push(score);
+      console.log('After push:');
+      console.log(mood.score);
+    }
+    this.markModified('mood');
+    this.save(function(err, res) {
+      console.log('Save error:');
+      console.log(err);
+      console.log(res.mood[0].score);
     });
+    // this.mood.push({
+    //   'time': time,
+    //   'mood': score
+    // });
     return this;
-    // return this.encryptPassword(plainText) === this.hashedPassword;
   },
 };
 

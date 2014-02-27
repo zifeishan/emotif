@@ -168,33 +168,50 @@ exports.me = function(req, res) {
 
 
 /**
-* Check if user exists
+* Add user mood
 */
 exports.addMood = function(req, res, next) {
   var userId = String(req.body.id);
-  var time = String(req.body.time);
-  var mood = String(req.body.mood);
+  var date = String(req.body.date);
+  var score = String(req.body.score);
 
   
-  User.find({_id: userId}, function (err, user) {
+  UserMood.findOne({user: userId}, function (err, usermood) {
     if (err) return next(new Error('Failed to load User'+userId));
     
-    console.log('=======START==========');
-    var thisuser = user[0];
-    console.log(thisuser);
-    console.log(userId);
-    console.log(time);
-    thisuser.mood.push({
-      'time': time, 
-      'score': mood
-    });
+    // console.log('=======START==========');
+    // var thisuser = user[0];
+    // console.log(thisuser);
+    // console.log(userId);
+    // console.log(time);
+    if(usermood == null) {
+      console.log('start creating mood document');
+      var data = {
+        user: userId,
+        mood: [{date:date, score:[score]}]
+      };
+      UserMood.create(data, function(err) {
+        if(err) console.log(err);
+        else console.log('succeed!');
+      });
+      console.log(data);
+      // console.log('creating succeed!');
+    } else {
+      console.log('start inserting into mood document');
+      usermood.addMood(date, score);
+    }
+    // thisuser.mood.push({
+    //   'time': time, 
+    //   'score': mood
+    // });
     //// WE CAN USE IN Mongo > 3.2.0: 
     // thissz = thisuser.mood.length;
     // console.log(thissz);
     // thisuser.mood.set(thissz, );
     //// Otherwise:
-    thisuser.markModified('mood');
-    thisuser.save();
+    // thisuser.markModified('mood');
+    // thisuser.save();
+    // UserMood.save();
     res.send();
   });
 
@@ -204,26 +221,23 @@ exports.addMood = function(req, res, next) {
 
 
 /**
-* Check if user exists
+* Get user mood
 */
-exports.getMoods = function(req, res, next) {
+exports.getMood = function(req, res, next) {
   
-  // console.log(req.body);
-  console.log(req.body.email);
-  var useremail = String(req.body.email);
-  // var time = String(req.body.time);
-  // var mood = String(req.body.mood);
-  console.log('User Mail: '+useremail);
-  User.find({email: useremail}, function (err, user) {
+  console.log(req.body.id);
+  var userId = String(req.body.id);
+  console.log('User ID: ' + userId);
+
+  UserMood.findOne({user: userId}, function (err, usermood) {
     if (err) return next(new Error('Failed to load User'+useremail));
-    // console.log('what???');
-    // console.log(user);
-    var thisuser = user[0];
-    // console.log(thisuser.mood);
-    // return thisuser.mood;
-    res.json({
-      "key":"Mood",
-      "values": thisuser.mood});
+    if(usermood != null) {
+      //Record found
+      res.send(usermood.mood);
+    } else {
+      //No record found
+      res.send(null);
+    }
   });
 };
 

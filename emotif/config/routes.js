@@ -60,7 +60,7 @@ module.exports = function(app){
   app.put('/api/users', users.changePassword);
   app.get('/api/users/me', users.me);
   app.put('/api/users/addmood', users.addMood);
-  app.post('/api/users/getmood', users.getMoods);
+  app.post('/api/users/getmood', users.getMood);
 
   app.post('/api/users/auth', users.authenticate);
   app.post('/api/users/create', users.create);

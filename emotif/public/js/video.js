@@ -5,7 +5,10 @@
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
+  RegisterNavListener();
   initializePage();
+
+
 })
 
 function initializePage() {
@@ -18,6 +21,10 @@ function initializePage() {
 
     // TODO Switch to photo
     window.location.href = '/recommend/photo';
+  });
+
+  $('#content-back-button').click(function(e) {
+    window.location.href = '/select';
   });
 
   $('#content-like-button').click(function(e) {

@@ -4,7 +4,7 @@ extends ../index
 
 block pageContent
   .bar.bar-header.bar-emotif
-    a.button.button-clear.icon.ion-ios7-arrow-back(href='/select')
+    a.button.button-clear.icon.ion-ios7-arrow-back#content-back-button
     h1.title.bar-title Emotif
 
   //- header-bar(title="'header'")
@@ -35,6 +35,7 @@ block pageContent
     //- a.tab-item(href="/select")
     //-   i.icon.ion-ios7-sunny-outline
     //-   p Select
+<<<<<<< HEAD
     .tabs.tabs-icon-top
           a.tab-item(href="/select")
             i.icon.ion-ios7-sunny-outline.active
@@ -45,10 +46,23 @@ block pageContent
           a.tab-item(href="/settings")
             i.icon.ion-ios7-gear-outline
             p Settings
+=======
+//-
+    a.tab-item
+      i.icon.ion-ios7-albums
+      p Content
+    a.tab-item#nav-trend
+      i.icon.ion-ios7-speedometer-outline
+      p Trend
+    a.tab-item#nav-settings
+      i.icon.ion-ios7-gear-outline
+      p Settings
+>>>>>>> 864b14b70348d65df904622449c4837c9f29c6b2
 
 block js
+  script(src="/js/apple-locality.js")
   script(src="/js/content.js")
-
+  
 //- <div class="list card">
 
 //-   <div class="item item-avatar">
