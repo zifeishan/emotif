@@ -1,0 +1,44 @@
+extends ../index
+
+block pageContent
+  .bar.bar-header.bar-emotif
+    a.button.button-clear.icon.ion-ios7-arrow-back(href='/select')
+    h1.title.bar-title Emotif
+
+  .scroll-content.has-header.has-tabs.overflow-scroll
+   .card
+    .list
+      .item.item-divider
+       p About Me
+      a.item.item-icon-left
+       p From
+        input(type='text', placeholder='Hometown')
+      a.item.item-icon-left
+       p Current Location
+        input(type='text', placeholder='Where do you live?')
+      a.item.item-icon-left
+       p Birthday
+        input(type='text', placeholder='mm/dd/yyyy')
+      a.item.item-icon-left
+       p Relationship
+        input(type='text', placeholder='Single/In a Relationship/Sexuality')
+
+    .content-bottom-spacer
+
+    .padding
+      button.button.button-block.button-assertive#settings-save-button Save
+      button.button.button-block.button-assertive#settings-skipAboutme-button Skip
+
+   .tabs.tabs-icon-top
+          a.tab-item(href="/select")
+            i.icon.ion-ios7-sunny-outline.active
+            p Select
+          a.tab-item(href="/trend")
+            i.icon.ion-ios7-speedometer
+            p Trend
+          a.tab-item(href="/settings")
+            i.icon.ion-ios7-gear-outline
+            p Settings
+
+block js
+  script(src="/js/settings.js")
