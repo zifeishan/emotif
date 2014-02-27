@@ -3,7 +3,8 @@
 var mongoose = require('mongoose'),
   User = mongoose.model('User'),
   Thing = mongoose.model('Thing'),
-  Video = mongoose.model('Video');
+  Video = mongoose.model('Video'),
+  UserMood = mongoose.model('UserMood');
 
 /**
  * Populate database with sample application data
@@ -108,3 +109,17 @@ User.create({
     console.log('finished populating users');
   }
 );
+
+UserMood.create({
+  user: '530ebff78a953de821000001',
+  mood: [
+  {date:'20140310', score:['1','2','2','1']},
+  {date:'20140309', score:['-1','-2','2','1']},
+  {date:'20140308', score:['-1','-2','-2','0']},
+  {date:'20140307', score:['-2','1','0','1']},
+  {date:'20140306', score:['1','2','0','1']},
+  {date:'20140305', score:['0','0','0','1']}
+  ]
+}, function() {
+  console.log('finished populating userMood');
+});
