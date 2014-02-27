@@ -5,7 +5,7 @@
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
-  RegisterNavListener();
+  //-RegisterNavListener();
   initializePage();
   $('#changeName').click(function(e){
     window.alert('Life is good, why change name?');
