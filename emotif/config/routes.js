@@ -42,6 +42,7 @@ module.exports = function(app){
   app.get('/content', main.content);
   app.get('/recommend/:rectype', main.contentType);
   app.get('/share', main.share);
+  app.get('/fblogin', main.fblogin);
 
   // Server API Routes
   // All the front-back communication routes should be written here

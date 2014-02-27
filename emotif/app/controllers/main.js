@@ -35,6 +35,9 @@ exports.content = function(req, res){
 exports.share = function(req, res){
   res.render('../views/partials/share');
 };
+exports.fblogin = function(req, res){
+  res.render('../views/partials/fblogin');
+};
 
 exports.contentType = function(req, res){
   var rectype = req.params.rectype;

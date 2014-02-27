@@ -14,7 +14,7 @@ module.exports = function (grunt) {
     pkg: grunt.file.readJSON('package.json'),
     develop: {
       server: {
-        file: 'app.js'
+        file: 'app.js',
         node_env: 'production'
       }
     },
