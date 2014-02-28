@@ -127,13 +127,17 @@ body {
 *********************************/
 .main-logo {
   position:fixed;
-  right:25%;
-  left:25%;
-  top:18%;
+  /*right:30%;*/
+  /*left:30%;*/
+  left: 50%;
+  margin-left: -75px;
+  top: 50%;
+  margin-top: -180px;
+  /*bottom: 85%;*/
 }
 
 .main-logo img{
-  max-width: 100%;
+  width: 150px;
 }
 
 .main-center {
@@ -261,11 +265,19 @@ body {
 /********************************
 * Content page CSS
 *********************************/
-
+.icon-selected {
+  color: green;
+}
 
 /********************************
 * Settings page CSS
 *********************************/
+.bar-icon {
+  width: 25px;
+  height: 25px;
+  margin: 8px;
+}
+
 .content-full-spacer {
   margin-top: 24px;
   margin-bottom: 40px;

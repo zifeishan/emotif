@@ -11,10 +11,18 @@ $(document).ready(function() {
 
 function initializePage() {
   //generate random video from database
-  loadMoodTrend();
+  loadMoodTrendBar();
 
-  $('#trend-refresh-button').click(function(e){
-    loadMoodTrend();
+  $('#trend-line-button').click(function(e){
+    loadMoodTrendLine();
+    $('#trend-line-button').hide();
+    $('#trend-bar-button').show();
+  });
+
+  $('#trend-bar-button').click(function(e){
+    loadMoodTrendBar();
+    $('#trend-bar-button').hide();
+    $('#trend-line-button').show();
   });
 
   $('#trend-share-button').click(function(e){
@@ -23,12 +31,10 @@ function initializePage() {
   $('#trend-back-button').click(function(e){
     window.location.href = '/select';
   });
-
-  
-
 }
 
-function loadMoodTrend() {
+function loadMoodTrendBar() {
+  $('#mood-graph svg').empty();
   $.get('/api/users/me', function(user) {
     console.log('Get User');
     console.log(user);
@@ -40,18 +46,33 @@ function loadMoodTrend() {
         //No record found, warn the user
         showNoRecordWarning();
       } else {
-        analyzeAndDrawGraph(result);
+        analyzeAndDrawGraph(result, 'bar');
       }
     })
   });
 }
 
-function analyzeAndDrawGraph(data) {
-  var shownDataLength = 7;
+function loadMoodTrendLine() {
+  $('#mood-graph svg').empty();
+  $.get('/api/users/me', function(user) {
+    console.log('Get User');
+    console.log(user);
+    var userId = user._id;
+    console.log(userId);
+    $.post('/api/users/getmood', {id : userId}, function(result) {
+      console.log(result);
+      if(result == null) {
+        //No record found, warn the user
+        showNoRecordWarning();
+      } else {
+        analyzeAndDrawGraph(result, 'line');
+      }
+    })
+  });
+}
 
-  // for(var i = data.length - 1; i>=0; i--) {
-  //   console.log(data[i]);
-  // }
+function analyzeAndDrawGraph(data, graphFormat) {
+  var shownDataLength = 7;
 
   //For now I only use array slice, will add sophisticated data selection method later.
   //e.g. select by date
@@ -67,6 +88,11 @@ function analyzeAndDrawGraph(data) {
   var maxMoodArray = [];
   var minMoodArray = [];
   var avgMoodArray = [];
+  var maxMoodArrayForLineChart = [];
+  var minMoodArrayForLineChart = [];
+  var avgMoodArrayForLineChart = [];
+  var dateStringArrayForLineChart = [];
+  var dateShownArrayForLineChart = [];
   for(var i=0; i<shownData.length; i++) {
     //tranfer date
     var monthString = shownData[i].date.substring(4,6);
@@ -90,7 +116,15 @@ function analyzeAndDrawGraph(data) {
       sumScore += score;
     }
     var avgScore = Math.ceil(sumScore / scoreArray.length);
+
+    //For Line Chart
+    // maxMoodArrayForLineChart.push({x:i, y:maxScore});
+    // minMoodArrayForLineChart.push({x:i, y:minScore});
+    avgMoodArrayForLineChart.push({x:i, y:avgScore});
+    dateStringArrayForLineChart.push(dateString);
+    dateShownArrayForLineChart.push(i);
     
+    //For Bar Chart
     //Here we need to transfer the data to adapt the stacked chart
     maxScore -= avgScore;
     avgScore -= minScore;
@@ -112,21 +146,29 @@ function analyzeAndDrawGraph(data) {
   //   });
   // }
 
-  var finalData = [
+  var finalDataForBarChart = [
   {key: 'Low', values: minMoodArray, color: '#7E8ADE'},
   {key: 'Average', values: avgMoodArray, color: '#7BBADE'},
   {key: 'High', values: maxMoodArray, color: '#F29E4A'}
   ];
 
+  var finalDataForLineChart = [
+  // {key: 'Low', values: minMoodArrayForLineChart, color: '#7E8ADE'},
+  {key: 'Average', values: avgMoodArrayForLineChart, color: '#7BBADE', area: true}
+  // {key: 'High', values: maxMoodArrayForLineChart, color: '#F29E4A'}
+  ];
 
-console.log(finalData);
+  console.log('Average Mood Array:');
+  console.log(avgMoodArray);
+  console.log(avgMoodArrayForLineChart);
 
   // console.log(generateDataForGraph());
 
   return nv.addGraph(function() {
-    // var width = 350;
-    var height = 250;
-    var chart = nv.models.multiBarChart()
+    var height = 220;
+
+    if(graphFormat == 'bar') {
+      var chart = nv.models.multiBarChart()
       .transitionDuration(100)
       .stacked(true)
       .reduceXTicks(false)   //If 'false', every single x-axis tick label will be rendered.
@@ -138,27 +180,38 @@ console.log(finalData);
       // .width(width)
       .height(height);
 
-    // var chart = nv.models.lineChart()
-    //             .margin({top:5,right:10,bottom:10,left:25})
-    //             .useInteractiveGuideline(false)  //We want nice looking tooltips and a guideline!
-    //             .transitionDuration(350)  //how fast do you want the lines to transition?
-    //             .showLegend(true)       //Show the legend, allowing users to turn on/off line series.
-    //             .showYAxis(true)        //Show the y-axis
-    //             .showXAxis(true)        //Show the x-axis
-    //             .height(height)
-    // ;
- 
-    // chart.xAxis
-    //     .tickFormat(d3.format(',f'));
- 
-    // chart.yAxis
-        // .tickFormat(d3.format(',.1f'));
- 
-    d3.select('#mood-graph svg')
-        .datum(finalData)
+      d3.select('#mood-graph svg')
+        .datum(finalDataForBarChart)
         .call(chart)
         // .attr('width', width)
         .attr('height', height+25);
+
+    } else if(graphFormat == 'line') {
+
+      var chart = nv.models.lineChart()
+                // .reduceXTicks(false)   //If 'false', every single x-axis tick label will be rendered.
+                // .rotateLabels(45)
+                .useInteractiveGuideline(true)  //We want nice looking tooltips and a guideline!
+                .transitionDuration(350)  //how fast do you want the lines to transition?
+                .showLegend(true)       //Show the legend, allowing users to turn on/off line series.
+                .showYAxis(true)        //Show the y-axis
+                .showXAxis(true)        //Show the x-axis
+                .forceY([0,5])
+                .margin({top:5,right:15,bottom:10,left:25})
+                .height(height)
+      ;
+
+      var x = d3.scale.ordinal().domain(dateShownArrayForLineChart).range(dateStringArrayForLineChart);
+    
+      chart.xAxis.tickFormat(x).rotateLabels(45);
+
+      d3.select('#mood-graph svg')
+        .datum(finalDataForLineChart)
+        .call(chart)
+        // .attr('width', width)
+        .attr('height', height+25);
+
+    }
  
     nv.utils.windowResize(chart.update);
  

@@ -54,12 +54,15 @@ block pageContent
           //- | Exercise can always make you feel better, remember to check out next time you are feeling down.
 
       .item.tabs.tabs-secondary.tabs-icon-left
-        a.tab-item#trend-refresh-button
-          i.icon.ion-refresh
-          | Refresh
+        a.tab-item#trend-line-button
+          i.icon.ion-arrow-graph-up-right
+          |  Line Trend
+        a.tab-item#trend-bar-button(style="display: none;")
+          i.icon.ion-stats-bars
+          |  Bar Trend
         a.tab-item#trend-share-button
           i.icon.ion-share
-          | Share
+          |  Share
     .content-bottom-spacer
 
   .tabs.tabs-icon-top
