@@ -1,4 +1,7 @@
 /* Space out content a bit */
+html {
+    height: 100%; /*For gradient*/
+}
 body {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -6,6 +9,18 @@ body {
   font-weight: 300;
   overflow: scroll;
   background-color: #93DE7F;
+
+  /* For gradient */
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  background-image: -webkit-linear-gradient(to bottom, #99FF76 0%,#61DB4C 100%); /* For Safari 5.1 to 6.0 */
+  background-image: -o-linear-gradient(to bottom, #99FF76 0%,#61DB4C 100%); /* For Opera 11.1 to 12.0 */
+  background-image: -moz-linear-gradient(to bottom, #99FF76 0%,#61DB4C 100%); /* For Firefox 3.6 to 15 */
+  background-image: linear-gradient(to bottom, #99FF76 0%,#61DB4C 100%); /* Standard syntax */  
+
 
 }
 
