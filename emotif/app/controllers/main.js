@@ -43,6 +43,18 @@ exports.fblogin = function(req, res){
   res.render('../views/partials/fblogin');
 };
 
+exports.aboutme = function(req, res) {
+  res.render('../views/partials/profile-aboutme');
+}
+exports.description = function(req, res) {
+  res.render('../views/partials/profile-description');
+}
+exports.interests = function(req, res) {
+  res.render('../views/partials/profile-interests');
+}
+exports.travels = function(req, res) {
+  res.render('../views/partials/profile-travels');
+}
 exports.contentType = function(req, res){
   var rectype = req.params.rectype;
   console.log(rectype);
@@ -61,7 +73,14 @@ exports.contentType = function(req, res){
     'http://ppcdn.500px.org/61662809/beb38b906e84e52357ff73e30b3aefeaa751ca39/3.jpg',
     'http://ppcdn.500px.org/61668383/05c894a4d7d30811366990151f17f485d5a06912/3.jpg',
     'http://ppcdn.500px.org/61722835/827362a4da5948447914ad614764e2ec7c92f0cf/3.jpg',
-    'http://ppcdn.500px.org/61710541/b4131a5a8169de7f9852fcd78868dcfa83b435da/3.jpg'
+    'http://ppcdn.500px.org/61710541/b4131a5a8169de7f9852fcd78868dcfa83b435da/3.jpg',
+    'http://ppcdn.500px.org/62291711/0a7d280799100fba4106d6e1c8efe19269149190/3.jpg',
+    'http://ppcdn.500px.org/62293399/48c5c4ff12b0897f01a5462fbd1e3c70456c2cab/3.jpg',
+    'http://ppcdn.500px.org/62275585/dee17a843df5a311083e24ddaf6c001b5eeb12f1/3.jpg',
+    'http://ppcdn.500px.org/62298081/8b16467ff0f286990c6d9d0457205cb236bc4227/3.jpg',
+    'http://ppcdn.500px.org/62282519/113844ca192941d4d199891ff77cc448cd9fa710/3.jpg',
+    'http://ppcdn.500px.org/62286129/08582cdbbeb429b2eb38a7647b39267ce592f895/3.jpg',
+    'http://ppcdn.500px.org/62300637/67f9d56543d4252dd14a071ca8e7136ac4bea04e/3.jpg',
     ];
     var totalNumber = arr_imgs.length;
     var vid = Math.floor(totalNumber * Math.random());

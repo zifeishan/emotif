@@ -44,6 +44,10 @@ module.exports = function(app){
   app.get('/recommend/:rectype', main.contentType);
   app.get('/share', main.share);
   app.get('/fblogin', main.fblogin);
+  app.get('/profile-aboutme', main.aboutme);
+  app.get('/profile-description', main.description);
+  app.get('/profile-interests', main.interests);
+  app.get('/profile-travels', main.travels);
 
   // Server API Routes
   // All the front-back communication routes should be written here

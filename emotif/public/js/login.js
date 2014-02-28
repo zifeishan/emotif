@@ -45,8 +45,8 @@ function SubmitLoginForm(e) {
 
     function afterAuth(result) {
       if(result.auth) {
-        // window.location.href = '/select';
-        window.location.href = '/fblogin';
+        window.location.href = '/select';
+        // window.location.href = '/fblogin';
       } else {
         //Need better alert
         triggerAlert();

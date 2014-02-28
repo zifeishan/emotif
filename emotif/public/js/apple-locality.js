@@ -11,8 +11,13 @@
 // }
 
 function RegisterNavListener(){
-  $('#nav-content').click(function(e){
+  // content button Not existing any more..
+  $('#nav-content').click(function(e){  
     window.location.href = '/content'
+  });
+
+  $('#nav-select').click(function(e){
+    window.location.href = '/select'
   });
   $('#nav-trend').click(function(e){
     window.location.href = '/trend'

@@ -1,0 +1,45 @@
+extends ../index
+
+block pageContent
+  .bar.bar-header.bar-emotif
+    a.button.button-clear.icon.ion-ios7-arrow-back#settings-backInterests-button
+    h1.title.bar-title Emotif
+
+  .scroll-content.has-header.has-tabs.overflow-scroll
+   .card
+    .list
+      .item.item-divider
+       p Interests
+      a.item.item-icon-left
+       p Music
+        input(type='text', placeholder='Classical/Pop/Rock/Eletronic/Folk/New Age...')
+      a.item.item-icon-left
+       p Movies
+        input(type='text', placeholder='Comedy/Documentary/Romance/Thriller/Science Fiction...')
+      a.item.item-icon-left
+       p Sports
+        input(type='text', placeholder='What do you play or enjoy watching?')
+      a.item.item-icon-left
+       p Inspirational Models
+        input(type='text', placeholder='Artists/Athletes/Scientists...They make my life so beautiful!')
+      a.item.item-icon-left
+       p Favorite Movies & TV Shows
+        input(type='text', placeholder='What do you like to watch for fun?')
+    .padding
+      button.button.button-block.button-balanced#settings-save-button Save
+      button.button.button-block.button-assertive#settings-skipInterests-button Skip
+  
+  .tabs.tabs-icon-top
+    a.tab-item#nav-select
+      i.icon.ion-ios7-sunny-outline
+      p Select
+    a.tab-item#nav-trend
+      i.icon.ion-ios7-speedometer-outline
+      p Trend
+    a.tab-item
+      i.icon.ion-ios7-gear
+      p Settings
+
+
+block js
+  script(src="/js/settings.js")

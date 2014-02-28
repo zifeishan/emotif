@@ -13,7 +13,8 @@ $(document).ready(function() {
     // getNewVideo();
 
     // TODO Switch to photo
-    window.location.href = '/recommend/video';
+    // window.location.href = '/recommend/video';
+    window.location.href = '/recommend/post';
   });
 
   $('#content-like-button').click(function(e) {

@@ -32,20 +32,29 @@ block pageContent
           i.icon.ion-heart
           | I'm better
     .content-bottom-spacer
-
-  .tabs.tabs-icon-top
-    //- a.tab-item(href="/select")
+    //- a.tab-item#nav-select
     //-   i.icon.ion-ios7-sunny-outline
     //-   p Select
-    a.tab-item
-      i.icon.ion-ios7-albums
-      p Content
+  .tabs.tabs-icon-top
+    a.tab-item#nav-select
+      i.icon.ion-ios7-sunny-outline
+      p Select
     a.tab-item#nav-trend
       i.icon.ion-ios7-speedometer-outline
       p Trend
     a.tab-item#nav-settings
       i.icon.ion-ios7-gear-outline
       p Settings
+
+    //- a.tab-item
+    //-   i.icon.ion-ios7-albums
+    //-   p Content
+    //- a.tab-item#nav-trend
+    //-   i.icon.ion-ios7-speedometer-outline
+    //-   p Trend
+    //- a.tab-item#nav-settings
+    //-   i.icon.ion-ios7-gear-outline
+    //-   p Settings
 
 block js
   script(src="/js/apple-locality.js")

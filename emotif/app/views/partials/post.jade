@@ -7,14 +7,18 @@ block recommendContent
     
   .item.item-body
     div
-      img.recphoto(src=source)
+      h3#post-title
+      img.postphoto#post-photo
+      p.recpost#post-content
+        i.ion-refreshing 
+        | Loading your Facebook posts...
       br 
       p
-        b= date
-      p= name
+        b#post-date
+      
 
-    p.subdued 
-      = like + ' people like you find this useful!'
+    //- p.subdued 
+    //-   = like + ' people like you find this useful!'
 
 block js
   script(src="/js/apple-locality.js")
