@@ -335,6 +335,14 @@ body {
   color: green;
 }
 
+.recphoto {
+  width: 100%;
+}
+.postphoto {
+  width: 70%;
+  margin: 0 auto;
+}
+
 /********************************
 * Settings page CSS
 *********************************/
@@ -405,6 +413,7 @@ body {
   border-width: 0px;
 }
 
+
 /*##############################*/
 /*.lead {
   font-size: 15px;
@@ -453,13 +462,6 @@ body {
 .nvd3 {
 }
 
-.recphoto {
-  width: 100%;
-}
-.postphoto {
-  width: 70%;
-  margin: 0 auto;
-}
 .button.button-assertive {
 color: #fff;
 background-color: #FF7050;
