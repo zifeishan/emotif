@@ -31,3 +31,21 @@ function triggerAlert() {
       alertLabel.css({'background-color': '#fff'});
     }, 3400);
 }
+
+function triggerInvalidEmailAlert() {
+  var alertDiv = $('.validate-alert');
+  alertDiv.fadeIn(200).delay(3000).fadeOut(200);
+  var alertLabel = $('.input-alert');
+  alertLabel.css({ 'background-color': '#F29E4A'});
+  setTimeout( function(){
+      alertLabel.css({'background-color': '#fff'});
+    }, 3400);
+}
+
+function triggerInvalidPasswordAlert() {
+  
+}
+
+function triggerFailToLogInAlert() {
+
+}

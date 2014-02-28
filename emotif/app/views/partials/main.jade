@@ -1,13 +1,13 @@
 extends ../index
 
 block pageContent
-  div#fb-root
+  //- div#fb-root
   .main-logo
     img(src="img/emotif-logo.png", alt="LOGO")
 
   .main-center
     div.validate-alert Please enter a valid email address!
-    div.fb
+    //- div.fb
     div.intro
       | Track and boost your mood
     //- form(name='form', novalidate)
@@ -17,14 +17,13 @@ block pageContent
       label.item.item-input.input-alert.input-login-down
         input(id= 'main-password-input', type='password', placeholder='Password')
     div.login-button-area
-      button.button.button-block.button-login
-        Block Login
+      button.button.button-block.button-login Login
 
   .main-footer
     p.
       New User? Create Your Account
 
 block js
-  script(src="/js/apple-locality.js")
+  //- script(src="/js/apple-locality.js")
   script(src="/js/main.js")
   script(src="/js/validate.js")

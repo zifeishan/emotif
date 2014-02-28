@@ -7,18 +7,18 @@
 $(document).ready(function() {
   // RegisterNavListener();
   initializePage();
-})
+});
 
 /*
  * Function that is called when the document is ready.
  */
 function initializePage() {
-  $('input').keypress(function (e) {
-    if (e.which == 13) {  // Enter key pressed
-      e.preventDefault();
-      SubmitLoginForm();
-    }
-  });
+  // $('input').keypress(function (e) {
+  //   if (e.which == 13) {  // Enter key pressed
+  //     e.preventDefault();
+  //     SubmitLoginForm();
+  //   }
+  // });
   $('.button-login').click(SubmitLoginForm);
 
   $('.main-footer').click(function() {
@@ -51,4 +51,4 @@ function SubmitLoginForm() {
       triggerAlert();
     }
   }
-  }
+}
