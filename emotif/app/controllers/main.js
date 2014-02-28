@@ -11,6 +11,10 @@ exports.index = function(req, res){
   // });
 };
 
+exports.login2 = function(req, res){
+  res.render('../views/partials/login2');
+};
+
 exports.select = function(req, res){
   res.render('../views/partials/select');
 };

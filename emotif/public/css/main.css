@@ -132,7 +132,7 @@ body {
   left: 50%;
   margin-left: -75px;
   top: 50%;
-  margin-top: -180px;
+  margin-top: -160px;
   /*bottom: 85%;*/
 }
 
@@ -142,10 +142,10 @@ body {
 
 .main-center {
   position: fixed;
-  top: 55%;
+  top: 50%;
   left:0;
   right:0;
-  margin-top:-80px;
+  margin-top:-90px;
 }
 
 .main-center p.hint{
@@ -186,11 +186,14 @@ body {
 
 .main-footer {
   position: fixed;
-  bottom: 10px;
+  top: 50%;
+  margin-top: 160px;
   text-align: center;
   left:0;
   right:0;
-  font-size: 12px;
+  font-size: 14px;
+  color: white;
+  font-weight: 300;
 }
 
 .validate-alert {
@@ -208,6 +211,25 @@ body {
   padding: 4px;
   text-align: center;
   display: none;
+}
+
+.login-button-area {
+  margin: 0px 10px 0px 10px;
+}
+
+.button-login {
+  background-color: #7BBADE;
+  color: white;
+  border-color: transparent;
+}
+
+.intro {
+  margin: 10px 10px 40px 10px;
+  text-align: center;
+  color: white;
+  font-family: "Bradley Hand ITC TT", "Papyrus", "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  font-size: 16pt;
 }
 
 /*.item-input {
