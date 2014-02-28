@@ -51,7 +51,7 @@ $(document).ready(function() {
   });
 
   $('#fblogin-no-button').click(function(e){
-    window.location.href = '/select';
+    window.location.href = '/profile-aboutme';
   });
 
 });

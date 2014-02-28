@@ -34,12 +34,26 @@ block pageContent
     .list
       .item.item-divider
         p User Acount
-      a.item.item-icon-left#changeName
-        i.icon.ion-ios7-person
-        p Change Name
+      a.item.item-icon-left#connectFacebook
+        i.icon.ion-person-stalker
+        p Connect Facebook
+      //- a.item.item-icon-left#changeName
+      //-   i.icon.ion-ios7-person
+      //-   p Change Name
       a.item.item-icon-left#changePassword
         i.icon.ion-ios7-locked
         p Change Password
+
+      .item.item-divider
+        p Edit Profile
+      a.item#aboutme
+        p About Me
+      a.item#description
+        p Description
+      a.item#interests
+        p Interests
+      a.item#travels
+        p Travels
 
       .item.item-divider
         p Content Tuning
@@ -54,18 +68,10 @@ block pageContent
             input(type='checkbox')
             .track
               .handle
-      .item.item-divider
-        p Edit Profile
-      a.item.item-icon-left#aboutme
-        p About Me
-      a.item.item-icon-left#description
-        p Description
-      a.item.item-icon-left#interests
-        p Interests
-      a.item.item-icon-left#travels
-        p Travels
+
     .padding
       button.button.button-block.button-assertive#settings-logout-button Log Out
+
   .content-bottom-spacer
 
     .tabs.tabs-icon-top
