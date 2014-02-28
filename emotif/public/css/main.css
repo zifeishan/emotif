@@ -113,6 +113,7 @@ body {
   margin-top: -250px;
 }
 */
+
 /*  For Homework Only  */
 .main-center-2 {
   position: fixed;
@@ -253,6 +254,19 @@ body {
   color: white;
   border-color: transparent;
   border-radius: 2px;
+}
+
+.validation-alert {
+  position: fixed;
+  top: 10px;
+  left: 10%;
+  right: 10%;
+  background-color: #fcf8e3;
+  /*border: 1px solid transparent;*/
+  border-radius: 2px;
+  color: #FF7050;
+  padding: 4px;
+  text-align: center;
 }
 
 /********************************

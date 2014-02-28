@@ -33,9 +33,14 @@ function SubmitSignupForm() {
     console.log(email);
     console.log(password);
 
+    if(validateEmail(email) == false) {
+      triggerInvalidEmailAlert();
+      return;
+    }
+
     //Here add some validation logic
     if(validatePassword(password) == false) {
-      triggerAlert();
+      triggerInvalidPasswordAlert();
       return;
     }
     
@@ -47,8 +52,11 @@ function SubmitSignupForm() {
         window.location.href = '/select';
         // window.location.href = '/fblogin';
       } else {
-        //Need better alert
-        triggerAlert();
+        if(result.info = 'exist') {
+          triggerUserExistAlert();
+        } else {
+          triggerFailToSignUpAlert();
+        }
       }
     }
 

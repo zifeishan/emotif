@@ -6,15 +6,14 @@ block pageContent
     img(src="img/emotif-logo.png", alt="LOGO")
 
   .main-center
-    div.validate-alert Please enter a valid email address!
     //- div.fb
     div.intro
       | Track and boost your mood
     //- form(name='form', novalidate)
     div.list.list-inset
-      label.item.item-input.input-alert.input-login-up
+      label.item.item-input.input-login-up#input-alert-email
         input(id='main-email-input', type='email', placeholder='Email Address')
-      label.item.item-input.input-alert.input-login-down
+      label.item.item-input.input-login-down#input-alert-password
         input(id= 'main-password-input', type='password', placeholder='Password')
     div.login-button-area
       button.button.button-block.button-login Login

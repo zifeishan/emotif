@@ -31,20 +31,34 @@ exports.authenticate = function(req, res, next) {
  */
 exports.create = function (req, res, next) {
   var email = req.body.email;
-    var password = req.body.password;
-    var newuser = {
-        email: email,
-        password: password
-    };
-    User.create( newuser, function(err, user) {
-        if(err) console.log(err);
+  var password = req.body.password;
+  var newuser = {
+      email: email,
+      password: password
+  };
+
+  User.find({email: email}, function (err, user) {
+    if (err) {
+      res.send({success: false, info: 'unknown'});
+    }
+    if (user.length) {
+      //User exists, cannot create
+      res.send({success: false, info: 'exist'});
+    } else {
+      //User does not exist, able to create
+      User.create( newuser, function(err, user) {
+        if(err) {
+          res.send({success: false, info: 'unknown'});
+        }
         req.login(user, function(err) {
             if (err) {
-                return next(err);
+                res.send({success: false, info: 'unknown'});
             }
             res.send({success: true});
         });
-    });
+      });
+    }
+  });
 };
 
 exports.createFBUser = function (req, res, next) {

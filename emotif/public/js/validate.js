@@ -26,26 +26,73 @@ function triggerAlert() {
   var alertDiv = $('.validate-alert');
   alertDiv.fadeIn(200).delay(3000).fadeOut(200);
   var alertLabel = $('.input-alert');
-  alertLabel.css({ 'background-color': '#F29E4A'});
+  alertLabel.css({ 'background-color': '#FF8178'});
   setTimeout( function(){
       alertLabel.css({'background-color': '#fff'});
     }, 3400);
 }
 
 function triggerInvalidEmailAlert() {
-  var alertDiv = $('.validate-alert');
-  alertDiv.fadeIn(200).delay(3000).fadeOut(200);
-  var alertLabel = $('.input-alert');
-  alertLabel.css({ 'background-color': '#F29E4A'});
+  var alertDiv = '<div class="validation-alert">Please enter a valid email!</div>';
+  $('body').append(alertDiv);
+  setTimeout(function(){
+    $('.validation-alert').remove();
+  }, 3000);
+  var alertLabel = $('#input-alert-email');
+  alertLabel.css({ 'background-color': '#FF8178'});
   setTimeout( function(){
       alertLabel.css({'background-color': '#fff'});
-    }, 3400);
+    }, 3000);
 }
 
 function triggerInvalidPasswordAlert() {
-  
+  var alertDiv = '<div class="validation-alert">Password should have more than 3 and less than 12 characters!</div>';
+  $('body').append(alertDiv);
+  setTimeout(function(){
+    $('.validation-alert').remove();
+  }, 3000);
+  var alertLabel = $('#input-alert-password');
+  alertLabel.css({ 'background-color': '#FF8178'});
+  setTimeout( function(){
+      alertLabel.css({'background-color': '#fff'});
+    }, 3000);
 }
 
 function triggerFailToLogInAlert() {
+  var alertDiv = '<div class="validation-alert">Login Failed! Please check your email and password!</div>';
+  $('body').append(alertDiv);
+  setTimeout(function(){
+    $('.validation-alert').remove();
+  }, 3000);
+  var alertLabel = $('#input-alert-password, #input-alert-email');
+  alertLabel.css({ 'background-color': '#FF8178'});
+  setTimeout( function(){
+      alertLabel.css({'background-color': '#fff'});
+    }, 3000);
+}
 
+function triggerFailToSignUpAlert() {
+  var alertDiv = '<div class="validation-alert">Server Error! Please try again later!</div>';
+  $('body').append(alertDiv);
+  setTimeout(function(){
+    $('.validation-alert').remove();
+  }, 3000);
+  var alertLabel = $('#input-alert-password, #input-alert-email');
+  alertLabel.css({ 'background-color': '#FF8178'});
+  setTimeout( function(){
+      alertLabel.css({'background-color': '#fff'});
+    }, 3000);
+}
+
+function triggerUserExistAlert() {
+  var alertDiv = '<div class="validation-alert">User Exist! Please try another email or login!</div>';
+  $('body').append(alertDiv);
+  setTimeout(function(){
+    $('.validation-alert').remove();
+  }, 3000);
+  var alertLabel = $('#input-alert-email');
+  alertLabel.css({ 'background-color': '#FF8178'});
+  setTimeout( function(){
+      alertLabel.css({'background-color': '#fff'});
+    }, 3000);
 }

@@ -5,13 +5,12 @@ block pageContent
     img(src="img/emotif-logo.png", alt="LOGO")
 
   .main-center
-    div.validate-alert Password should have more than 3 characters!
     div.intro
       | Track and boost your mood
     div.list.list-inset
-      label.item.item-input.input-alert.input-login-up
+      label.item.item-input.input-alert.input-login-up#input-alert-email
         input(id='signup-email-input', type='email', placeholder='Email Address')
-      label.item.item-input.input-alert.input-login-down
+      label.item.item-input.input-alert.input-login-down#input-alert-password
         input(id= 'signup-password-input', type='password', placeholder='Password')
     div.signup-button-area
       button.button.button-block.button-signup
