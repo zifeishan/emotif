@@ -29,7 +29,7 @@ body {
 *  Widget CSS
 *********************************/
 .bar-emotif {
-  background-color: #93DE7F;
+  background-color: #61db4c;
   border-bottom: 1px solid white;
   background-size: 0px;
   /*border-bottom: 1px solid #408740;*/
@@ -354,7 +354,7 @@ body {
   width: 100%;
 }
 .postphoto {
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
 }
 
