@@ -139,10 +139,12 @@ function FBGetFriends(callback)
 // Used this
 function FBGetPosts(callback)
 {
+
   $.getScript('//connect.facebook.net/en_UK/all.js', function(){
-    // FB.api('/me/feed?fields=picture,likes,created_time,description,story,story_tags,type,status_type&limit=300', callback);
+    FB.api('/me/feed?fields=picture,likes,link,created_time,description,story,story_tags,type,status_type&until=last month&limit=100', callback);
+    // FB.api('http://graph.facebook.com/fql?q={QUERY_HERE}')
     //lightweight
-    FB.api('/me/feed?fields=picture,created_time,description,story,type,status_type,link&limit=500', callback);
+    // FB.api('/me/feed?fields=picture,created_time,description,story,type,status_type,link&limit=500', callback);
   });
 }
 

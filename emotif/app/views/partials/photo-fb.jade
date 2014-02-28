@@ -1,0 +1,29 @@
+extends content
+
+block recommendContent
+  .item
+    //- p Remember the good old days?
+    p Travel back to the past!
+    
+  .item.item-body
+    div
+      
+      img.recphoto#fbphoto-photo
+      p.recpost#fbphoto-content
+        i.ion-refreshing 
+        | Loading your Facebook posts...
+      br
+      p.recdate#fbphoto-date
+      p.subdued
+        label#like-number
+        |  people likes this photo!
+      
+      
+
+    //- p.subdued 
+    //-   = like + ' people like you find this useful!'
+
+block js
+  script(src="/js/apple-locality.js")
+  script(src="/js/photo-fb.js")
+  

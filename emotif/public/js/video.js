@@ -20,7 +20,7 @@ function initializePage() {
     // getNewVideo();
 
     // TODO Switch to photo
-    window.location.href = '/recommend/photo';
+    window.location.href = '/recommend/fbphoto';
   });
 
   $('#content-back-button').click(function(e) {
