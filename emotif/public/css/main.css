@@ -6,6 +6,7 @@ body {
   font-weight: 300;
   overflow: scroll;
   background-color: #93DE7F;
+  /*background-color: linear-gradient(to bottom, #5ad427 0%,#a4e786 100%)*/
 
 }
 
@@ -15,6 +16,7 @@ body {
 .bar-emotif {
   background-color: #93DE7F;
   border-bottom: 1px solid white;
+  background-size: 0px;
   /*border-bottom: 1px solid #408740;*/
 
 }
@@ -286,29 +288,38 @@ body {
 }
 .mood-select#p2 {
   background-color: #FF7050;
-  border-color: #e7e7e7;
-
+  /*border-color: #e7e7e7;*/
+  border-width: 0px;
+  border-radius: 2px;
 }
 
 .mood-select#p1 {
   background-color: #F29E4A;
-  border-color: #e7e7e7;
-
+  /*border-color: #e7e7e7;*/
+  border-width: 0px;
+  border-radius: 2px;
 }
 .mood-select#p0 {
   background-color: #FFED5D;
-  border-color: #e7e7e7;
-
+  /*border-color: #e7e7e7;*/
+  border-width: 0px;
+  border-radius: 2px;
 }
 .mood-select#n1 {
   background-color: #7BBADE;
-  border-color: #e7e7e7;
-
+  /*border-color: #e7e7e7;*/
+  border-width: 0px;
+  border-radius: 2px;
 }
 .mood-select#n2 {
   background-color: #7E8ADE;
-  border-color: #e7e7e7;
+  /*border-color: #e7e7e7;*/
+  border-width: 0px;
+  border-radius: 2px;
+}
 
+.mood-record {
+  border-radius: 2px;
 }
 
 .button.button-assertive {
@@ -343,8 +354,59 @@ body {
   margin-bottom: 20px;
 }
 
+
+/********************************
+*          Common CSS
+*********************************/
+
+.tabs-foot {
+  /*background-color: white;*/
+  background-color: #F7F7F7;
+  /*border: none;*/
+  /*padding: 0px;*/
+  background-size: 0px;
+  /*color: #007AFF;*/
+  color: #2B2B2B;
+  font-weight: 300;
+}
+
+.item-top {
+  border-color: white;
+  border-bottom-color: #E5E5E5;
+}
+
+.item-middle {
+  border-color: white;
+  border-bottom-color: #E5E5E5;
+  border-top-color: #E5E5E5;
+}
+
+.item-bottom {
+  border-color: white;
+  border-top-color: #E5E5E5;
+}
+
+.item-divider {
+  /*border-color: white;*/
+  border-bottom-color: #E5E5E5;
+  border-top-color: #E5E5E5;
+  border-left-width: 0px;
+  border-right-width: 0px;
+}
+
+.item-divider-top {
+  border-bottom-color: #E5E5E5;
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+}
+
+.button-emotif {
+  border-width: 0px;
+}
+
 /*##############################*/
-.lead {
+/*.lead {
   font-size: 15px;
 }
 
@@ -402,4 +464,4 @@ body {
 color: #fff;
 background-color: #FF7050;
 border-color: #e7e7e7;
-}
+}*/

@@ -5,25 +5,27 @@ block pageContent
     h1.title.bar-title Emotif
 
   .scroll-content.has-header.overflow-scroll
-    .card
-      .item.item-divider How are you feeling today?
-      .item
+    .list.card
+      .item.item-top How are you feeling today?
+      .item.item-middle
 
         button#p2.button.button-full.button-positive.mood-select Excited
         button#p1.button.button-full.button-calm.mood-select Happy
         button#p0.button.button-full.button-balanced.mood-select Calm
         button#n1.button.button-full.button-energized.mood-select Sad
         button#n2.button.button-full.button-assertive.mood-select Awful
-        label.item.item-input
-          textarea#moodnote(type='text', placeholder='Write a short diary...')
 
-  .tabs.tabs-icon-top
+      .item.item-bottom
+        label.item.item-input
+          textarea#moodnote.mood-record(type='text', placeholder='Write a short diary...')
+
+  .tabs.tabs-icon-top.tabs-foot
     a.tab-item
-      i.icon.ion-ios7-sunny
-      p Select
+      i.icon.ion-ios7-partlysunny
+      p Select Mood
     a.tab-item#nav-trend
       i.icon.ion-ios7-speedometer-outline
-      p Trend
+      p Mood Trend
     a.tab-item#nav-settings
       i.icon.ion-ios7-gear-outline
       p Settings

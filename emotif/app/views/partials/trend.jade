@@ -1,33 +1,3 @@
-//- .logo
-//-   a(href="/")
-//-     img(src="images/logo.png" alt="LOGO")
-
-//- .jumbotron
-//-   div.bigheader
-//-     h3.
-//-       Congrats! You are in a good mood!
-//-     p.
-//-       Your mood trend:
-
-//-   div.trend
-//-     //- | Show my trend here...  
-//-     //- svg#trendchart
-//-     div.fakechart.row
-//-       //- div.col-md-12
-//-       img(src="images/fakechart.png", alt="Rendering...")
-    
-
-//- .row
-//-   .col-xs-5.col-xs-offset-1
-//-     a.btn.btn-primary.btn-block(href='/content') Back
-//-   .col-xs-5.col-xs-offset-0
-//-     a.btn.btn-success.btn-block(href='/share') Share it now
-
-//- .spacer
-
-//- .footer
-//-   p ♥ from the Emotif team
-
 extends ../index
 
 block pageContent
@@ -37,12 +7,12 @@ block pageContent
 
   .scroll-content.has-header.has-tabs.overflow-scroll
     .list.card
-      .item
+      .item.item-top
         p Check out your mood trend here!
 
       //- canvas#mychart(data-type="Line")
       
-      .item.item-body
+      .item.item-body.item-middle
         div#mood-graph
           svg
         //- img.full-image(src="images/fakechart.png")
@@ -53,7 +23,7 @@ block pageContent
           //- br
           //- | Exercise can always make you feel better, remember to check out next time you are feeling down.
 
-      .item.tabs.tabs-secondary.tabs-icon-left
+      .item.tabs.tabs-secondary.tabs-icon-left.item-bottom
         a.tab-item#trend-line-button
           i.icon.ion-arrow-graph-up-right
           |  Line Trend
@@ -65,27 +35,14 @@ block pageContent
           |  Share
     .content-bottom-spacer
 
-  .tabs.tabs-icon-top
-     a.tab-item#nav-select
-            i.icon.ion-ios7-sunny-outline
-            p Select
-          a.tab-item#nav-trend
-            i.icon.ion-ios7-speedometer
-            p Trend
-          a.tab-item#nav-settings
-            i.icon.ion-ios7-gear-outline
-            p Settings
-
-    //- a.tab-item#nav-select
-    //-   i.icon.ion-ios7-sunny-outline
-    //-   p Select
-    //-a.tab-item#nav-content
-      i.icon.ion-ios7-albums-outline
-      p Content
-    //-a.tab-item.active
+  .tabs.tabs-icon-top.tabs-foot
+    a.tab-item#nav-select
+      i.icon.ion-ios7-partlysunny-outline
+      p Select Mood
+    a.tab-item
       i.icon.ion-ios7-speedometer
-      p Trend
-    //-a.tab-item#nav-settings
+      p Mood Trend
+    a.tab-item#nav-settings
       i.icon.ion-ios7-gear-outline
       p Settings
 
