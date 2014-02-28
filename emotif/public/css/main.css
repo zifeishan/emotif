@@ -338,8 +338,8 @@ body {
   width: 100%;
 }
 .postphoto {
-  width: 50%;
-  text-align: center;
+  width: 70%;
+  margin: 0 auto;
 }
 .button.button-assertive {
 color: #fff;

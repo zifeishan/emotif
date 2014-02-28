@@ -99,8 +99,16 @@ $(document).ready(function() {
 
           $('#post-title').text(post.story);
           $('#post-photo').attr('src', post.picture);
+          if(post.link != null) {
+            $('#post-photo').click(function(){
+              window.location.href = post.link;
+            });  
+          }
+          //Cancel the loading message
+          $('#post-content').text('');  
           $('#post-content').text(post.description);
           $('#post-date').text(post.created_time);
+
 
         }
       })

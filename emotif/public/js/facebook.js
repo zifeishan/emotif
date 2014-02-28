@@ -119,7 +119,7 @@ function AfterFBLogin(response) {
   }
 }
 
-
+// Unused functions...
 function FBGetPhotos(callback)
 {
   $.getScript('//connect.facebook.net/en_UK/all.js', function(){
@@ -139,12 +139,13 @@ function FBGetFriends(callback)
   });
 }
 
+// Used this
 function FBGetPosts(callback)
 {
   $.getScript('//connect.facebook.net/en_UK/all.js', function(){
     // FB.api('/me/feed?fields=picture,likes,created_time,description,story,story_tags,type,status_type&limit=300', callback);
     //lightweight
-    FB.api('/me/feed?fields=picture,created_time,description,story,type,status_type&limit=500', callback);
+    FB.api('/me/feed?fields=picture,created_time,description,story,type,status_type,link&limit=500', callback);
   });
 }
 
