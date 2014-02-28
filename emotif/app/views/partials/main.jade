@@ -8,26 +8,23 @@ block pageContent
   .main-center
     div.validate-alert Please enter a valid email address!
     div.fb
-    form(name='form', novalidate)
-      p.hint.
-        Enter your email address to sign in or create a new account:
-      label.item.item-input.input-alert
-        //- input(type='email' placeholder='Email Address' ng-model='user.email' required)
-        input(id='main-email-input', type='email', placeholder='Email Address', required)
-      .row
-        //- .col-66
-        //-   p.back
-        //-     a.loginfacebook(id="main-facebook-button") Facebook Login
-        .col-33.col-offset-66
-          p.next
-            a.back(id="main-next-button") Next
+    div.intro
+      | Track and boost your mood
+    //- form(name='form', novalidate)
+    div.list.list-inset
+      label.item.item-input.input-alert.input-login-up
+        input(id='main-email-input', type='email', placeholder='Email Address')
+      label.item.item-input.input-alert.input-login-down
+        input(id= 'main-password-input', type='password', placeholder='Password')
+    div.login-button-area
+      button.button.button-block.button-login
+        Block Login
 
   .main-footer
     p.
-      Learn About Emotif
+      New User? Create Your Account
 
 block js
   script(src="/js/apple-locality.js")
   script(src="/js/main.js")
   script(src="/js/validate.js")
-  

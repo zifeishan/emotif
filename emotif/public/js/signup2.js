@@ -1,5 +1,5 @@
 /*
-* Front end logic for login page.
+* Front end logic for signup page.
 */
 'use strict';
 
@@ -7,28 +7,30 @@
 $(document).ready(function() {
   RegisterNavListener();
   initializePage();
+  // initializeFB();
 })
+
 
 /*
  * Function that is called when the document is ready.
  */
 function initializePage() {
-  $('#login-back-button').click(function(e) {
+  $('#signup-back-button').click(function(e) {
     window.location.href = '/main2';
   });
 
   $('input').keypress(function (e) {
     if (e.which == 13) {  // Enter key pressed
       e.preventDefault();
-      SubmitLoginForm();
+      SubmitSignupForm();
     }
   });
-
-  $('#login-signin-button').click(SubmitLoginForm);
+  
+  $('#signup-signup-button').click(SubmitSignupForm);
 
 }
 
-function SubmitLoginForm(e) {
+function SubmitSignupForm(e) {
     var email = $('#email').val();
     var password = $('#password').val();
     console.log(email);
@@ -39,17 +41,18 @@ function SubmitLoginForm(e) {
       triggerAlert();
       return;
     }
-
+    
     //Here I will call passport to authenticate user
-    $.post('/api/users/auth', {email: email, password: password}, afterAuth);
+    $.post('/api/users/create', {email: email, password: password}, afterCreate);
 
-    function afterAuth(result) {
-      if(result.auth) {
-        window.location.href = '/select';
-        // window.location.href = '/fblogin';
+    function afterCreate(result) {
+      if(result.success) {
+        // window.location.href = '/select';
+        window.location.href = '/fblogin';
       } else {
         //Need better alert
         triggerAlert();
       }
     }
-  }
+
+}

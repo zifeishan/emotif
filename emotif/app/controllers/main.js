@@ -2,13 +2,10 @@
 
 exports.index = function(req, res){
   res.render('../views/partials/main');
-  // Article.find(function(err, articles){
-  //   if(err) throw new Error(err);
-  //   res.render('index', {
-  //     title: 'Generator-Express MVC',
-  //     articles: articles
-  //   });
-  // });
+};
+
+exports.main2 = function(req, res){
+  res.render('../views/partials/main2');
 };
 
 exports.select = function(req, res){
@@ -17,15 +14,22 @@ exports.select = function(req, res){
 exports.trend = function(req, res){
   res.render('../views/partials/trend');
 };
+
 exports.login = function(req, res){
   var email = req.params.email;
   res.render('../views/partials/login', {email:email});
 };
+
 exports.signup = function(req, res){
+  res.render('../views/partials/signup');
+};
+
+exports.signup2 = function(req, res){
   var email = req.params.email;
   console.log(email);
-  res.render('../views/partials/signup', {email:email});
+  res.render('../views/partials/signup2', {email:email});
 };
+
 exports.settings = function(req, res){
   res.render('../views/partials/settings');
 };

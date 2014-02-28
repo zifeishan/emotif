@@ -1,0 +1,33 @@
+extends ../index
+
+block pageContent
+  div#fb-root
+  .main-logo
+    img(src="img/emotif-logo.png", alt="LOGO")
+
+  .main-center-2
+    div.validate-alert Please enter a valid email address!
+    div.fb
+    form(name='form', novalidate)
+      p.hint.
+        Enter your email address to sign in or create a new account:
+      label.item.item-input.input-alert
+        //- input(type='email' placeholder='Email Address' ng-model='user.email' required)
+        input(id='main-email-input', type='email', placeholder='Email Address', required)
+      .row
+        //- .col-66
+        //-   p.back
+        //-     a.loginfacebook(id="main-facebook-button") Facebook Login
+        .col-33.col-offset-66
+          p.next
+            a.back(id="main-next-button") Next
+
+  .main-footer-2
+    p.
+      Learn About Emotif
+
+block js
+  script(src="/js/apple-locality.js")
+  script(src="/js/main2.js")
+  script(src="/js/validate.js")
+  

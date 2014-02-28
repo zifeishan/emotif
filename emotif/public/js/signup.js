@@ -7,32 +7,29 @@
 $(document).ready(function() {
   RegisterNavListener();
   initializePage();
-  // initializeFB();
-})
-
+});
 
 /*
  * Function that is called when the document is ready.
  */
 function initializePage() {
-  $('#signup-back-button').click(function(e) {
-    window.location.href = '/';
-  });
-
   $('input').keypress(function (e) {
     if (e.which == 13) {  // Enter key pressed
       e.preventDefault();
-      SubmitSignupForm();
+      SubmitLoginForm();
     }
   });
-  
-  $('#signup-signup-button').click(SubmitSignupForm);
 
+  $('.button-signup').click(SubmitSignupForm);
+
+  $('.main-footer').click(function() {
+    window.location.href = '/';
+  });
 }
 
-function SubmitSignupForm(e) {
-    var email = $('#email').val();
-    var password = $('#password').val();
+function SubmitSignupForm() {
+    var email = $('#signup-email-input').val();
+    var password = $('#signup-password-input').val();
     console.log(email);
     console.log(password);
 
@@ -47,8 +44,8 @@ function SubmitSignupForm(e) {
 
     function afterCreate(result) {
       if(result.success) {
-        // window.location.href = '/select';
-        window.location.href = '/fblogin';
+        window.location.href = '/select';
+        // window.location.href = '/fblogin';
       } else {
         //Need better alert
         triggerAlert();

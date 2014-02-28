@@ -24,7 +24,8 @@
 
 'use strict';
 
-var video = require('../app/controllers/video'),
+var main = require('../app/controllers/main'),
+    video = require('../app/controllers/video'),
     users = require('../app/controllers/users'),
     session = require('../app/controllers/session'),
     gatekeeper = require('../app/controllers/gatekeeper');
@@ -32,12 +33,10 @@ var video = require('../app/controllers/video'),
 module.exports = function(app){
 
   //main page route
-  var main = require('../app/controllers/main');
   app.get('/', main.index);
+  app.get('/signup', main.signup);
   app.get('/select', main.select);
   app.get('/trend', main.trend);
-  app.get('/login/:email', main.login);
-  app.get('/signup/:email', main.signup);
   app.get('/settings', main.settings);
   app.get('/content', main.content);
   app.get('/recommend/:rectype', main.contentType);
@@ -47,6 +46,11 @@ module.exports = function(app){
   app.get('/profile-description', main.description);
   app.get('/profile-interests', main.interests);
   app.get('/profile-travels', main.travels);
+
+  //For alternative design homwork use
+  app.get('/main2', main.main2);
+  app.get('/login/:email', main.login);
+  app.get('/signup2/:email', main.signup2);
 
   // Server API Routes
   // All the front-back communication routes should be written here
