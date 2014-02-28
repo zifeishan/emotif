@@ -64,6 +64,9 @@ exports.contentType = function(req, res){
   else if(rectype == 'post') {
     res.render('../views/partials/post');
   } 
+  else if(rectype == 'fbphoto') {
+    res.render('../views/partials/photo-fb');
+  } 
   else if(rectype == 'photo') {
 
     var arr_imgs = ['http://ppcdn.500px.org/61695383/355ba6a8e3f86d4860e72b57bae999d1ceafff6b/3.jpg',

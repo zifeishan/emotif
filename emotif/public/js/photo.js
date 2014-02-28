@@ -14,7 +14,7 @@ $(document).ready(function() {
 
     // TODO Switch to photo
     // window.location.href = '/recommend/video';
-    window.location.href = '/recommend/post';
+    window.location.href = '/recommend/video';
   });
 
   $('#content-like-button').click(function(e) {

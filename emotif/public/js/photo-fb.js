@@ -7,7 +7,7 @@
 $(document).ready(function() {
   RegisterNavListener();
   
-  var alter_recommend = '/recommend/photo';
+  var alter_recommend = '/recommend/post';
 
   //add clickListeners for buttons
   $('#content-refresh-button').click(function(e) {
@@ -51,7 +51,7 @@ $(document).ready(function() {
     return array;
   }
 
-  function RandomPost(allposts) {
+  function RandomPhoto(allposts) {
     allposts = shuffle(allposts);
     console.log('Total posts:'+allposts.length);
     for(var i = 0; i < allposts.length; i++){
@@ -61,19 +61,14 @@ $(document).ready(function() {
       // console.log('Pick one:');
       // console.log(allposts[index]);
       var post = allposts[index];
-      if (
-        post.status_type == 'approved_friend'
-        || post.status_type == 'mobile_status_update'
-        || post.status_type == undefined
-        || (post.likes == undefined && post.status_type == undefined)
-        // || post.status_type != "wall_post"
-        // || post.status_type == 'app_created_story'
+      if (post.source == null
+        
         )
         continue;
       else
         return post;
     }
-    return post;
+    return null;
 
   }
 
@@ -81,38 +76,31 @@ $(document).ready(function() {
     console.log('FB status:'+data.status);
     if (data.status == 'connected') {
 
-      FBGetPosts(function(res){
+      FBGetPhotos(function(res){
         console.log(res);
         if(res.data != null && res.data.length > 0){
-          var post = RandomPost(res.data);
-          console.log(post);
-          if (post == null) {
+          var fbphoto = RandomPhoto(res.data);
+          console.log(fbphoto);
+          if (fbphoto == null) {
             window.location.href = alter_recommend;
           }
           
-          // API: '/me/posts?fields=picture,likes,created_time,description,story,story_tags,type,status_type&limit=100'
-          // Object {picture: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash1/t5/373523_6278093869_764126549_q.jpg", created_time: "2013-11-30T20:49:35+0000", story: "Zifei Shan likes Dr Pepper.", story_tags: Object, type: "link"…}
-          //   created_time: "2013-11-30T20:49:35+0000"
-          //   id: "100004349652754_246716888816631"
-          //   picture: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash1/t5/373523_6278093869_764126549_q.jpg"
-          //   story: "Zifei Shan likes Dr Pepper."
-          //   story_tags: Object
-          //   type: "link"
-          //   __proto__: Object
-
-          $('#post-title').text(post.story);
-          $('#post-photo').attr('src', post.picture);
-          // if(post.link != null) {
-          //   $('#post-photo').click(function(){
-          //     window.location.href = post.link;
-          //   });  
-          // }
+          // FB.api('/me/photos?fields=name,source,likes,created_time&limit=100', callback);
+          $('#fbphoto-photo').attr('src', fbphoto.source);
           //Cancel the loading message
-          $('#post-content').text('');  
-          $('#post-content').text(post.description);
-          if(post.created_time != null)
-            $('#post-date').text(new Date(post.created_time));
-
+          $('#fbphoto-content').text('');  
+          $('#fbphoto-content').text(fbphoto.name);
+          if(fbphoto.created_time != null)
+            $('#fbphoto-date').text(new Date(fbphoto.created_time));
+          
+          if (fbphoto.likes != null) {
+            window.testlikes = fbphoto.likes;
+            $('label#like-number').text(fbphoto.likes.data.length);
+          }
+          else
+            $('label#like-number').text('0');
+            
+        
 
         }
       })
