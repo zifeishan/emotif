@@ -1,58 +1,54 @@
 /*
-* Front end logic for main page.
+* Front end logic for login page.
 */
 'use strict';
 
-// Listen for ALL links at the top level of the document. For
-// testing purposes, we're not going to worry about LOCAL vs.
-// EXTERNAL links - we'll just demonstrate the feature.
-
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
-  
-  //login logic
+  // RegisterNavListener();
   initializePage();
-  RegisterNavListener();
 })
 
 /*
  * Function that is called when the document is ready.
  */
 function initializePage() {
-
   $('input').keypress(function (e) {
     if (e.which == 13) {  // Enter key pressed
       e.preventDefault();
-      SubmitForm();
+      SubmitLoginForm();
     }
   });
+  $('.button-login').click(SubmitLoginForm);
 
-  $('#main-next-button').click(SubmitForm);
+  $('.main-footer').click(function() {
+    window.location.href = '/signup';
+  });
+
 }
 
-function SubmitForm(e){
+function SubmitLoginForm() {
   var email = $('#main-email-input').val();
-      
-  //Form validation code
-  if(validateEmail(email) == false) {
+  var password = $('#main-password-input').val();
+  console.log(email);
+  console.log(password);
+
+  //Here add some validation logic
+  if(validatePassword(password) == false) {
     triggerAlert();
     return;
   }
 
-  var url_call = '/api/gatekeeper';
-  var post_body = {
-    'email': email
-  };
-  console.log(post_body);
+  //Here I will call passport to authenticate user
+  $.post('/api/users/auth', {email: email, password: password}, afterAuth);
 
-  $.post(url_call, post_body, function(result) {
-
-    // Temp: use for getting user emails, not good
-    window.localStorage.setItem('email', email);
-    if(result.exist) {
-      window.location.href = '/login/' + email;
+  function afterAuth(result) {
+    if(result.auth) {
+      window.location.href = '/select';
+      // window.location.href = '/fblogin';
     } else {
-      window.location.href = '/signup/' + email;
+      //Need better alert
+      triggerAlert();
     }
-  });
-}
+  }
+  }

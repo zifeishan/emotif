@@ -6,13 +6,11 @@ body {
   font-weight: 300;
   overflow: scroll;
   background-color: #93DE7F;
-<<<<<<< HEAD
+
   /*background-size: 173px 173px, 311px 311px, 547px 547px, 683px 683px;
   background-image:
-=======
   background-size: 173px 173px, 311px 311px, 547px 547px, 683px 683px;
 /*  background-image:
->>>>>>> 864b14b70348d65df904622449c4837c9f29c6b2
     -webkit-linear-gradient(     0, rgba(255,255,255, .02) 50%, transparent 50%),
     -webkit-linear-gradient(     0, rgba(255,255,255, .04) 50%, transparent 50%),
     -webkit-linear-gradient(180deg, rgba(255,255,255, .07) 50%, transparent 50%),
@@ -36,12 +34,9 @@ body {
     linear-gradient(     0, rgba(255,255,255, .02) 50%, transparent 50%),
     linear-gradient(     0, rgba(255,255,255, .04) 50%, transparent 50%),
     linear-gradient(180deg, rgba(255,255,255, .07) 50%, transparent 50%),
-<<<<<<< HEAD
     linear-gradient(180deg, rgba(255,255,255, .06) 50%, transparent 50%);
     */
-=======
-    linear-gradient(180deg, rgba(255,255,255, .06) 50%, transparent 50%);*/
->>>>>>> 864b14b70348d65df904622449c4837c9f29c6b2
+
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -135,15 +130,13 @@ body {
 /********************************
 * Main, Login, Signup page CSS
 *********************************/
+
 .main-logo {
   position:fixed;
-  /*right:30%;*/
-  /*left:30%;*/
   left: 50%;
   margin-left: -75px;
   top: 50%;
-  margin-top: -160px;
-  /*bottom: 85%;*/
+  margin-top: -180px;
 }
 
 .main-logo img{
@@ -155,8 +148,86 @@ body {
   top: 50%;
   left:0;
   right:0;
-  margin-top:-90px;
+  margin-top:-120px;
 }
+
+.intro {
+  margin: 10px 10px 30px 10px;
+  text-align: center;
+  color: white;
+  font-family: "Bradley Hand ITC TT", "Papyrus", "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  font-size: 16pt;
+}
+
+.main-footer {
+  position: fixed;
+  top: 50%;
+  margin-top: 120px;
+  text-align: center;
+  left:0;
+  right:0;
+  font-size: 14px;
+  color: white;
+  font-weight: 300;
+}
+
+/*  For Homework Only  */
+.main-center-2 {
+  position: fixed;
+  top: 50%;
+  left:0;
+  right:0;
+  margin-top:-70px;
+}
+
+.main-footer-2 {
+  position: fixed;
+  bottom: 10px;
+  text-align: center;
+  left:0;
+  right:0;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.main-center-2 p.hint{
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: 14px;
+}
+
+.main-center-2 p.next{
+  margin-right: 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: right;
+}
+
+.main-center-2 p.back{
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.main-center-2 a:link{
+  color: #000000;
+  text-decoration:none;
+}
+
+.main-center-2 a:hover{
+  color: #000000;
+  text-decoration:none;
+  cursor: hand;
+}
+
+.main-center-2 a:visited{
+  color: #000000;
+  text-decoration:none;
+}
+
+/*  Homework Part End   */
 
 .main-center p.hint{
   margin-left: 15px;
@@ -194,18 +265,6 @@ body {
   text-decoration:none;
 }
 
-.main-footer {
-  position: fixed;
-  top: 50%;
-  margin-top: 160px;
-  text-align: center;
-  left:0;
-  right:0;
-  font-size: 14px;
-  color: white;
-  font-weight: 300;
-}
-
 .validate-alert {
   position: fixed;
   right: 5%;
@@ -231,15 +290,28 @@ body {
   background-color: #7BBADE;
   color: white;
   border-color: transparent;
+  border-radius: 2px;
 }
 
-.intro {
-  margin: 10px 10px 40px 10px;
-  text-align: center;
+.input-login-up {
+  border-color: white;
+  border-bottom-color: #E5E5E5;
+}
+
+.input-login-down {
+  border-color: white;
+  border-top-color: #E5E5E5;
+}
+
+.signup-button-area {
+  margin: 0px 10px 0px 10px;
+}
+
+.button-signup {
+  background-color: #F29E4A;
   color: white;
-  font-family: "Bradley Hand ITC TT", "Papyrus", "Helvetica Neue", sans-serif;
-  font-weight: 300;
-  font-size: 16pt;
+  border-color: transparent;
+  border-radius: 2px;
 }
 
 /*.item-input {
