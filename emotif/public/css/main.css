@@ -17,10 +17,10 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 
-  background-image: -webkit-linear-gradient(to bottom, #99FF76 0%,#61DB4C 100%); /* For Safari 5.1 to 6.0 */
-  background-image: -o-linear-gradient(to bottom, #99FF76 0%,#61DB4C 100%); /* For Opera 11.1 to 12.0 */
-  background-image: -moz-linear-gradient(to bottom, #99FF76 0%,#61DB4C 100%); /* For Firefox 3.6 to 15 */
-  background-image: linear-gradient(to bottom, #99FF76 0%,#61DB4C 100%); /* Standard syntax */  
+  background-image: -webkit-linear-gradient(to bottom, #8EE874 0%,#61DB4C 100%); /* For Safari 5.1 to 6.0 */
+  background-image: -o-linear-gradient(to bottom, #8EE874 0%,#61DB4C 100%); /* For Opera 11.1 to 12.0 */
+  background-image: -moz-linear-gradient(to bottom, #8EE874 0%,#61DB4C 100%); /* For Firefox 3.6 to 15 */
+  background-image: linear-gradient(to bottom, #8EE874 0%,#61DB4C 100%); /* Standard syntax */  
 
 
 }
@@ -30,7 +30,7 @@ body {
 *********************************/
 .bar-emotif {
   background-color: #93DE7F;
-  border-bottom: 1px solid white;
+  /*border-bottom: 1px solid white;*/
   background-size: 0px;
   /*border-bottom: 1px solid #408740;*/
 
