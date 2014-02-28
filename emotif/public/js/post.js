@@ -110,8 +110,13 @@ $(document).ready(function() {
           //Cancel the loading message
           $('#post-content').text('');  
           $('#post-content').text(post.description);
-          if(post.created_time != null)
-            $('#post-date').text(new Date(post.created_time));
+          if(post.created_time != null){
+            var d = new Date(post.created_time);
+            var dstr = 'Date: '+d.getFullYear() + '-' + (d.getMonth()+1) + '-' + d.getDay()
+            $('#post-date').text(dstr);
+          }
+
+            
 
 
         }
