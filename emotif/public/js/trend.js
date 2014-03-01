@@ -115,7 +115,8 @@ function analyzeAndDrawGraph(data, graphFormat) {
       }
       sumScore += score;
     }
-    var avgScore = Math.ceil(sumScore / scoreArray.length);
+    // var avgScore = Math.ceil(sumScore / scoreArray.length);
+    var avgScore = sumScore / scoreArray.length;
 
     //For Line Chart
     // maxMoodArrayForLineChart.push({x:i, y:maxScore});
