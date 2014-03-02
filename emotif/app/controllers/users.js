@@ -3,28 +3,63 @@
 var mongoose = require('mongoose'),
     User = mongoose.model('User'),
     UserMood = mongoose.model('UserMood'),
-    passport = require('passport');
+    passport = require('passport'),
+    RememberMe = require('../../config/rememberme');
 
 
+/**
+ * authenticate user with local strategy
+ */
 exports.authenticate = function(req, res, next) {
-    passport.authenticate('local', function(err, user, info) {
+  passport.authenticate('local', function(err, user, info) {
+    if (err) {
+        return next(err);
+    }
+
+    if (!user) {
+        return res.json({auth: false});
+    }
+
+    req.login(user, function(err) {
         if (err) {
             return next(err);
         }
 
-        if (!user) {
-            return res.json({auth: false});
-        }
-
-        req.login(user, function(err) {
-            if (err) {
-                return next(err);
-            }
-
-            res.json({auth: true});
-        });
-    })(req, res, next);
+        res.json({auth: true});
+    });
+  })(req, res, next);
 }
+
+/**
+ * Authenticate user with remember-me strategy
+ */
+exports.authenticateAndRemember = function(req, res, next) {
+  passport.authenticate('local', function(err, user, info) {
+    if (err) {
+        return next(err);
+    }
+
+    if (!user) {
+        return res.json({auth: false});
+    }
+
+    RememberMe.issueToken(user, function(err, token) {
+      if (err) { return next(err); }
+      res.cookie('remember_me', token, { path: '/', httpOnly: true, maxAge: 604800000 });
+      req.login(user, function(err) {
+        if (err) {
+            return next(err);
+        }
+        res.json({auth: true});
+      });
+    });
+
+  })(req, res, next);
+}
+
+// exports.authenticateWithCookie = function(req, res, next) {
+//   passport.authenticate('remember-me', function())(req, res, next);
+// }
 
 /**
  * Create user
@@ -37,11 +72,11 @@ exports.create = function (req, res, next) {
       password: password
   };
 
-  User.find({email: email}, function (err, user) {
+  User.findOne({email: email}, function (err, user) {
     if (err) {
       res.send({success: false, info: 'unknown'});
     }
-    if (user.length) {
+    if (user != null) {
       //User exists, cannot create
       res.send({success: false, info: 'exist'});
     } else {
@@ -50,6 +85,10 @@ exports.create = function (req, res, next) {
         if(err) {
           res.send({success: false, info: 'unknown'});
         }
+        RememberMe.issueToken(user, function(err, token) {
+          if (err) { return next(err); }
+          res.cookie('remember_me', token, { path: '/', httpOnly: true, maxAge: 604800000 });
+        });
         req.login(user, function(err) {
             if (err) {
                 res.send({success: false, info: 'unknown'});
@@ -180,6 +219,23 @@ exports.me = function(req, res) {
   res.json(req.user || null);
 };
 
+/**
+ * Logout function for Local Strategy
+ */ 
+exports.logout = function (req, res) {
+  console.log('log out');
+  req.logout();
+  res.send(200);
+};
+
+/**
+ * Logout function for Remember-me Strategy
+ */ 
+exports.logoutAndForget = function(req, res) {
+  res.clearCookie('remember_me');
+  req.logout();
+  res.redirect('/');
+};
 
 /**
 * Add user mood

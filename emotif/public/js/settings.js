@@ -98,7 +98,7 @@ $(document).ready(function() {
 function initializePage() {
   $('#settings-logout-button').click(function(e) {
     console.log('logout');
-    $.get('/api/session/logout', function() {
+    $.get('/api/users/logout', function() {
       window.location.href = '/';
     });
   });

@@ -105,12 +105,12 @@ User.create({
   name: 'Test User',
   email: 'test@test.com',
   password: 'test'
-}, function() {
+}, function(err, user) {
     console.log('finished populating users');
-    User.find({email: 'test@test.com'}, function(err, user) {
-      if(err) console.log(err);
-      // var testUserID = user._id;
-      // console.log(testUserID);
+    if(err) console.log(err);
+    // var testUserID = user._id;
+    // console.log(testUserID);
+    if(user) {
       UserMood.create({
         user: user._id,
         mood: [
@@ -124,7 +124,7 @@ User.create({
       }, function() {
         console.log('finished populating userMood');
       });
-    });
+    }
   }
 );
 

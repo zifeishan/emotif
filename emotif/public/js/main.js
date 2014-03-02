@@ -45,7 +45,8 @@ function SubmitLoginForm() {
   }
 
   //Here I will call passport to authenticate user
-  $.post('/api/users/auth', {email: email, password: password}, afterAuth);
+  // $.post('/api/users/auth', {email: email, password: password}, afterAuth);
+  $.post('/api/users/login', {email: email, password: password}, afterAuth);
 
   function afterAuth(result) {
     if(result.auth) {

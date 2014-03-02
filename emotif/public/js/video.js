@@ -41,8 +41,8 @@ function initializePage() {
 function getNewVideo() {
 
   var videoStrategy = [
-    // 'database',
-    // 'keyword',
+    'database',
+    'keyword',
     'popular'
   ];
 

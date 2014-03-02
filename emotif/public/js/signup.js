@@ -52,7 +52,7 @@ function SubmitSignupForm() {
         window.location.href = '/select';
         // window.location.href = '/fblogin';
       } else {
-        if(result.info = 'exist') {
+        if(result.info == 'exist') {
           triggerUserExistAlert();
         } else {
           triggerFailToSignUpAlert();

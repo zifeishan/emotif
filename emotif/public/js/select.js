@@ -32,7 +32,7 @@ function initializePage() {
     // email = Auth.getCurrentUser().email;
     var dateProvider = new Date();
     var day = dateProvider.getDate().toString();
-    var month = dateProvider.getMonth().toString();
+    var month = (dateProvider.getMonth() + 1).toString();
     if(month.length == 1){
       month = '0' + month;
     }

@@ -27,7 +27,6 @@
 var main = require('../app/controllers/main'),
     video = require('../app/controllers/video'),
     users = require('../app/controllers/users'),
-    session = require('../app/controllers/session'),
     gatekeeper = require('../app/controllers/gatekeeper');
 
 module.exports = function(app){
@@ -67,14 +66,17 @@ module.exports = function(app){
   app.put('/api/users/addmood', users.addMood);
   app.post('/api/users/getmood', users.getMood);
 
+  //login and logout for Local strategy
   app.post('/api/users/auth', users.authenticate);
+  app.get('/api/users/local_logout', users.logout);
+  //login and logout for Remember-me strategy
+  app.post('/api/users/login', users.authenticateAndRemember);
+  app.get('/api/users/logout', users.logoutAndForget);
   app.post('/api/users/create', users.create);
   app.post('/api/users/createfb', users.createFBUser);
   app.post('/api/users/checkLogin', users.isUserLoggedIn);
 
   app.get('/api/users/:id', users.show);
 
-  app.post('/api/session', session.login);
-  app.get('/api/session/logout', session.logout);
 };
 

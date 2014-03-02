@@ -21,14 +21,17 @@ var UserSchema = new Schema({
     type: String,
     default: 'user'
   },
+  token: { 
+    type: String,
+    default: ''
+  },
   hashedPassword: String,
   provider: String,
   salt: String,
   facebook: {},
   twitter: {},
   github: {},
-  google: {},
-  mood: []
+  google: {}
 });
 
 /**
@@ -161,6 +164,18 @@ UserSchema.methods = {
     var salt = new Buffer(this.salt, 'base64');
     return crypto.pbkdf2Sync(password, salt, 10000, 64).toString('base64');
   },
+
+  deleteToken: function() {
+    this.token = '';
+    this.save();
+    return;
+  },
+
+  saveToken: function(token) {
+    this.token = token;
+    this.save();
+    return;
+  }
 
   // addmood: function(time, score) {
   //   this.mood = this.mood.push({

@@ -28,6 +28,9 @@ module.exports = function(app, config) {
     app.use(passport.initialize());
     app.use(passport.session());
 
+    // add passport remember-me autentication strategy
+    app.use(passport.authenticate('remember-me', { successRedirect: '/select', failureRedirect: '/'}));
+
     app.use(express.methodOverride());
     app.use(app.router);
     app.use(function(req, res) {
