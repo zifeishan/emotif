@@ -39,13 +39,66 @@ function initializePage() {
 }
 
 function getNewVideo() {
-  $.get('/api/video/database', function(json) {
-    console.log(json);
-    var video = json;
-    var final_url = 'http://www.youtube.com/embed/' + video.video_id;
+
+  var videoStrategy = [
+    // 'database',
+    // 'keyword',
+    'popular'
+  ];
+
+  var videoId = '';
+  var videoTitle = '';
+
+  var strategySize = videoStrategy.length;
+  var selectedStrategyIndex = Math.floor(Math.random() * strategySize);
+  var selectedStrategy = videoStrategy[selectedStrategyIndex];
+
+  switch (selectedStrategy)
+  {
+    case 'database':
+      renderVideoWithDatabase();
+      break;
+    case 'keyword':
+      renderVideoWithKeyword();
+      break;
+    case 'popular':
+      renderVideoWithPopular();
+      break;
+  }
+
+  function renderVideoWithDatabase() {
+    $.get('/api/video/database', function(json) {
+      var video = json;
+      videoId = video.video_id;
+      videoTitle = video.caption;
+      renderVideo();
+    });
+  }
+
+  function renderVideoWithKeyword() {
+    $.post('/api/video/keyword', {keyword: 'funny'}, function(json) {
+      var video = json;
+      videoId = video.id;
+      videoTitle = video.title;
+      renderVideo();
+    });
+  }
+
+  function renderVideoWithPopular() {
+    console.log('popular');
+    $.get('/api/video/popular', function(json) {
+      var video = json;
+      videoId = video.id;
+      videoTitle = video.title;
+      renderVideo();
+    })
+  }
+
+  function renderVideo() {
+    var finalUrl = 'http://www.youtube.com/embed/' + videoId;
     var likes = Math.floor(100* Math.random());
-    $('iframe').attr('src', final_url);
+    $('iframe').attr('src', finalUrl);
     $('label#like-number').text(likes);
-    $('b#video-title').text(video.caption);
-  });
+    $('b#video-title').text(videoTitle);
+  }
 }

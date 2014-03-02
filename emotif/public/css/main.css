@@ -8,7 +8,7 @@ body {
   font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
   overflow: scroll;
-  background-color: #93DE7F;
+  /*background-color: #93DE7F;*/
   /*background-color: linear-gradient(to bottom, #5ad427 0%,#a4e786 100%)*/
 
   /* For gradient */
@@ -391,6 +391,10 @@ body {
   /*color: #007AFF;*/
   color: #2B2B2B;
   font-weight: 300;
+}
+
+.card-shadowed {
+  box-shadow: 1px 1px 2px #4AA33A;
 }
 
 .item-top {

@@ -36,12 +36,12 @@ function initializePage() {
 function loadMoodTrendBar() {
   $('#mood-graph svg').empty();
   $.get('/api/users/me', function(user) {
-    console.log('Get User');
-    console.log(user);
+    // console.log('Get User');
+    // console.log(user);
     var userId = user._id;
-    console.log(userId);
+    // console.log(userId);
     $.post('/api/users/getmood', {id : userId}, function(result) {
-      console.log(result);
+      // console.log(result);
       if(result == null) {
         //No record found, warn the user
         showNoRecordWarning();
@@ -55,12 +55,12 @@ function loadMoodTrendBar() {
 function loadMoodTrendLine() {
   $('#mood-graph svg').empty();
   $.get('/api/users/me', function(user) {
-    console.log('Get User');
-    console.log(user);
+    // console.log('Get User');
+    // console.log(user);
     var userId = user._id;
-    console.log(userId);
+    // console.log(userId);
     $.post('/api/users/getmood', {id : userId}, function(result) {
-      console.log(result);
+      // console.log(result);
       if(result == null) {
         //No record found, warn the user
         showNoRecordWarning();
@@ -80,7 +80,7 @@ function analyzeAndDrawGraph(data, graphFormat) {
     shownDataLength = data.length;
   }
   var shownData = data.slice(-shownDataLength);
-  console.log(shownData);
+  // console.log(shownData);
 
   //preprocess the data
   //date, max mood, min mood and average mood
@@ -135,8 +135,8 @@ function analyzeAndDrawGraph(data, graphFormat) {
     avgMoodArray.push({x:dateString, y:avgScore});
   }
   // console.log(dateArray);
-  console.log(maxMoodArray);
-  console.log('process data finished');
+  // console.log(maxMoodArray);
+  // console.log('process data finished');
 
   // function generateDataForGraph() {
   //   return maxMoodArray.map(function(data, i) {
@@ -147,21 +147,35 @@ function analyzeAndDrawGraph(data, graphFormat) {
   //   });
   // }
 
+  // colorful theme
+  // var finalDataForBarChart = [
+  // {key: 'Low', values: minMoodArray, color: '#7E8ADE'},
+  // {key: 'Average', values: avgMoodArray, color: '#7BBADE'},
+  // {key: 'High', values: maxMoodArray, color: '#F29E4A'}
+  // ];
+
+  // var finalDataForLineChart = [
+  // // {key: 'Low', values: minMoodArrayForLineChart, color: '#7E8ADE'},
+  // {key: 'Average', values: avgMoodArrayForLineChart, color: '#7BBADE', area: true}
+  // // {key: 'High', values: maxMoodArrayForLineChart, color: '#F29E4A'}
+  // ];
+
+  //Blue theme
   var finalDataForBarChart = [
-  {key: 'Low', values: minMoodArray, color: '#7E8ADE'},
-  {key: 'Average', values: avgMoodArray, color: '#7BBADE'},
-  {key: 'High', values: maxMoodArray, color: '#F29E4A'}
+  {key: 'Low', values: minMoodArray, color: '#3399CC'},
+  {key: 'Average', values: avgMoodArray, color: '#62C2F0'},
+  {key: 'High', values: maxMoodArray, color: '#ABE2FC'}
   ];
 
   var finalDataForLineChart = [
   // {key: 'Low', values: minMoodArrayForLineChart, color: '#7E8ADE'},
-  {key: 'Average', values: avgMoodArrayForLineChart, color: '#7BBADE', area: true}
+  {key: 'Average', values: avgMoodArrayForLineChart, color: '#62C2F0', area: true}
   // {key: 'High', values: maxMoodArrayForLineChart, color: '#F29E4A'}
   ];
 
-  console.log('Average Mood Array:');
-  console.log(avgMoodArray);
-  console.log(avgMoodArrayForLineChart);
+  // console.log('Average Mood Array:');
+  // console.log(avgMoodArray);
+  // console.log(avgMoodArrayForLineChart);
 
   // console.log(generateDataForGraph());
 
