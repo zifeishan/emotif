@@ -14,6 +14,7 @@ $(document).ready(function() {
 
     // TODO Switch to photo
     // window.location.href = '/recommend/video';
+    ga("send", "event", "refresh", "click")
     window.location.href = '/recommend/video';
   });
 
@@ -21,9 +22,11 @@ $(document).ready(function() {
     var likes = parseInt($('#like-number').text());
     likes++;
     $('label#like-number').text(likes);
+    ga("send", "event", "like", "click")
   });
 
   $('#content-better-button').click(function(e) {
+    ga("send", "event", "better", "click")
     window.location.href = '/trend';
   });
   $('#content-back-button').click(function(e) {
