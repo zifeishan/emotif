@@ -7,6 +7,8 @@
 $(document).ready(function() {
   RegisterNavListener();
   
+  var alter_recommend = '/recommend/fbphoto';
+  // var alter_recommend = '/content';
 
   //add clickListeners for buttons
   $('#content-refresh-button').click(function(e) {
@@ -14,19 +16,19 @@ $(document).ready(function() {
 
     // TODO Switch to photo
     // window.location.href = '/recommend/video';
-    ga("send", "event", "refresh", "click")
-    window.location.href = '/recommend/video';
+    ga("send", "event", "refresh", "click");
+    window.location.href = alter_recommend;
   });
 
   $('#content-like-button').click(function(e) {
     var likes = parseInt($('#like-number').text());
     likes++;
     $('label#like-number').text(likes);
-    ga("send", "event", "like", "click")
+    ga("send", "event", "like", "click");
   });
 
   $('#content-better-button').click(function(e) {
-    ga("send", "event", "better", "click")
+    ga("send", "event", "better", "click");
     window.location.href = '/trend';
   });
   $('#content-back-button').click(function(e) {

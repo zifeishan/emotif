@@ -54,7 +54,8 @@ function initializePage() {
               if(value > 0) {
                 window.location.href = '/trend';
               } else {
-                window.location.href = '/recommend/video';
+                // window.location.href = '/recommend/video';
+                window.location.href = '/content';
               }
             }
         });

@@ -5,16 +5,20 @@
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
+  // $('#gascript1').text("function utmx_section(){}function utmx(){}(function(){var k='83009409-0',d=document,l=d.location,c=d.cookie; if(l.search.indexOf('utm_expid='+k)>0)return; function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c. indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write('<sc'+'ript src=\"'+'http'+(l.protocol=='https:'?'s://ssl':'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+ '\" type=\"text/javascript\" charset=\"utf-8\"><\/sc'+'ript>')})();");
+  // $('#gascript2').text("utmx('url','A/B');");
+
   RegisterNavListener();
   
-  var alter_recommend = '/recommend/post';
+  var alter_recommend = '/recommend/video';
+  // var alter_recommend = '/content';
 
   //add clickListeners for buttons
   $('#content-refresh-button').click(function(e) {
     // getNewVideo();
 
     // TODO Switch to photo
-    ga("send", "event", "refresh", "click")
+    ga("send", "event", "refresh", "click");
     window.location.href = alter_recommend;
   });
 
@@ -22,11 +26,11 @@ $(document).ready(function() {
     var likes = parseInt($('#like-number').text());
     likes++;
     $('label#like-number').text(likes);
-    ga("send", "event", "like", "click")
+    ga("send", "event", "like", "click");
   });
 
   $('#content-better-button').click(function(e) {
-    ga("send", "event", "better", "click")
+    ga("send", "event", "better", "click");
     window.location.href = '/trend';
   });
   $('#content-back-button').click(function(e) {

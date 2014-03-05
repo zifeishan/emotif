@@ -51,7 +51,8 @@ function FBLogin(callback)
         cookie     : true, // enable cookies to allow the server to access the session
         xfbml      : true  // parse XFBML
       }); 
-    var permissions = 'basic_info,public_profile,user_friends,read_stream,user_events,friends_events,user_interests,user_likes,friends_likes,user_photos,friends_photos,user_status,user_videos';  
+    // var permissions = 'basic_info,public_profile,user_friends,read_stream,user_events,friends_events,user_interests,user_likes,friends_likes,user_photos,friends_photos,user_status,user_videos';  
+    var permissions = 'basic_info,public_profile,user_friends,user_likes,friends_likes,user_photos,friends_photos,user_status';  
     var permissionUrl = "https://m.facebook.com/dialog/oauth?client_id=" + '1481091805451645' //appId
     + "&response_type=code&redirect_uri=" 
     + window.location.origin + '/select'
