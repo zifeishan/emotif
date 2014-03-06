@@ -1,0 +1,33 @@
+extends content
+
+block recommendContent
+
+  .item.item-top
+    p Check out this popular funny video!
+    
+  .item.item-body.item-middle
+    p.video2-title
+      b#video-title
+
+    iframe.full-image(id='ytplayer', type='text/html', src='', allowfullscreen="true", frameborder="0")
+    p
+      | Another user comments on this video:
+      br 
+      div.video-comment#video-comment
+    p.video-like
+      label#like-number   
+      |  people like this funny video!
+    
+
+  .item.item-body.item-bottom.item-card-button
+    .row
+      .col.col-33
+        a.button.button-outline.button-positive.button-block.button-card#content-refresh-button Try Another
+      .col.col-33
+        a.button.button-outline.button-balanced.button-block.button-card#content-like-button I like it
+      .col.col-33
+        a.button.button-outline.button-assertive.button-block.button-card#content-better-button I'm better
+
+block js
+  script(src="/js/apple-locality.js")  
+  script(src="/js/video2.js")

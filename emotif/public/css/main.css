@@ -358,6 +358,39 @@ body {
   margin: 0 auto;
 }
 
+/* For GA Experiment */
+.item-card-button {
+  padding: 0px 0px;
+}
+
+.button-card {
+  font-size: 14px;
+  padding: 1px 2px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  min-height: 30px;
+  height: 30px;
+  line-height: 25px;
+}
+
+p.video2-title {
+  margin-top: 0px;
+}
+
+.video-comment {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 300px;
+  color: #8E8E93;
+  padding: 5px 8px;
+  border: 1px solid #E5E5E5;
+  border-radius: 2px;
+}
+
+p.video-like {
+  color: #66cc33;
+}
+
 /********************************
 * Settings page CSS
 *********************************/

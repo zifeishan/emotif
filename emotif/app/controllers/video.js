@@ -110,3 +110,19 @@ exports.getVideoFromDatabase = function (req, res, next) {
 	}
   });
 };
+
+exports.getVideoCommentById = function (req, res, next) {
+  var videoId = req.params.videoId;
+  youtube.video( videoId ).comments( {'max-results': 1}, function(err, result) {
+    // console.log(result.entry[0].content['$t']);
+    if(err) {
+      console.log(err);
+      res.json({success: false, message: 'Video Comment Retrival Error'});
+    }
+    var comment = "";
+    if(result.entry !== undefined && result.entry.length >= 1) {
+      comment = result.entry[0].content;
+    }
+    res.json({comment: comment});
+  });
+};

@@ -1,5 +1,6 @@
 /*
-* Front end logic for video page.
+* This js is purely for GA experiment.
+* Front end logic for video2 page.
 */
 'use strict';
 
@@ -15,7 +16,7 @@ function initializePage() {
   //generate random video from database
   getNewVideo();
 
-  var alter_recommend ='/recommend/post';
+  var alter_recommend ='/recommend/video';
   // var alter_recommend = '/content';
 
   //add clickListeners for buttons
@@ -84,6 +85,7 @@ function getNewVideo() {
       videoId = video.video_id;
       videoTitle = video.caption;
       renderVideo();
+      renderVideoComment(videoId);
     });
   }
 
@@ -93,6 +95,7 @@ function getNewVideo() {
       videoId = video.id;
       videoTitle = video.title;
       renderVideo();
+      renderVideoComment(videoId);
     });
   }
 
@@ -103,7 +106,16 @@ function getNewVideo() {
       videoId = video.id;
       videoTitle = video.title;
       renderVideo();
-    })
+      renderVideoComment(videoId);
+    });
+  }
+
+  function renderVideoComment(videoId) {
+    console.log('Render comments!');
+    $.get('/api/video/comment/' + videoId, function(json) {
+      var comment = json.comment;
+      $('div#video-comment').text(comment['$t']);
+    });
   }
 
   function renderVideo() {

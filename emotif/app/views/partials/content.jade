@@ -1,9 +1,10 @@
 extends ../index
 
 block GAExperiment
+
   script#gascript1.
     function utmx_section(){}function utmx(){}(function(){var
-    k='83009409-0',d=document,l=d.location,c=d.cookie;
+    k='83066039-2',d=document,l=d.location,c=d.cookie;
     if(l.search.indexOf('utm_expid='+k)>0)return;
     function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
     indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
@@ -13,9 +14,10 @@ block GAExperiment
     '&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
     valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
     '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+  
   script#gascript2.
     utmx('url','A/B');
-  
+
 block pageContent
 
   .bar.bar-header.bar-emotif
@@ -35,16 +37,17 @@ block pageContent
       //-     | Watch this funny video and you'll feel relaxed!
       //-   p.subdued {{video.likes}} people like you find this useful!
 
-      .item.tabs.tabs-secondary.tabs-icon-left.item-bottom
-        a.tab-item#content-refresh-button
-          i.icon.ion-refresh
-          | Another
-        a.tab-item#content-like-button
-          i.icon.ion-thumbsup
-          | I like it
-        a.tab-item#content-better-button
-          i.icon.ion-heart
-          | I'm better
+      //- For GA experiment
+      //- .item.tabs.tabs-secondary.tabs-icon-left.item-bottom
+      //-   a.tab-item#content-refresh-button
+      //-     i.icon.ion-refresh
+      //-     | Another
+      //-   a.tab-item#content-like-button
+      //-     i.icon.ion-thumbsup
+      //-     | I like it
+      //-   a.tab-item#content-better-button
+      //-     i.icon.ion-heart
+      //-     | I'm better
     .content-bottom-spacer
     //- a.tab-item#nav-select
     //-   i.icon.ion-ios7-sunny-outline
@@ -74,58 +77,3 @@ block js
   script(src="/js/apple-locality.js")
   script(src="/js/content.js")
   
-//- <div class="list card">
-
-//-   <div class="item item-avatar">
-//-     <img src="mcfly.jpg">
-//-     <h2>Marty McFly</h2>
-//-     <p>November 05, 1955</p>
-//-   </div>
-
-//-   <div class="item item-body">
-//-     <img class="full-image" src="delorean.jpg">
-//-     <p>
-//-       This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
-//-       the content is from a card-body consisting of an image and paragraph text. The footer
-//-       consists of tabs, icons aligned left, within the card-footer.
-//-     </p>
-//-     <p>
-//-       <a href="#" class="subdued">1 Like</a>
-//-       <a href="#" class="subdued">5 Comments</a>
-//-     </p>
-//-   </div>
-
-//-   <div class="item tabs tabs-secondary tabs-icon-left">
-//-     <a class="tab-item" href="#">
-//-       <i class="icon ion-thumbsup"></i>
-//-       Like
-//-     </a>
-//-     <a class="tab-item" href="#">
-//-       <i class="icon ion-chatbox"></i>
-//-       Comment
-//-     </a>
-//-     <a class="tab-item" href="#">
-//-       <i class="icon ion-share"></i>
-//-       Share
-//-     </a>
-//-   </div>
-
-//- </div>
-
-//- .jumbotron
-//-   div.bigheader
-//-     h3.
-//-       Why not try this out?
-
-//-   div.video
-//-     img.mainlogo(src="images/yoga.png" alt="Yoga Video")
-//-     br
-//-     br
-//-     p.lead.
-//-       Follow this video and do a 15-minute Yoga!
-
-//- .row
-//-   .col-xs-5.col-xs-offset-1
-//-     a.btn.btn-warning.btn-block(type='button', href='content2') Try another
-//-   .col-xs-5.col-xs-offset-0
-//-     a.btn.btn-success.btn-block(type='button', ng-href='/trend', href="/trend") I feel better

@@ -61,6 +61,10 @@ exports.contentType = function(req, res){
   if(rectype == 'video') {
     res.render('../views/partials/video');
   }
+  //Only for GA experiment
+  else if(rectype == 'video2') {
+    res.render('../views/partials/video2');
+  }
   else if(rectype == 'post') {
     res.render('../views/partials/post');
   } 

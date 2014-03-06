@@ -15,7 +15,8 @@ block recommendContent
       p= name
 
     p.subdued 
-      = like + ' people like you find this useful!'
+      label#like-number   
+      |  people like you find this useful!
 
 block js
   script(src="/js/apple-locality.js")

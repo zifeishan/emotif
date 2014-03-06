@@ -58,6 +58,7 @@ module.exports = function(app){
   app.post('/api/video/keyword', video.getVideoByKeyword);
   app.get('/api/video/database', video.getVideoFromDatabase);
   app.get('/api/video/popular', video.getVideoByPopularity);
+  app.get('/api/video/comment/:videoId', video.getVideoCommentById);
   
   app.post('/api/users', users.create);
   app.post('/api/users/exist', users.userExist);
