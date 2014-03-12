@@ -97,8 +97,8 @@ $(document).ready(function() {
           //Cancel the loading message
           $('#fbphoto-content').text('');  
           $('#fbphoto-content').text(fbphoto.name);
-          if(fbphoto.created_time != null)
-            $('#fbphoto-date').text(new Date(fbphoto.created_time));
+          // if(fbphoto.created_time != null)
+          //   $('#fbphoto-date').text(new Date(fbphoto.created_time));
           
           if (fbphoto.likes != null) {
             window.testlikes = fbphoto.likes;
