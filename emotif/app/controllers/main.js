@@ -33,9 +33,7 @@ exports.signup2 = function(req, res){
 exports.settings = function(req, res){
   res.render('../views/partials/settings');
 };
-exports.content = function(req, res){
-  res.render('../views/partials/content');
-};
+
 exports.share = function(req, res){
   res.render('../views/partials/share');
 };
@@ -55,6 +53,26 @@ exports.interests = function(req, res) {
 exports.travels = function(req, res) {
   res.render('../views/partials/profile-travels');
 }
+
+exports.content = function(req, res){
+  // res.render('../views/partials/content');
+  var types = [
+    "video",
+    "post",
+    "photo-fb",
+    "photo",
+    "contact",
+    "sports",
+    "meditation"
+  ];
+
+  var typeSize = types.length;
+  var typeIndex = Math.floor(Math.random() * typeSize);
+  var renderURL = "../views/partials/" + types[typeIndex];
+
+  res.render(renderURL);
+};
+
 exports.contentType = function(req, res){
   var rectype = req.params.rectype;
   console.log(rectype);

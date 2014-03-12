@@ -391,6 +391,35 @@ p.video-like {
   color: #66cc33;
 }
 
+div.topic {
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #7BBADE;
+  border-radius: 2px;
+  background-color: #7BBADE;
+  color: white;
+  padding: 5px;
+}
+
+div.friend {
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #F29E4A;
+  border-radius: 2px;
+  background-color: #F29E4A;
+  color: white;
+  padding: 5px;
+}
+
+p.first {
+  margin-top: 0px;
+}
+
+div.card-spacer {
+  /*margin: 20px;*/
+  padding: 10px;
+}
+
 /********************************
 * Settings page CSS
 *********************************/
