@@ -24,8 +24,8 @@ function initializePage() {
 
     // TODO Switch to photo
     ga("send", "event", "refresh", "click");
-    // window.location.href = alter_recommend;
-    window.location.reload();
+    window.location.href = alter_recommend;
+    // window.location.reload();
     
   });
 

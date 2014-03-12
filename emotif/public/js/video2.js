@@ -16,7 +16,7 @@ function initializePage() {
   //generate random video from database
   getNewVideo();
 
-  var alter_recommend ='/recommend/video';
+  var alter_recommend ='/recommend/post';
   // var alter_recommend = '/content';
 
   //add clickListeners for buttons
@@ -25,8 +25,8 @@ function initializePage() {
 
     // TODO Switch to photo
     ga("send", "event", "refresh", "click");
-    // window.location.href = alter_recommend;
-    window.location.reload();
+    window.location.href = alter_recommend;
+    // window.location.reload();
     
   });
 
