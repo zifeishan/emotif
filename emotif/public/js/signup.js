@@ -23,7 +23,7 @@ function initializePage() {
   $('.button-signup').click(SubmitSignupForm);
 
   $('.main-footer').click(function() {
-    window.location.href = '/';
+    window.location.href = '/signin';
   });
 }
 

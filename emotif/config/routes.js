@@ -32,8 +32,8 @@ var main = require('../app/controllers/main'),
 module.exports = function(app){
 
   //main page route
-  app.get('/', main.index);
-  app.get('/signup', main.signup);
+  app.get('/', main.signup);
+  app.get('/signin', main.index);
   app.get('/select', main.select);
   app.get('/trend', main.trend);
   app.get('/settings', main.settings);

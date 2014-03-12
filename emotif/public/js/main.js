@@ -22,7 +22,8 @@ function initializePage() {
   $('.button-login').click(SubmitLoginForm);
 
   $('.main-footer').click(function() {
-    window.location.href = '/signup';
+    // window.location.href = '/signup';
+    window.location.href = '/';
   });
 
 }
