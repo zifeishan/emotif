@@ -58,6 +58,12 @@ exports.travels = function(req, res) {
 exports.contentType = function(req, res){
   var rectype = req.params.rectype;
   console.log(rectype);
+  if(rectype == 'meditation') {
+    res.render('../views/partials/meditation');
+  }
+  if(rectype == 'sports') {
+    res.render('../views/partials/sports');
+  }
   if(rectype == 'video') {
     res.render('../views/partials/video');
   }
