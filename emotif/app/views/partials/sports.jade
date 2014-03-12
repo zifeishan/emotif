@@ -1,0 +1,32 @@
+extends content
+
+block recommendContent
+
+  .item.item-top
+    p Try some refreshing outdoor sports!
+    
+  .item.item-body.item-middle
+        
+    iframe.full-image(id='ytplayer', type='text/html', src='', allowfullscreen="true", frameborder="0")
+    p
+      b#video-title
+      //- br
+      //- | Watch this funny video and you'll feel relaxed!
+    p.subdued
+      label#like-number   
+      |  people like you find this useful!
+
+  //- .item.tabs.tabs-secondary.tabs-icon-left.item-bottom
+  //-     a.tab-item#content-refresh-button
+  //-       i.icon.ion-refresh
+  //-       | Another
+  //-     a.tab-item#content-like-button
+  //-       i.icon.ion-thumbsup
+  //-       | I like it
+  //-     a.tab-item#content-better-button
+  //-       i.icon.ion-heart
+  //-       | I'm better
+
+block js
+  script(src="/js/apple-locality.js")  
+  script(src="/js/video.js")

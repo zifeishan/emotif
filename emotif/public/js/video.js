@@ -5,6 +5,10 @@
 
 var isLiked = false;
 
+String.prototype.endsWith = function(suffix) {
+    return this.indexOf(suffix, this.length - suffix.length) !== -1;
+};
+
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
   RegisterNavListener();
@@ -13,7 +17,14 @@ $(document).ready(function() {
 
 function initializePage() {
   //generate random video from database
-  getNewVideo();
+  if (window.location.href.endsWith('sports')){
+    getNewVideo('sports');
+  }
+  else if (window.location.href.endsWith('meditation')){
+    getNewVideo('meditation');
+  }
+  else
+    getNewVideo('funny');
 
   var alter_recommend ='/recommend/post';
   // var alter_recommend = '/content';
@@ -50,13 +61,30 @@ function initializePage() {
   });
 }
 
-function getNewVideo() {
+function getNewVideo(keyword) {
 
   var videoStrategy = [
     'database',
-    'keyword',
-    'popular'
+    'popular',
+    'funny'
   ];
+  if (keyword == 'sports') {
+    videoStrategy = [
+      // 'outdoor sports',
+      'jogging scenery',
+      'cycling trailer',
+      'MLB top plays',
+      'football top plays',
+      'NBA top plays'
+    ];
+  }
+  if (keyword == 'meditation') {
+    videoStrategy = [
+      'best meditation music'
+    ];
+  }
+
+  
 
   var videoId = '';
   var videoTitle = '';
@@ -65,16 +93,18 @@ function getNewVideo() {
   var selectedStrategyIndex = Math.floor(Math.random() * strategySize);
   var selectedStrategy = videoStrategy[selectedStrategyIndex];
 
+  console.log(selectedStrategy);
+
   switch (selectedStrategy)
   {
     case 'database':
       renderVideoWithDatabase();
       break;
-    case 'keyword':
-      renderVideoWithKeyword();
-      break;
     case 'popular':
       renderVideoWithPopular();
+      break;
+    default:
+      renderVideoWithKeyword(selectedStrategy);
       break;
   }
 
@@ -87,8 +117,8 @@ function getNewVideo() {
     });
   }
 
-  function renderVideoWithKeyword() {
-    $.post('/api/video/keyword', {keyword: 'funny'}, function(json) {
+  function renderVideoWithKeyword(keyword) {
+    $.post('/api/video/keyword', {keyword: keyword}, function(json) {
       var video = json;
       videoId = video.id;
       videoTitle = video.title;
