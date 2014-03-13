@@ -16,8 +16,8 @@ function initializePage() {
   //generate random video from database
   getNewVideo();
 
-  var alter_recommend ='/recommend/post';
-  // var alter_recommend = '/content';
+  // var alter_recommend ='/recommend/post';
+  var alter_recommend = '/content';
 
   //add clickListeners for buttons
   $('#content-refresh-button').click(function(e) {
