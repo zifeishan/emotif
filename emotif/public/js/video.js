@@ -16,18 +16,11 @@ $(document).ready(function() {
 })
 
 function initializePage() {
-  //generate random video from database
-  if (window.location.href.endsWith('sports')){
-    getNewVideo('sports');
-  }
-  else if (window.location.href.endsWith('meditation')){
-    getNewVideo('meditation');
-  }
-  else
-    getNewVideo('funny');
+  var recommend_type = $('#contentType').val();
+  // console.log(recommend_type);
+  getNewVideo(recommend_type);
 
-  var alter_recommend ='/recommend/post';
-  // var alter_recommend = '/content';
+  var alter_recommend ='/content';
 
   //add clickListeners for buttons
   $('#content-refresh-button').click(function(e) {
@@ -63,11 +56,13 @@ function initializePage() {
 
 function getNewVideo(keyword) {
 
+  // Funny videos
   var videoStrategy = [
     'database',
     'popular',
     'funny'
   ];
+  // search for sports
   if (keyword == 'sports') {
     videoStrategy = [
       // 'outdoor sports',
@@ -78,13 +73,12 @@ function getNewVideo(keyword) {
       'NBA top plays'
     ];
   }
+  // meditation
   if (keyword == 'meditation') {
     videoStrategy = [
       'best meditation music'
     ];
   }
-
-  
 
   var videoId = '';
   var videoTitle = '';

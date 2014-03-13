@@ -7,8 +7,8 @@
 $(document).ready(function() {
   RegisterNavListener();
   
-  var alter_recommend = '/recommend/photo';
-  // var alter_recommend = '/content';
+  // var alter_recommend = '/recommend/photo';
+  var alter_recommend = '/content';
 
   //add clickListeners for buttons
   $('#content-refresh-button').click(function(e) {
