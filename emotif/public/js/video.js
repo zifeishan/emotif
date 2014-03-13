@@ -42,7 +42,7 @@ function initializePage() {
       var likes = parseInt($('#like-number').text());
       likes++;
       $('label#like-number').text(likes);
-      ga("send", "event", "like", "click");
+      // ga("send", "event", "like", "click");
       isLiked = true;
      }
   });
