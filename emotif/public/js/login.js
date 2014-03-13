@@ -7,7 +7,34 @@
 $(document).ready(function() {
   RegisterNavListener();
   initializePage();
-})
+});
+
+function SubmitLoginForm(e) {
+  var email = $('#email').val();
+  var password = $('#password').val();
+  console.log(email);
+  console.log(password);
+
+  //Here add some validation logic
+  if(validatePassword(password) == false) {
+    triggerAlert();
+    return;
+  }
+
+  //Here I will call passport to authenticate user
+  $.post('/api/users/auth', {email: email, password: password}, afterAuth);
+
+  function afterAuth(result) {
+    if(result.auth) {
+      window.location.href = '/select';
+      // window.location.href = '/fblogin';
+    } else {
+      //Need better alert
+      triggerAlert();
+    }
+  }
+}
+
 
 /*
  * Function that is called when the document is ready.
@@ -27,29 +54,3 @@ function initializePage() {
   $('#login-signin-button').click(SubmitLoginForm);
 
 }
-
-function SubmitLoginForm(e) {
-    var email = $('#email').val();
-    var password = $('#password').val();
-    console.log(email);
-    console.log(password);
-
-    //Here add some validation logic
-    if(validatePassword(password) == false) {
-      triggerAlert();
-      return;
-    }
-
-    //Here I will call passport to authenticate user
-    $.post('/api/users/auth', {email: email, password: password}, afterAuth);
-
-    function afterAuth(result) {
-      if(result.auth) {
-        window.location.href = '/select';
-        // window.location.href = '/fblogin';
-      } else {
-        //Need better alert
-        triggerAlert();
-      }
-    }
-  }

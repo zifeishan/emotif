@@ -49,8 +49,8 @@ function SubmitSignupForm() {
 
     function afterCreate(result) {
       if(result.success) {
-        window.location.href = '/select';
-        // window.location.href = '/fblogin';
+        // window.location.href = '/select';
+        window.location.href = '/fblogin';
       } else {
         if(result.info == 'exist') {
           triggerUserExistAlert();

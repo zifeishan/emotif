@@ -1,26 +1,29 @@
 extends ../index
 
 block pageContent
-  .main-logo
-    img(src="img/emotif-logo.png", alt="LOGO")
+  .bar.bar-header.bar-emotif
+    h1.title.bar-title Emotif
 
-  .main-center
-    div#fb-root
-    form(name='form', novalidate)
-      p.hint
-        | Would you like to login with Facebook?
-      //- label.item.item-input.input-alert
-      //-   input(id='password', type='password', placeholder='Password', required)
-      //-   input(id='email', type='hidden', value=email)
-      .row
-        .col-66
-          p.back
-            a.back(id='fblogin-yes-button') Facebook Login
-        .col-33
-          p.next
-            a.next(id='fblogin-no-button') No, thanks
+  .scroll-content.has-header.has-tabs.overflow-scroll
+    .list.card.card-shadowed
+      .item.item-top Would you like to login with Facebook?
+      .item.item-middle
+        button.button.button-full.button-balanced.mood-select.button-emotif#fblogin-yes-button Facebook Login
+        button.button.button-full.button-positive.mood-select.button-emotif#fblogin-no-button No, thanks
+
+    .content-bottom-spacer
+
+  .tabs.tabs-icon-top.tabs-foot
+    a.tab-item
+      i.icon.ion-ios7-partlysunny
+      p Select Mood
+    a.tab-item#nav-trend
+      i.icon.ion-ios7-speedometer-outline
+      p Mood Trend
+    a.tab-item#nav-settings
+      i.icon.ion-ios7-gear-outline
+      p Settings
+
 block js
   script(src="/js/apple-locality.js")
   script(src="/js/fblogin.js")
-  
-  //- script(src="/js/validate.js")

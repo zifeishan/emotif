@@ -39,7 +39,7 @@ $(document).ready(function() {
             window.location.href = '/fblogin';
           }
           else {
-            window.location.href = '/select';
+            window.location.href = '/interest';
           }
         });
       }
@@ -52,7 +52,7 @@ $(document).ready(function() {
 
   $('#fblogin-no-button').click(function(e){
     FBLogout();
-    window.location.href = '/profile-aboutme';
+    window.location.href = '/interest';
   });
 
 });

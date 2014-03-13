@@ -5,10 +5,13 @@
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
+
   RegisterNavListener();
   
-  // var alter_recommend = '/recommend/photo';
+  // var alter_recommend = '/recommend/video';
   var alter_recommend = '/content';
+
+  var friendlist = [];
 
   //add clickListeners for buttons
   $('#content-refresh-button').click(function(e) {
@@ -34,6 +37,46 @@ $(document).ready(function() {
     window.location.href = '/select';
   });
 
+  var topics = [
+    'A sports game you recently watched',
+    'Your feelings',
+    'Your recent life',
+    'A TV show you recently watched',
+    'Your burdan',
+    'One of your secrets',
+    'One event you have been expected'
+  ];
+
+  var topicSize = topics.length;
+  var selectedTopicIndex = Math.floor(Math.random() * topicSize);
+  var selectedTopic = topics[selectedTopicIndex];
+
+  $('#topic').text(selectedTopic);
+
+  $('#contact-refresh-button').click(function(e) {
+    if (friendlist == null || friendlist.length == 0) {
+        // do nothing
+    } else {
+      var fbfriend = RandomFriend(friendlist);
+      console.log(fbfriend);
+      if (fbfriend == null) {
+        // window.location.href = alter_recommend;
+        $('#friendname').text('Your best friends');
+      }
+      else {
+        $('#friendname').text(fbfriend.name);
+      }
+    }
+    selectedTopicIndex = Math.floor(Math.random() * topicSize);
+    selectedTopic = topics[selectedTopicIndex];
+
+    $('#topic').text(selectedTopic);
+
+
+  });
+
+
+
   function shuffle(array) {
     var currentIndex = array.length
       , temporaryValue
@@ -55,7 +98,7 @@ $(document).ready(function() {
     return array;
   }
 
-  function RandomPost(allposts) {
+  function RandomFriend(allposts) {
     allposts = shuffle(allposts);
     console.log('Total posts:'+allposts.length);
     for(var i = 0; i < allposts.length; i++){
@@ -65,70 +108,44 @@ $(document).ready(function() {
       // console.log('Pick one:');
       // console.log(allposts[index]);
       var post = allposts[index];
-      if (
-        post.status_type == 'approved_friend'
-        || post.status_type == 'mobile_status_update'
-        || post.status_type == undefined
-        || (post.likes == undefined && post.status_type == undefined)
-        // || post.status_type != "wall_post"
-        // || post.status_type == 'app_created_story'
+      if (post.name == null
+        
         )
         continue;
       else
         return post;
     }
-    return post;
+    return null;
 
   }
 
+  //Check login with FB. 
   FBCheckLogin(function(data){
     console.log('FB status:'+data.status);
     if (data.status == 'connected') {
 
-      FBGetPosts(function(res){
+      FBGetFriends(function(res){
         console.log(res);
         if(res.data != null && res.data.length > 0){
-          var post = RandomPost(res.data);
-          console.log(post);
-          if (post == null) {
-            window.location.href = alter_recommend;
-          }
           
-          // API: '/me/posts?fields=picture,likes,created_time,description,story,story_tags,type,status_type&limit=100'
-          // Object {picture: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash1/t5/373523_6278093869_764126549_q.jpg", created_time: "2013-11-30T20:49:35+0000", story: "Zifei Shan likes Dr Pepper.", story_tags: Object, type: "link"…}
-          //   created_time: "2013-11-30T20:49:35+0000"
-          //   id: "100004349652754_246716888816631"
-          //   picture: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash1/t5/373523_6278093869_764126549_q.jpg"
-          //   story: "Zifei Shan likes Dr Pepper."
-          //   story_tags: Object
-          //   type: "link"
-          //   __proto__: Object
-
-          $('#post-title').text(post.story);
-          $('#post-photo').attr('src', post.picture);
-          // if(post.link != null) {
-          //   $('#post-photo').click(function(){
-          //     window.location.href = post.link;
-          //   });  
-          // }
-          //Cancel the loading message
-          $('#post-content').text('');  
-          $('#post-content').text(post.description);
-          // if(post.created_time != null){
-          //   var d = new Date(post.created_time);
-          //   var dstr = 'Date: '+d.getFullYear() + '-' + (d.getMonth()+1) + '-' + d.getDay()
-          //   $('#post-date').text(dstr);
-          // }
-
+          friendlist = res.data;
+          var fbfriend = RandomFriend(friendlist);
+          console.log(fbfriend);
+          if (fbfriend == null) {
+            // window.location.href = alter_recommend;
+            $('#friendname').text('Your best friends');
+          }
+          else {
+            $('#friendname').text(fbfriend.name);
+            $('#dial-button').attr('href', 'tel:'+fbfriend.name);
+          }
             
-
-
         }
-      })
+      });
 
     } else {
       // TODO switch to another type
-      window.location.href = alter_recommend;
+      $('#friendname').text('Your best friends');
     }
   });
 })
