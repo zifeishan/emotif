@@ -9,20 +9,25 @@ block recommendContent
     p.first Talk about
 
     .row
-      .col.col-50.col-offset-25
-        div.topic NBA Games
+      .col.col-80.col-offset-10
+        div.topic#topic Loading topics...
 
     p with friend:
     
     .row
-      .col.col-50.col-offset-25
-        div.friend Danny Lee
+      .col.col-80.col-offset-10
+        div.friend#friendname Picking your friends...
 
     div.card-spacer
 
-    a.button.button-outline.button-balanced.button-block(href="tel:6505612037")#dial-button
-      i.icon.ion-ios7-telephone-outline
-      |   Call him
+    .item.item-body.item-bottom.item-card-button
+      .row
+        .col.col-50
+          a.button.button-outline.button-positive.button-block#content-refresh-button Who else?
+        .col.col-50
+          a.button.button-outline.button-balanced.button-block(href="tel:")#dial-button
+            i.icon.ion-ios7-telephone-outline
+            |   Call friend
 
     p.subdued
       label#like-number   
@@ -30,4 +35,4 @@ block recommendContent
 
 block js
   script(src="/js/apple-locality.js")  
-  script(src="/js/video.js")
+  script(src="/js/contact.js")

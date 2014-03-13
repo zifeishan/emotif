@@ -76,13 +76,16 @@ exports.content = function(req, res){
 exports.contentType = function(req, res){
   var rectype = req.params.rectype;
   console.log(rectype);
-  if(rectype == 'meditation') {
+  if(rectype == 'contact') {
+    res.render('../views/partials/contact');
+  }
+  else if(rectype == 'meditation') {
     res.render('../views/partials/meditation');
   }
-  if(rectype == 'sports') {
+  else if(rectype == 'sports') {
     res.render('../views/partials/sports');
   }
-  if(rectype == 'video') {
+  else if(rectype == 'video') {
     res.render('../views/partials/video');
   }
   // //Only for GA experiment
