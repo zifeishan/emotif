@@ -1,33 +1,58 @@
 extends ../index
 
 block pageContent
-  .main-logo
-    img(src="img/emotif-logo.png", alt="LOGO")
+  .bar.bar-header.bar-emotif
+    //- a.button.button-clear.icon.ion-ios7-arrow-back#settings-back-button
+    //- a.button.button-clear
+      img(src="/img/back-white.png").bar-icon
+    h1.title.bar-title Emotif
 
-  .main-center
-    div What do you like?
-    form(name='form', novalidate)
-      p.hint()
-        | Sign in as:
-        br
-        = email
-      label.item.item-input.input-alert
-        input(id= 'password', type='password', placeholder='Password', required)
-        input(id='email', type='hidden', value=email)
-      .row
-        .col-33
-          p.back
-            a.next(id='login-back-button') Back
-        .col-33.col-offset-33
-          p.next
-            a.back(id='login-signin-button') Sign In
+  .scroll-content.has-header.overflow-scroll
+   .card.card-shadowed
+    .list
+      .item.item-divider.item-divider-top.item-interest
+        p Tell us about your interest:
 
+      ul.list
+        li.item.item-checkbox.item-middle
+          label.checkbox
+            input(type="checkbox")
+          | Sport
 
-  .main-footer
-    p.
-      Forgot Password?
+        li.item.item-checkbox.item-middle 
+          label.checkbox
+            input(type="checkbox")
+          | Movie
+
+        li.item.item-checkbox.item-middle 
+          label.checkbox
+            input(type="checkbox")
+          | Nature
+
+        li.item.item-checkbox.item-middle 
+          label.checkbox
+            input(type="checkbox")
+          | Animal
+
+        li.item.item-checkbox.item-middle 
+          label.checkbox
+            input(type="checkbox")
+          | Technology
+
+        li.item.item-checkbox.item-middle 
+          label.checkbox
+            input(type="checkbox")
+          | Photography
+
+        li.item.item-checkbox.item-middle
+          label.checkbox
+            input(type="checkbox")
+          | Entertainment
+
+    .padding
+      button.button.button-block.button-positive.button-emotif#interest-next-button Next
+
 
 block js
   script(src="/js/apple-locality.js")
-  script(src="/js/login.js")
-  script(src="/js/validate.js")
+  script(src="/js/interest.js")

@@ -287,6 +287,16 @@ body {
 }
 
 /********************************
+* Interest page CSS
+*********************************/
+.item-interest {
+  font-weight: 200;
+  font-size: 20pt;
+  background-color: #F7F7F7;
+}
+
+
+/********************************
 * Select page CSS
 *********************************/
 

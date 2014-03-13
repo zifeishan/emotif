@@ -34,6 +34,10 @@ exports.settings = function(req, res){
   res.render('../views/partials/settings');
 };
 
+exports.addInterest = function(req, res) {
+  res.render('../views/partials/interest');
+};
+
 exports.share = function(req, res){
   res.render('../views/partials/share');
 };

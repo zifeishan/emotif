@@ -45,6 +45,7 @@ module.exports = function(app){
   app.get('/profile-description', main.description);
   app.get('/profile-interests', main.interests);
   app.get('/profile-travels', main.travels);
+  app.get('/interest', main.addInterest);
 
   //For alternative design homwork use
   app.get('/main2', main.main2);

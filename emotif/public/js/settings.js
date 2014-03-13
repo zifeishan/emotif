@@ -27,18 +27,18 @@ $(document).ready(function() {
   });
   
 
-  $('#aboutme').click(function(e){
-    window.location.href = '/profile-aboutme';
-  });
-  $('#description').click(function(e){
-    window.location.href = '/profile-description';
-  });
-  $('#interests').click(function(e){
-    window.location.href = '/profile-interests';
-  });
-  $('#travels').click(function(e){
-    window.location.href = '/profile-travels';
-  });
+  // $('#aboutme').click(function(e){
+  //   window.location.href = '/profile-aboutme';
+  // });
+  // $('#description').click(function(e){
+  //   window.location.href = '/profile-description';
+  // });
+  // $('#interests').click(function(e){
+  //   window.location.href = '/profile-interests';
+  // });
+  // $('#travels').click(function(e){
+  //   window.location.href = '/profile-travels';
+  // });
   // Redirect skip buttons
   $('#settings-skipAboutme-button').click(function(e) {
       window.location.href = '/profile-description';
